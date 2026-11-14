@@ -69,3 +69,9 @@ M-Film's `fos_film.c` at the same pinned 8118e9c commit was reviewed for cylinde
 ### tone6 reference descriptions and Thai masks
 
 Reference-character text derives from M-Film's DESC catalog and eight built-in descriptions at the same pinned commit; preserve GPL-2.0-only attribution to M-Film contributors. Short Thai translations/adaptations are recorded with the original English in research/film-labels/DETAILS_TH.json. TONEINFO.BIN contains bounded, CRC-checked offline masks shaped from Noto Sans Thai plus English reference strings. Preserve the Noto font OFL notice; TONEINFO_OFL.txt is included in the runtime data directory and the font source/license remains in assets/fonts/noto-sans-thai. No source photograph or RAW/LUT implementation is introduced.
+
+### tone7 baked cartridge artwork, cache and palette review
+
+M-Film's fos_shelf.c / fos_ui.c / fos_gfx.c and fork/src/filmroll.c at pinned commit 8118e9c7c072371bd53eda8920f44910e8a35baf were reviewed for cached prepainted cartridges, elapsed-frame timing, multi-level palette ramps and two-bank palette save/restore. Credit M-Film contributors; inherited label data remains GPL-2.0-only. The independent offline renderer in tools/generate_film_art.py uses the original stock label metadata, cylindrical projection, supersampling and material shading to build FILMART.BIN. Its runtime caches four checked sprites and scopes custom palette entries to 80–239; it replaces tone5/6's runtime label rendering. No upstream raster texture, sample photograph, RAW engine or LUT is imported.
+
+Barlow Condensed Bold and ExtraBold font files are copied verbatim from the pinned M-Film tree and retain the SIL Open Font License 1.1, copyright and source notes in assets/fonts/barlow. FILMART_OFL.txt accompanies runtime artwork. Noto/TONEINFO notices continue to apply independently. Film and brand words identify source presets; there is no claim of endorsement or exact retail packaging reproduction.

@@ -25,18 +25,18 @@
 #define FONT_LARGE 4
 #define BMPPITCH 720
 #define NO_BG_ERASE 255
-#define COLOR_BLACK 0
+#define COLOR_BLACK 2
 #define COLOR_WHITE 1
-#define COLOR_BLUE 2
-#define COLOR_ORANGE 3
-#define COLOR_CYAN 4
-#define COLOR_GREEN1 120
-#define COLOR_GREEN2 121
-#define COLOR_RED 122
-#define COLOR_DARK_RED 123
-#define COLOR_YELLOW 124
-#define COLOR_MAGENTA 125
-#define COLOR_GRAY(a) ((a)+10)
+#define COLOR_BLUE 11
+#define COLOR_ORANGE 19
+#define COLOR_CYAN 5
+#define COLOR_GREEN1 6
+#define COLOR_GREEN2 7
+#define COLOR_RED 8
+#define COLOR_DARK_RED 12
+#define COLOR_YELLOW 15
+#define COLOR_MAGENTA 14
+#define COLOR_GRAY(a) (38+(a)*41/100)
 #define FONT_ID(font) ((font)&255)
 #define FONT_FG(font) (((font)>>8)&255)
 #define O_RDONLY 0
@@ -58,9 +58,15 @@ static const int menu_sem=1,gui_sem=2;
 #define SUBMENU_OR_EDIT (submenu_level || edit_mode)
 #define RECORDING recording
 static int photo_thai_enabled;
-static int io_missing,io_corrupt,io_short,thai_pixels;
+static int io_missing,io_corrupt,io_short,thai_pixels,art_reads;
+static uint32_t LCD_Palette[1536],palette_registers[512];
+static int palette_ready,palette_writes;
+static uint32_t shamem_read(uint32_t reg){assert(reg<512);return palette_registers[reg];}
+static void EngDrvOut(uint32_t reg,uint32_t value){assert(reg<512);assert(reg%256>=80 && reg%256<240);palette_registers[reg]=value;palette_writes++;}
+static void init_palette(void){if(palette_ready)return;palette_ready=1;for(int i=0;i<256;i++){LCD_Palette[i*3]=i;LCD_Palette[i*3+768]=i+256;LCD_Palette[i*3+2]=0x03000000u|((i==1?235:i)<<16);palette_registers[i]=0x03000000u+i;palette_registers[i+256]=0x03001000u+i;}}
+
 static unsigned char framebuffer[720*480];
-static const char * tone_asset_path(const char *p) { return strstr(p,"TONEINFO.BIN")?getenv("PHOTO_TEST_TONE_INFO"):getenv("PHOTO_TEST_ATLAS"); }
+static const char * tone_asset_path(const char *p) { return strstr(p,"FILMART.BIN")?getenv("PHOTO_TEST_FILM_ART"):strstr(p,"TONEINFO.BIN")?getenv("PHOTO_TEST_TONE_INFO"):getenv("PHOTO_TEST_ATLAS"); }
 static int FIO_GetFileSize(const char * p,unsigned * size)
 {
     const char *path=tone_asset_path(p);struct stat st;if(!path || io_missing || stat(path,&st))return -1;
@@ -71,11 +77,13 @@ static void fio_free(void * p) { free(p); }
 static FILE * FIO_OpenFile(const char * p,int flags) { (void)flags;const char *path=tone_asset_path(p);return path?fopen(path,"rb"):NULL; }
 static int FIO_ReadFile(FILE * file,void * data,unsigned n)
 {
+    if(n==34144)art_reads++;
     int got=fread(data,1,n,file);
     if(io_corrupt && got)((unsigned char*)data)[0]^=1;
     return io_short && got ? got-1 : got;
 }
 static void FIO_CloseFile(FILE * file) { fclose(file); }
+static int64_t FIO_SeekSkipFile(FILE *f,int64_t off,int whence){return fseek(f,(long)off,whence)?-1:ftell(f);}
 static uint8_t * bmp_vram(void) { return framebuffer; }
 static void bmp_putpixel_fast(uint8_t * b,int x,int y,int color)
 {
@@ -282,6 +290,7 @@ static struct menu prefs={.name="Prefs"};
 
 static void reset(void)
 {
+    init_palette();
     memset(photo_selection,0,sizeof(photo_selection));photo_page_index=0;photo_menu_reset();
     submenu_level=edit_mode=menu_help_active=menu_lv_transparent_mode=recording=0;
     actions=last_mode=close_requests=run_actions=exercise_native_reentry=menu_redraw_cancel=0;

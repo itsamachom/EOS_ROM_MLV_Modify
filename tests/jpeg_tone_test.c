@@ -82,7 +82,7 @@ int main(void) {
         for(int group=0;group<4;group++) {
             photo_tone_group=group;int ids[PHOTO_TONE_COUNT],n=photo_tone_ids(group,ids);
             for(int option=0;option<n;option++) {
-                photo_tone_selected[group]=option;photo_tone_confirm=0;photo_tone_working=0;photo_tone_anim_step=3;render();assert(!lang || photo_thai_active());
+                photo_tone_selected[group]=option;photo_tone_confirm=0;photo_tone_working=0;photo_tone_anim_step=2;render();assert(!lang || photo_thai_active());
                 char name[128];snprintf(name,sizeof(name),"tones-%s-%02d",lang?"th":"en",ids[option]+1);save_proof(name);
             }
         }
@@ -107,7 +107,7 @@ int main(void) {
     photo_tone_group=0;photo_tone_selected[0]=0;photo_tone_confirm=0;photo_tone_working=0;
     int no_writes=tone_host_write_calls;
     press(BGMT_PRESS_RIGHT);save_proof("tone-zoom-0");
-    for(int frame=1;frame<4;frame++){render();char p[40];snprintf(p,sizeof(p),"tone-zoom-%d",frame);save_proof(p);}
+    for(int frame=1;frame<3;frame++){render();char p[40];snprintf(p,sizeof(p),"tone-zoom-%d",frame);save_proof(p);}
     assert(!photo_tone_animation_pending() && tone_host_write_calls==no_writes);
     press(BGMT_PRESS_SET);int preview=photo_tone_current();press(BGMT_PRESS_LEFT);
     assert(photo_tone_confirm==1 && photo_tone_current()==preview && tone_host_write_calls==no_writes);
@@ -129,9 +129,43 @@ int main(void) {
     assert(!photo_film_info_prepare());io_corrupt=0;
     photo_film_info_attempted=0;io_short=1;assert(!photo_film_info_prepare());io_short=0;
     photo_film_info=info;photo_film_info_attempted=1;
-    /* Bounded texture allocation may fail: the existing flat renderer stays usable. */
-    unsigned char *cached=photo_film_texture;photo_film_texture=NULL;photo_film_texture_attempted=1;
-    render();photo_film_texture=cached;
+    /* Four-slot hot pages do not reread or rerender art during animation. */
+    photo_tone_confirm=0;photo_tone_working=0;photo_tone_anim_step=2;render();
+    int reads=art_reads;render();render();assert(art_reads==reads);
+    assert(photo_film_palette_live && palette_writes>0);
+    /* Firmware palette refresh must not replace the saved original registers. */
+    int prior_palette_writes=palette_writes;
+    palette_registers[200]=0;
+    assert(photo_film_sprite(photo_tone_current()));
+    assert(palette_writes==prior_palette_writes+320);
+    photo_tone_art_release();
+    for(int i=80;i<240;i++){assert(palette_registers[i]==0x03000000u+(unsigned)i);assert(palette_registers[i+256]==0x03001000u+(unsigned)i);}
+    io_missing=1;photo_film_art_attempted=0;assert(!photo_film_art_prepare());assert(!photo_film_palette_live);io_missing=0;
+    photo_tone_art_release();
+    for(int failure=0;failure<2;failure++) {
+        int before_palette=palette_writes;
+        io_corrupt=!failure;io_short=failure;
+        assert(!photo_film_art_prepare() && !photo_film_art && !photo_film_art_file);
+        assert(palette_writes==before_palette);
+        io_corrupt=io_short=0;photo_tone_art_release();
+        assert(photo_film_art_prepare());
+        io_corrupt=!failure;io_short=failure;
+        assert(!photo_film_sprite(0) && !photo_film_palette_live);
+        assert(palette_writes==before_palette);
+        io_corrupt=io_short=0;photo_tone_art_release();
+    }
+    reset();tone_host_ready=1;photo_tone_opened=1;photo_tone_confirm=0;
+    photo_tone_group=0;photo_tone_selected[0]=0;
+    press(BGMT_PRESS_LEFT);assert(photo_tone_selected[0]==0);
+    int ids_end[PHOTO_TONE_COUNT],end=photo_tone_ids(0,ids_end)-1;
+    photo_tone_selected[0]=end;press(BGMT_PRESS_RIGHT);assert(photo_tone_selected[0]==end);
+    assert(photo_film_palette_live);
+    press(BGMT_MENU);assert(!photo_film_palette_live && !photo_film_art_file && !photo_film_art);
+    photo_tone_opened=1;render();assert(photo_film_palette_live);
+    assert(photo_menu_key(BGMT_PRESS_HALFSHUTTER)==0 && !photo_film_palette_live);
+    photo_tone_opened=1;render();photo_menu_reset();assert(!photo_film_palette_live && !photo_film_art);
+    for(int i=80;i<240;i++){assert(palette_registers[i]==0x03000000u+(unsigned)i);assert(palette_registers[i+256]==0x03001000u+(unsigned)i);}
+    puts("PASS cached sprites, CRC/short-read fallback, scoped palette refresh/restore, close paths and shelf endpoints");
     photo_thai_enabled=1;photo_tone_group=0;photo_tone_selected[0]=0;
     for(int step=0;step<9;step++){photo_tone_working=1;photo_tone_step=step;render();char name[40];snprintf(name,sizeof(name),"tone-setting-%d",step);save_proof(name);}
     photo_tone_working=0;puts("PASS all tone/category screens and setting-indicator frames stay inside the real framebuffer in Thai/English");

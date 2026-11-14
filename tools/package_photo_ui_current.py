@@ -35,6 +35,9 @@ assert version.encode() in binary, 'Build version differs from version file; reb
 assert len(binary) % 4 == 0
 assert functools.reduce(operator.xor, struct.unpack('<%dI' % (len(binary)//4), binary), 0) == 0
 assert payload['ML/data/PHOTO_TH.BIN'] == (root/'firmware/data/photo_thai/PHOTO_TH.BIN').read_bytes()
+if b'ML/data/FILMART.BIN' in binary:
+    assert payload['ML/data/FILMART.BIN']==(root/'firmware/data/photo_thai/FILMART.BIN').read_bytes()
+    assert payload['ML/data/FILMART_OFL.txt']==(root/'assets/fonts/barlow/OFL.txt').read_bytes()
 if b'ML/data/TONEINFO.BIN' in binary:
     assert payload['ML/data/TONEINFO.BIN']==(root/'firmware/data/photo_thai/TONEINFO.BIN').read_bytes()
     assert payload['ML/data/TONEINFO_OFL.txt']==(root/'assets/fonts/noto-sans-thai/OFL.txt').read_bytes()

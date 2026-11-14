@@ -1,0 +1,1 @@
+Barlow fonts, Copyright 2017 The Barlow Project Authors, SIL OFL 1.1. Copied verbatim from HNGSeries/M-Film commit 8118e9c7c072371bd53eda8920f44910e8a35baf, ml-dev/filmos/fonts. Used for offline film-label artwork; source font files are not loaded by the camera. See OFL.txt.

@@ -5003,9 +5003,12 @@ menu_redraw_task()
             
             if (!menu_redraw_blocked)
             {
+                #ifdef CONFIG_600D
+                int film_frame_start=get_ms_clock();
+                #endif
                 menu_redraw_do();
                 #ifdef CONFIG_600D
-                if(photo_tone_animation_pending()){msleep(35);menu_redraw();}
+                if(photo_tone_animation_pending()){int rest=28-(get_ms_clock()-film_frame_start);if(rest<1)rest=1;if(rest>8)rest=8;msleep(rest);menu_redraw();}
                 #endif
             }
         }
@@ -5749,6 +5752,9 @@ static void menu_close()
     if (!menu_shown)
         return;
     menu_shown = false;
+    #ifdef CONFIG_600D
+    photo_menu_reset(); /* restore the scoped film palette on every close path */
+    #endif
 
     customize_mode = 0;
     update_disp_mode_bits_from_params();

@@ -25,6 +25,8 @@ include ../Makefile
 
 # Offline-shaped Thai resources; English remains available if the atlas is absent.
 zip_contents::
+	$(CP) $(TOP_DIR)/data/photo_thai/FILMART.BIN $(ZIP_DIR)/ML/data/
+	$(CP) $(TOP_DIR)/../assets/fonts/barlow/OFL.txt $(ZIP_DIR)/ML/data/FILMART_OFL.txt
 	$(CP) $(TOP_DIR)/data/photo_thai/PHOTO_TH.BIN $(ZIP_DIR)/ML/data/
 	$(CP) $(TOP_DIR)/data/photo_thai/TONEINFO.BIN $(ZIP_DIR)/ML/data/
 	$(CP) $(TOP_DIR)/../assets/fonts/noto-sans-thai/OFL.txt $(ZIP_DIR)/ML/data/TONEINFO_OFL.txt
