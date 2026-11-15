@@ -86,8 +86,8 @@ static void convert_task(void *unused){
     if(bounce){fio_free(bounce);bounce=NULL;}
     if(!ok)FIO_RemoveFile(jpeg_part);
     FIO_RemoveFile(print_part);
-    percent=ok?100:0;running=0;
-    NotifyBox(5000,"%s",status);menu_redraw();
+    percent=ok?100:0;
+    NotifyBox(5000,"%s",status);menu_redraw();running=0;
 }
 static MENU_SELECT_FUNC(start_convert){
     (void)priv;(void)delta;
@@ -130,8 +130,8 @@ static struct menu_entry entries[]={
   {.name="Cancel conversion",.select=cancel_convert,.help="Stop processing; source RAW is preserved."},MENU_EOL}},
 };
 static unsigned int init(void){menu_add("Shoot",entries,COUNT(entries));return 0;}
-/* Keeping the task/code resident avoids unloading a module while it is in FIO. */
-static unsigned int deinit(void){if(running)return 1;menu_remove("Shoot",entries,COUNT(entries));return 0;}
+/* Module shutdown must wait for cancellation/close; loader ignores deinit returns. */
+static unsigned int deinit(void){cancel=1;while(running)msleep(20);menu_remove("Shoot",entries,COUNT(entries));return 0;}
 MODULE_INFO_START()
  MODULE_INIT(init)
  MODULE_DEINIT(deinit)
