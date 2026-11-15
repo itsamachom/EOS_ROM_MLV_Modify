@@ -9,7 +9,7 @@ import zipfile
 root=Path(__file__).resolve().parents[1]
 release=(root/'scripts/photo-ui-version.txt').read_text().strip()
 assert re.fullmatch(r'v[0-9][A-Za-z0-9._-]*',release)
-raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly'
+raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify'
 folder=root/f'deliveries/photo-ui-{release}-full'
 full=folder/f'600D-102-PHOTO-UI-{release}-FULL-EXPERIMENTAL.zip'
 source=folder/f'600D-PHOTO-UI-{release}-source.zip'
@@ -51,7 +51,7 @@ for kind,suffix in [('first_install','FIRST-INSTALL'),('camera','UPDATE')]:
             if n in {'COPYING','AI_ASSISTANCE.md','THIRD_PARTY_NOTICES.md','GAMES_TH.md','UPDATE_TH.md','INSTALL_TH.md','INSTALL_EN.md','INSTALL_UPSTREAM.txt'} or n.startswith('release/v3r2/'):
                 z.writestr(n,b)
         z.writestr('BUILD_INFO.json',json.dumps(metadata,indent=2)+'\n')
-        z.writestr('SOURCE.txt',f'Project: https://itsamachom.github.io/eos_rom_mlv_modifly/\nMatching source: {source_url}\nSource SHA256: {sha(source.read_bytes())}\nInherited dietlibc source remains unverified; see included provenance and notices.\n')
+        z.writestr('SOURCE.txt',f'Project: https://itsamachom.github.io/EOS_ROM_MLV_Modify/\nMatching source: {source_url}\nSource SHA256: {sha(source.read_bytes())}\nInherited dietlibc source remains unverified; see included provenance and notices.\n')
         z.writestr('PAYLOAD_SHA256SUMS',''.join(f'{sha(b)}  {n}\n' for n,b in sorted(payload.items())))
     with zipfile.ZipFile(dest) as z:
         assert z.testzip() is None
@@ -64,7 +64,7 @@ for kind,suffix in [('first_install','FIRST-INSTALL'),('camera','UPDATE')]:
 outputs['source']={'filename':source.name,'url':source_url,'bytes':source.stat().st_size,'sha256':sha(source.read_bytes())}
 metadata={'version':release,'target':'600D.102','status':'Public Experimental',
           'audience':'First installation or existing ML: choose the matching package',
-          'project':'FIRMWARE ADD-ON Thai-Menu','project_website':'https://itsamachom.github.io/eos_rom_mlv_modifly/',
+          'project':'FIRMWARE ADD-ON Thai-Menu','project_website':'https://itsamachom.github.io/EOS_ROM_MLV_Modify/',
           'firmware_source_tag':release,'firmware_source_commit':commit,'source_base_commit':info['base_commit'],
           'full_zip_sha256':sha(full.read_bytes()),'autoexec_sha256':sha(runtime['autoexec.bin']),
           'installer_sha256':fir_hash,**outputs,

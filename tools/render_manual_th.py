@@ -8,7 +8,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'https://itsamachom.github.io/eos_rom_mlv_modifly/'
+BASE = 'https://itsamachom.github.io/EOS_ROM_MLV_Modify/'
 data = json.loads((ROOT / 'website-content/manual-th.json').read_text())
 lex = json.loads((ROOT / 'translations/photo_th.json').read_text())
 release = (ROOT / 'scripts/photo-ui-version.txt').read_text().strip()
@@ -112,7 +112,7 @@ for p, (slug, badge, title) in enumerate(groups):
         screenshot = f'{BASE}menu-previews/{release}/th/th-{p+1:02d}-{i+1:02d}-item-01.png'
         source = source_for_item.get(key, source_for_menu[menu])
         assert (ROOT / source).is_file()
-        src = f'https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/{data["reviewed_source_commit"]}/{source}'
+        src = f'https://github.com/itsamachom/EOS_ROM_MLV_Modify/blob/{data["reviewed_source_commit"]}/{source}'
         overview = thai_captures[p, i, 'item', 1]
         assert overview['label'] == key
         body += (f'<article class="menu-entry" id="{ident}" data-menu-key="{esc(key, quote=True)}"><h3 id="{ident}-title">{esc(name)}</h3>'

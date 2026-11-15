@@ -1,6 +1,6 @@
 # หน้าแรก GitHub และการค้นหาโครงการ
 
-หน้าแรกของ repository ใช้ branch เริ่มต้น `main` งานปัจจุบันคือ **FIRMWARE ADD-ON Thai-Menu v3r5** สำหรับ Canon EOS 600D / Rebel T3i / Kiss X5 และ Canon firmware 1.0.2 เว็บไซต์อยู่ที่ https://itsamachom.github.io/eos_rom_mlv_modifly/
+หน้าแรกของ repository ใช้ branch เริ่มต้น `main` งานปัจจุบันคือ **FIRMWARE ADD-ON Thai-Menu v3r5** สำหรับ Canon EOS 600D / Rebel T3i / Kiss X5 และ Canon firmware 1.0.2 เว็บไซต์อยู่ที่ https://itsamachom.github.io/EOS_ROM_MLV_Modify/
 
 README บน main เป็นจุดเริ่มสำหรับผู้ใช้ มีเว็บ ดาวน์โหลดแยก FIRST-INSTALL / UPDATE / SOURCE, คู่มือติดตั้ง คู่มือเมนูพร้อมภาพ วิดีโอ และช่องทางแจ้งปัญหา branch `site/eos-600d-bilingual` ยังใช้เผยแพร่เว็บตามการตั้งค่า Pages เดิม เมื่อแก้งานให้คงข้อมูลสอง branch นี้สอดคล้องกัน
 
@@ -8,9 +8,9 @@ README บน main เป็นจุดเริ่มสำหรับผู�
 
 ค่าที่เตรียมไว้ดู [.github/repository-metadata.json](.github/repository-metadata.json) **GitHub ไม่อ่านไฟล์นี้ไปตั้ง About/topics อัตโนมัติ** เป็นข้อมูลสำหรับบันทึกผ่านหน้าเว็บหรือ API เท่านั้น
 
-1. เข้า [หน้า repository](https://github.com/itsamachom/EOS_ROM_MLV_Modifly) ด้วยบัญชีเจ้าของหรือผู้มีสิทธิ์ดูแล
+1. เข้า [หน้า repository](https://github.com/itsamachom/EOS_ROM_MLV_Modify) ด้วยบัญชีเจ้าของหรือผู้มีสิทธิ์ดูแล
 2. ที่แถบขวา **About** กดรูปเฟือง
-3. ใส่ Description ด้านล่าง และ Website เป็น `https://itsamachom.github.io/eos_rom_mlv_modifly/`
+3. ใส่ Description ด้านล่าง และ Website เป็น `https://itsamachom.github.io/EOS_ROM_MLV_Modify/`
 4. เพิ่ม Topics จากรายการด้านล่าง แล้วกด **Save changes**
 
 Description ที่แนะนำ:
@@ -21,9 +21,9 @@ Topics ที่แนะนำ:
 
 `magic-lantern` · `canon` · `canon-600d` · `eos-600d` · `rebel-t3i` · `kiss-x5` · `firmware-addon` · `camera-firmware` · `thai-menu` · `thai-language` · `photography` · `timelapse` · `open-source`
 
-About คือคำอธิบายสั้น/เว็บไซต์ของ repository; Topics คือคำค้นจัดหมวด ไม่ใช่เลขรุ่น ส่วน **Git tag** เช่น [v3r5](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/tree/v3r5) ระบุจุดในประวัติโค้ด ไม่ควรเปลี่ยน tag เดิมให้ชี้ไปงานใหม่ การแก้คู่มือหรือหน้าเว็บไม่จำเป็นต้องเพิ่มเลขเฟิร์มแวร์
+About คือคำอธิบายสั้น/เว็บไซต์ของ repository; Topics คือคำค้นจัดหมวด ไม่ใช่เลขรุ่น ส่วน **Git tag** เช่น [v3r5](https://github.com/itsamachom/EOS_ROM_MLV_Modify/tree/v3r5) ระบุจุดในประวัติโค้ด ไม่ควรเปลี่ยน tag เดิมให้ชี้ไปงานใหม่ การแก้คู่มือหรือหน้าเว็บไม่จำเป็นต้องเพิ่มเลขเฟิร์มแวร์
 
-เมื่อใช้ API ได้ ผู้มีสิทธิ์สามารถนำ description/homepage ไป PATCH repository และ topics ไป PUT endpoint `/repos/itsamachom/EOS_ROM_MLV_Modifly/topics` ตามเอกสาร GitHub ไม่ใส่ token ในไฟล์นี้หรือในแชต การเรียก API จากเครื่องคลาวด์ครั้งล่าสุดได้ `Forbidden` จึงยังไม่ได้บันทึก About/topics ผ่าน API
+เมื่อใช้ API ได้ ผู้มีสิทธิ์สามารถนำ description/homepage ไป PATCH repository และ topics ไป PUT endpoint `/repos/itsamachom/EOS_ROM_MLV_Modify/topics` ตามเอกสาร GitHub ไม่ใส่ token ในไฟล์นี้หรือในแชต การเรียก API จากเครื่องคลาวด์ครั้งล่าสุดได้ `Forbidden` จึงยังไม่ได้บันทึก About/topics ผ่าน API
 
 ## ป้าย GPL-2.0 ใช้ได้หรือไม่
 
@@ -54,6 +54,6 @@ About คือคำอธิบายสั้น/เว็บไซต์ข�
 
 เจ้าของกำลังสมัครช่องทางสนับสนุน ยังไม่ได้เพิ่มปุ่ม GitHub Sponsors หรือระบบรับเงิน เมื่อสมัครเสร็จจึงเชื่อมบัญชีที่เจ้าของยืนยัน รายได้จาก YouTube ใช้ต่อได้ตามสิทธิ์ช่อง โดยเนื้อหาและลิงก์ดาวน์โหลดไม่จำเป็นต้องล็อกไว้หลังการชำระเงิน
 
-เว็บไซต์: https://itsamachom.github.io/eos_rom_mlv_modifly/
+เว็บไซต์: https://itsamachom.github.io/EOS_ROM_MLV_Modify/
 
 ผู้พัฒนา: [YouTube Online2easy](https://www.youtube.com/@Online2easy) · [Facebook Online2easy](https://www.facebook.com/online2easy) · [Online2hobby Blog](https://online2hobby.blogspot.com/)

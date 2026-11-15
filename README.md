@@ -4,15 +4,15 @@
 
 *Thai / English Magic Lantern add-on for Canon EOS 600D. Downloads, installation tutorial and illustrated Thai user manual.*
 
-**[เข้าเว็บไซต์โครงการ](https://itsamachom.github.io/eos_rom_mlv_modifly/) · [เลือกไฟล์ดาวน์โหลด](https://itsamachom.github.io/eos_rom_mlv_modifly/download.html) · [คู่มือภาษาไทยพร้อมภาพ](https://itsamachom.github.io/eos_rom_mlv_modifly/manual-th.html) · [วิดีโอสอนติดตั้ง](https://itsamachom.github.io/eos_rom_mlv_modifly/videos.html)**
+**[เข้าเว็บไซต์โครงการ](https://itsamachom.github.io/EOS_ROM_MLV_Modify/) · [เลือกไฟล์ดาวน์โหลด](https://itsamachom.github.io/EOS_ROM_MLV_Modify/download.html) · [คู่มือภาษาไทยพร้อมภาพ](https://itsamachom.github.io/EOS_ROM_MLV_Modify/manual-th.html) · [วิดีโอสอนติดตั้ง](https://itsamachom.github.io/EOS_ROM_MLV_Modify/videos.html)**
 
 ## ชุดทดสอบใหม่: เมนูโทนสี JPEG
 
 **v3r6-tone6** จัดชื่อแท็บ/ฟิล์มกึ่งกลาง การ์ดขอบมน แอนิเมชันขยายเมื่อเลื่อนเลือกแทนกรอบส้ม ป้ายโทนที่ใช้อยู่สีเหลืองขอบมนพร้อมกลักย่อ SETครั้งแรกเปิดหน้ากลักใหญ่/คำอธิบายไทยและค่าจริง SETอีกครั้งจึงใช้โทนและกลับหน้ารวม MENUย้อนกลับโดยไม่เปลี่ยนค่า ชื่อ/สีฐานทั้ง72รายการและสูตรISO/WB/Picture Styleเดิมไม่เปลี่ยน
 
-[ดูหน้าตาเมนูและวิธีใช้](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/tree/v3r6-tone6) · [ดาวน์โหลด UPDATE รุ่นทดสอบ](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/v3r6-tone6/downloads/v3r6-tone6/camera/600D-102-Thai-Menu-v3r6-tone6-UPDATE.zip) · [ซอร์สตรงกับบิลด์](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/v3r6-tone6/deliveries/photo-ui-v3r6-tone6-full/600D-PHOTO-UI-v3r6-tone6-source.zip)
+[ดูหน้าตาเมนูและวิธีใช้](https://github.com/itsamachom/EOS_ROM_MLV_Modify/tree/v3r6-tone6) · [ดาวน์โหลด UPDATE รุ่นทดสอบ](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/v3r6-tone6/downloads/v3r6-tone6/camera/600D-102-Thai-Menu-v3r6-tone6-UPDATE.zip) · [ซอร์สตรงกับบิลด์](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/v3r6-tone6/deliveries/photo-ui-v3r6-tone6-full/600D-PHOTO-UI-v3r6-tone6-source.zip)
 
-[ดูภาพเมนูที่วาดจากโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/v3r6-tone6/previews/jpeg-tones/tone-active-th.png) · [หน้ารายละเอียดใหม่](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/v3r6-tone6/previews/jpeg-tones/tone-detail-th-01.png) · [ดูภาพและรายชื่อครบ72](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/v3r6-tone6/research/film-labels/GALLERY_TH.md)
+[ดูภาพเมนูที่วาดจากโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modify/blob/v3r6-tone6/previews/jpeg-tones/tone-active-th.png) · [หน้ารายละเอียดใหม่](https://github.com/itsamachom/EOS_ROM_MLV_Modify/blob/v3r6-tone6/previews/jpeg-tones/tone-detail-th-01.png) · [ดูภาพและรายชื่อครบ72](https://github.com/itsamachom/EOS_ROM_MLV_Modify/blob/v3r6-tone6/research/film-labels/GALLERY_TH.md)
 
 ผ่าน host tests และ ARM build **ยังไม่ยืนยันบนกล้องจริง** ต้องใช้ Canon EOS 600D / firmware 1.0.2 ตั้ง JPEG หรือ RAW+JPEG และสำรองชุดเดิมก่อนทดลอง สูตรนี้ไม่ใช่ 72 ลุค LUT ที่ผ่านห้องล้างภาพของ M-Film รุ่นทดลองนี้เปลี่ยน ISO จริงตามต้นฉบับ รายละเอียดการคืนค่า Picture Style/WB/ISO ที่สำรองใน RAM อยู่ในวิธีใช้ของชุดทดสอบ ส่วนชุดหลัก v3r5 อยู่ด้านล่าง
 
@@ -22,10 +22,10 @@
 | --- | --- |
 | ยังไม่เคยติดตั้ง Magic Lantern | [วิธีติดตั้งครั้งแรก](INSTALL_TH.md#ติดตั้งครั้งแรก) และชุด **FIRST-INSTALL** ด้านล่าง |
 | มี Magic Lantern ใช้งานอยู่แล้ว | [วิธีอัปเดต](INSTALL_TH.md#อัปเดตกล้องและการ์ดที่มี-ml-แล้ว) และชุด **UPDATE** |
-| เรียนรู้เมนูและการตั้งค่า | [คู่มือ 44 เมนู / 116 ตัวเลือกย่อย](https://itsamachom.github.io/eos_rom_mlv_modifly/manual-th.html) · [PDF พร้อมภาพ 42 หน้า](https://itsamachom.github.io/eos_rom_mlv_modifly/manual/Thai-Menu-v3r5-Manual-TH.pdf?edition=illustrated-1) |
-| ดูวิธีติดตั้ง | [วิดีโอติดตั้งบน YouTube](https://www.youtube.com/watch?v=Ii1Uv8L9Nf8) · [หน้ารวมวิดีโอ](https://itsamachom.github.io/eos_rom_mlv_modifly/videos.html) |
+| เรียนรู้เมนูและการตั้งค่า | [คู่มือ 44 เมนู / 116 ตัวเลือกย่อย](https://itsamachom.github.io/EOS_ROM_MLV_Modify/manual-th.html) · [PDF พร้อมภาพ 42 หน้า](https://itsamachom.github.io/EOS_ROM_MLV_Modify/manual/Thai-Menu-v3r5-Manual-TH.pdf?edition=illustrated-1) |
+| ดูวิธีติดตั้ง | [วิดีโอติดตั้งบน YouTube](https://www.youtube.com/watch?v=Ii1Uv8L9Nf8) · [หน้ารวมวิดีโอ](https://itsamachom.github.io/EOS_ROM_MLV_Modify/videos.html) |
 | ศึกษาหรือพัฒนาโค้ด | [โฟลเดอร์ firmware](firmware/) · [แนวทางมีส่วนร่วม](CONTRIBUTING.md) · [ซอร์สตรงกับรุ่นเผยแพร่](DOWNLOAD.md) |
-| พบปัญหาหรือเสนอปรับเมนู | [แจ้งปัญหา](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/issues/new/choose) พร้อมรุ่นกล้อง Canon firmware และรุ่น Thai-Menu |
+| พบปัญหาหรือเสนอปรับเมนู | [แจ้งปัญหา](https://github.com/itsamachom/EOS_ROM_MLV_Modify/issues/new/choose) พร้อมรุ่นกล้อง Canon firmware และรุ่น Thai-Menu |
 
 ## ดาวน์โหลด v3r5 — แยกไฟล์ลงกล้องจากซอร์ส
 
@@ -33,11 +33,11 @@
 
 | ไฟล์ | สำหรับใคร | ดาวน์โหลด |
 | --- | --- | --- |
-| **FIRST-INSTALL** | กล้องที่ยังไม่มี Magic Lantern — รวมตัวติดตั้งเดิม `ML-SETUP.FIR`, `autoexec.bin` และ `ML/` | [ZIP · 2.13 MB](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/main/downloads/v3r5/first_install/600D-102-Thai-Menu-v3r5-FIRST-INSTALL-doc1.zip) |
-| **UPDATE** | กล้องและการ์ดที่ใช้ Magic Lantern อยู่แล้ว — ไม่มี FIR และไม่เรียก Firmware Update ซ้ำเพื่ออัปเดตเมนู | [ZIP · 2.07 MB](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/main/downloads/v3r5/camera/600D-102-Thai-Menu-v3r5-UPDATE-doc1.zip) |
-| **SOURCE CODE** | ซอร์สสำหรับศึกษา/พัฒนา **ไม่ใช่ไฟล์ติดตั้งลงกล้อง** | [ZIP · 27.32 MB](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/main/downloads/v3r5/source/600D-PHOTO-UI-v3r5-source-doc1.zip) |
+| **FIRST-INSTALL** | กล้องที่ยังไม่มี Magic Lantern — รวมตัวติดตั้งเดิม `ML-SETUP.FIR`, `autoexec.bin` และ `ML/` | [ZIP · 2.13 MB](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/main/downloads/v3r5/first_install/600D-102-Thai-Menu-v3r5-FIRST-INSTALL-doc1.zip) |
+| **UPDATE** | กล้องและการ์ดที่ใช้ Magic Lantern อยู่แล้ว — ไม่มี FIR และไม่เรียก Firmware Update ซ้ำเพื่ออัปเดตเมนู | [ZIP · 2.07 MB](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/main/downloads/v3r5/camera/600D-102-Thai-Menu-v3r5-UPDATE-doc1.zip) |
+| **SOURCE CODE** | ซอร์สสำหรับศึกษา/พัฒนา **ไม่ใช่ไฟล์ติดตั้งลงกล้อง** | [ZIP · 27.32 MB](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/main/downloads/v3r5/source/600D-PHOTO-UI-v3r5-source-doc1.zip) |
 
-[รายละเอียดไฟล์และ SHA256](DOWNLOAD.md) · [ติดตั้งภาษาไทย](INSTALL_TH.md) · [English installation](INSTALL_EN.md) · [รายละเอียดรุ่น v3r5](PHOTO_UI_V3R5.md) · [Tag v3r5](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/tree/v3r5)
+[รายละเอียดไฟล์และ SHA256](DOWNLOAD.md) · [ติดตั้งภาษาไทย](INSTALL_TH.md) · [English installation](INSTALL_EN.md) · [รายละเอียดรุ่น v3r5](PHOTO_UI_V3R5.md) · [Tag v3r5](https://github.com/itsamachom/EOS_ROM_MLV_Modify/tree/v3r5)
 
 > **Public Experimental — ไม่ใช่ Stable**: มีผล ARM build และ host checks แต่ยังไม่ได้ยืนยันบิลด์นี้บนกล้องจริง/QEMU หรือการติดตั้งครั้งแรกบนฮาร์ดแวร์ การรวมตัวติดตั้งเดิมไม่ใช่หลักฐานว่าทดสอบติดตั้งผ่านแล้ว ใช้เฉพาะรุ่น/Canon firmware ที่ระบุ
 
@@ -49,10 +49,10 @@
 - แยกชุดติดตั้งครั้งแรก ชุดอัปเดต และซอร์สโค้ด พร้อมคู่มือและ checksum
 - [วิธีเปิดเกม Arkanoid / Pong / Sokoban](GAMES_TH.md) ด้วยโมดูลที่ตรงกับแพ็ก
 
-<a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/"><img src="docs/menu-previews/v3r5/th/th-01-04-options-01.png" width="420" alt="ภาพจำลองเมนูล็อคกระจกสะท้อนจากโค้ด v3r5"></a>
-<a href="https://itsamachom.github.io/eos_rom_mlv_modifly/manual-th.html"><img src="docs/menu-previews/v3r5/th/th-06-05-options-01.png" width="420" alt="ภาพจำลองหน้าเวอร์ชัน FIRMWARE ADD-ON Thai-Menu v3r5"></a>
+<a href="https://itsamachom.github.io/EOS_ROM_MLV_Modify/menu-previews/v3r5/"><img src="docs/menu-previews/v3r5/th/th-01-04-options-01.png" width="420" alt="ภาพจำลองเมนูล็อคกระจกสะท้อนจากโค้ด v3r5"></a>
+<a href="https://itsamachom.github.io/EOS_ROM_MLV_Modify/manual-th.html"><img src="docs/menu-previews/v3r5/th/th-06-05-options-01.png" width="420" alt="ภาพจำลองหน้าเวอร์ชัน FIRMWARE ADD-ON Thai-Menu v3r5"></a>
 
-ภาพข้างต้นสร้างจากตัววาดเมนูและฟอนต์ในโค้ด **ไม่ใช่ภาพจับจากกล้องจริง** ค่าที่ต้องอ่านจากกล้องใช้สถานะยังไม่พร้อมใช้งาน และสีเป็นพาเลตจำลอง [ดูแกลเลอรีภาพทั้งหมด](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/)
+ภาพข้างต้นสร้างจากตัววาดเมนูและฟอนต์ในโค้ด **ไม่ใช่ภาพจับจากกล้องจริง** ค่าที่ต้องอ่านจากกล้องใช้สถานะยังไม่พร้อมใช้งาน และสีเป็นพาเลตจำลอง [ดูแกลเลอรีภาพทั้งหมด](https://itsamachom.github.io/EOS_ROM_MLV_Modify/menu-previews/v3r5/)
 
 ## ซอร์ส เครดิต และใบอนุญาต
 
@@ -65,10 +65,10 @@
 
 ## ผู้พัฒนาและติดตามงาน
 
-[เว็บไซต์ FIRMWARE ADD-ON](https://itsamachom.github.io/eos_rom_mlv_modifly/) · [YouTube Online2easy](https://www.youtube.com/@Online2easy) · [Facebook Online2easy](https://www.facebook.com/online2easy) · [Online2hobby Blog](https://online2hobby.blogspot.com/)
+[เว็บไซต์ FIRMWARE ADD-ON](https://itsamachom.github.io/EOS_ROM_MLV_Modify/) · [YouTube Online2easy](https://www.youtube.com/@Online2easy) · [Facebook Online2easy](https://www.facebook.com/online2easy) · [Online2hobby Blog](https://online2hobby.blogspot.com/)
 
 ถ้าโครงการมีประโยชน์ กด **Star** เพื่อเก็บไว้ และเลือก **Watch → Custom → Releases** เพื่อติดตามเมื่อมี GitHub Release จริง การอัปเดตเว็บหรือ push โค้ดเพียงอย่างเดียวไม่ใช่การออกรุ่นเฟิร์มแวร์ใหม่
 
 [วิธีมีส่วนร่วม](CONTRIBUTING.md) · [แนวทางข้อมูลหน้า GitHub และการประชาสัมพันธ์](WEBSITE_AND_OUTREACH_TH.md)
 
-[เปลี่ยนชื่อ repository เป็น EOS_ROM_MLV_Modifly: สถานะและผลต่อลิงก์](REPOSITORY_RENAME_TH.md)
+[เปลี่ยนชื่อ repository เป็น EOS_ROM_MLV_Modify: สถานะและผลต่อลิงก์](REPOSITORY_RENAME_TH.md)

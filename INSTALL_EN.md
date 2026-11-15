@@ -25,7 +25,7 @@ Back up autoexec.bin and ML/. With the camera off, use a reader to replace autoe
 
 A new card may require boot preparation even when the camera already has ML; see "Installing Magic Lantern on other cards" upstream. Never boot an ML-bootable card without a working autoexec.bin. Restore both backed-up runtime components to roll back; uninstalling the camera boot flag is a separate upstream procedure.
 
-Project: https://itsamachom.github.io/eos_rom_mlv_modifly/
+Project: https://itsamachom.github.io/EOS_ROM_MLV_Modify/
 Developer: https://www.youtube.com/@Online2easy / https://www.facebook.com/online2easy / https://online2hobby.blogspot.com/
 
 Preserve original credits/licenses. Independent Codex/LLM-assisted fork, not endorsed by Canon or Magic Lantern. Inherited dietlibc corresponding source remains unverified; see THIRD_PARTY_NOTICES.md and release/v3r2/PROVENANCE.md.

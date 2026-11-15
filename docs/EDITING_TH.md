@@ -21,7 +21,7 @@
 
 ## แก้ผ่านหน้า GitHub
 
-1. เปิด repository EOS_ROM_MLV_Modifly และเลือก branch `site/eos-600d-bilingual`
+1. เปิด repository EOS_ROM_MLV_Modify และเลือก branch `site/eos-600d-bilingual`
 2. เปิดโฟลเดอร์ docs แล้วเลือก index.html สำหรับภาษาไทย หรือ en/index.html สำหรับภาษาอังกฤษ
 3. กดไอคอนดินสอ / Edit this file หากคุณมีสิทธิ์แก้
 4. ค้นหาข้อความหรือคำว่า CONTENT: story แล้วแก้ข้อความ โดยเก็บแท็ก HTML ไว้

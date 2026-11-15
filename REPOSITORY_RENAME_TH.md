@@ -1,51 +1,42 @@
-# เปลี่ยนชื่อ repository เป็น EOS_ROM_MLV_Modifly
+# ชื่อ repository ปัจจุบัน: EOS_ROM_MLV_Modify
 
-ชื่อที่ต้องการ: `itsamachom/EOS_ROM_MLV_Modifly` จากเดิม `itsamachom/eos_rom_mlv_modifly`
-เป็นการเปลี่ยนตัวพิมพ์ของชื่อเดิม ไม่ต้องสร้าง repository ใหม่หรือย้ายประวัติ Git
+เจ้าของเปลี่ยนชื่อเรียบร้อยแล้วเป็น **itsamachom/EOS_ROM_MLV_Modify**
+ตรวจชื่อจากหน้า GitHub โดยตรงเมื่อ 15 พฤศจิกายน 2026
+ชื่อเดิมคือ `eos_rom_mlv_modifly`; ชื่อ `EOS_ROM_MLV_Modifly` เป็นชื่อที่เคยเสนอชั่วคราว ไม่ใช่ชื่อสุดท้าย
 
-## สถานะ
+## ลิงก์หลัก
 
-เตรียมลิงก์ GitHub และ raw.githubusercontent.com ในเอกสาร/หน้าเว็บ/ตัวสร้างเอกสารให้ใช้ชื่อใหม่แล้ว
-ทดสอบ raw URL ที่ใช้ตัวพิมพ์ใหม่ได้ HTTP 200 แม้ชื่อแสดงผลของ repository ยังไม่ได้เปลี่ยน
-ไฟล์แพ็กเกจที่เผยแพร่แล้วและข้อมูล provenance/checksum คงเป็นหลักฐานของรุ่นเดิม
-การเปลี่ยนชื่อ repository ไม่ต้องติดตั้งเฟิร์มแวร์กล้องใหม่
+- Repository: https://github.com/itsamachom/EOS_ROM_MLV_Modify
+- เว็บไซต์: https://itsamachom.github.io/EOS_ROM_MLV_Modify/
+- ดาวน์โหลด: https://itsamachom.github.io/EOS_ROM_MLV_Modify/download.html
+- คู่มือ: https://itsamachom.github.io/EOS_ROM_MLV_Modify/manual-th.html
+- English: https://itsamachom.github.io/EOS_ROM_MLV_Modify/en/
 
-**การแก้ไฟล์ไม่ได้เปลี่ยนชื่อแสดงผลใน GitHub Settings**
-การเรียก GitHub API จากสภาพแวดล้อมนี้ถูกบล็อกที่ api.github.com (HTTP CONNECT 403)
-จึงต้องให้เจ้าของเปลี่ยนชื่อผ่าน GitHub ก่อน:
+ปรับลิงก์ในเอกสาร เว็บ ตัวสร้างเอกสาร และโครงการ Android ให้ใช้ชื่อสุดท้ายแล้ว
+GitHub Pages ยังใช้ branch `site/eos-600d-bilingual` และโฟลเดอร์ `/docs` ตามเดิม
+ปรับ URL ในคู่มือ PDF ของเว็บไซต์ด้วย แพ็กเกจเฟิร์มแวร์และ checksum ของรุ่นที่เผยแพร่แล้วไม่เปลี่ยน
 
-1. เปิด https://github.com/itsamachom/EOS_ROM_MLV_Modifly/settings
-2. ใน General หา Repository name
-3. ใส่ `EOS_ROM_MLV_Modifly` แล้วกด Rename
-4. ตรวจชื่อที่แสดงบนหน้า repository ว่าเปลี่ยนแล้ว
+## ผลต่อลิงก์เก่า
 
-## ผลต่อลิงก์
+- GitHub มี redirect สำหรับชื่อ repository เก่า รวมถึงการเข้าถึง Git ส่วนลิงก์ดาวน์โหลด raw ต้องตรวจแยก
+- ไม่สร้าง repository ใหม่ที่ชื่อเดิม หากยังต้องอาศัย redirect ของชื่อเก่า
+- **GitHub Pages ไม่รับประกัน redirect ตาม repository** ควรแก้บุ๊กมาร์ก โพสต์ และลิงก์ที่แชร์ไว้ให้เป็น `/EOS_ROM_MLV_Modify/`
+- ข้อความใน commit เก่า, source ZIP, PDF ในแพ็กเกจเก่า และ provenance อาจยังมีชื่อเก่า ไม่เขียนประวัติหรือแพ็กเกจทับเพียงเพื่อเปลี่ยน URL
+- ไม่เปลี่ยนชื่อ branch/tag และไม่ต้องติดตั้งเฟิร์มแวร์กล้องใหม่เพื่อเปลี่ยนชื่อ repository
 
-- ลิงก์ repository, branch, tag, Issues และ PR ของ GitHub รองรับชื่อ repository แบบไม่แยกตัวพิมพ์ และ GitHub มีระบบ redirect สำหรับการ rename ทั่วไป
-- URL ดาวน์โหลดที่ใช้ repository ตัวพิมพ์ใหม่ถูกตรวจแยกจาก URL เว็บไซต์ GitHub Pages
-- ไม่แก้ tag เดิม ไม่เปลี่ยนชื่อ branch และไม่สร้างแพ็กเกจกล้องใหม่เพียงเพื่อเปลี่ยนตัวพิมพ์ของ URL
-- ประวัติ commit, source ZIP และ PDF ที่เผยแพร่แล้วอาจยังมีชื่อเดิม ลิงก์ GitHub เดิมยังอาศัยการรองรับชื่อ/redirect ได้
-- ถ้าเป็นการเปลี่ยนชื่อเป็นคำอื่นในอนาคต อย่าสร้าง repository ใหม่ที่ชื่อเก่าหากยังต้องพึ่ง redirect เดิม
+## ตรวจ Pages หลังเผยแพร่
 
-## GitHub Pages ต้องตรวจแยก
-
-เว็บไซต์ปัจจุบันอ้างอิง https://itsamachom.github.io/eos_rom_mlv_modifly/
-ยังคง URL นี้ในลิงก์เว็บไซต์จนกว่า GitHub Settings → Pages จะยืนยัน URL หลัง rename
-**อย่าอาศัย redirect ของ repository มาเป็นหลักประกันว่าเว็บไซต์ Pages จะ redirect ด้วย**
-
-หลังเปลี่ยนชื่อ ให้เปิด https://github.com/itsamachom/EOS_ROM_MLV_Modifly/settings/pages
-ตรวจ Source เดิม: Deploy from a branch → `site/eos-600d-bilingual` → `/docs`
-ดู URL จากปุ่ม Visit site และทดสอบหน้าแรก, download.html, manual-th.html และ en/index.html
-หาก URL เปลี่ยนเป็น `/EOS_ROM_MLV_Modifly/` ให้ปรับลิงก์ Pages และ base URL ใน tools/website-content/docs ตาม URL ที่ GitHub แสดง
-อย่าเปลี่ยน Source/branch/folder โดยไม่จำเป็น
+เปิด https://github.com/itsamachom/EOS_ROM_MLV_Modify/settings/pages และใช้ URL ที่ GitHub แสดงจาก Visit site
+ตรวจหน้าแรก, download.html, manual-th.html, คู่มือ PDF และ en/index.html
+หากหน้าเว็บยังเป็นข้อมูลเก่า ให้รอ workflow `pages build and deployment` ของ commit ล่าสุดเสร็จ
+เครื่องมือรอบนี้ถูกนโยบายเครือข่ายบล็อกการเปิด itsamachom.github.io จึงทดสอบเว็บและดาวน์โหลดบนเครื่อง พร้อมตรวจ deployment ผ่าน GitHub แยกจากการยืนยัน HTTP ของเว็บไซต์จริง
 
 ## อัปเดต remote บนเครื่องที่ clone ไว้
 
 ```sh
-git remote set-url origin https://github.com/itsamachom/EOS_ROM_MLV_Modifly.git
+git remote set-url origin https://github.com/itsamachom/EOS_ROM_MLV_Modify.git
 git remote -v
 git fetch origin
 ```
 
-ชื่อโฟลเดอร์ในเครื่องไม่จำเป็นต้องเปลี่ยนตาม repository
-สำหรับงาน Codex ใหม่ เลือก repository ตามชื่อใหม่หลังระบบ GitHub แสดงชื่อเรียบร้อย
+ชื่อโฟลเดอร์ในเครื่องไม่จำเป็นต้องเปลี่ยน สำหรับงาน Codex ใหม่ให้เลือก repository ชื่อ EOS_ROM_MLV_Modify

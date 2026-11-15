@@ -14,10 +14,10 @@ const root = path.resolve(__dirname,'..');
     const item=meta[key];const payload=await fs.readFile(path.join(root,item.path));
     assert.equal(payload.length,item.bytes);
     assert.equal(crypto.createHash('sha256').update(payload).digest('hex'),item.sha256);
-    packages[key]={...item,payload,url:`https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/site/eos-600d-bilingual/${item.path}`};
+    packages[key]={...item,payload,url:`https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/site/eos-600d-bilingual/${item.path}`};
   }
   const cameraURL=packages.camera.url;
-  const sourceURL=meta.source.url.replace('/eos_rom_mlv_modifly/','/EOS_ROM_MLV_Modifly/');
+  const sourceURL=meta.source.url.replace('/eos_rom_mlv_modifly/','/EOS_ROM_MLV_Modify/');
   const server = http.createServer(async(req,res)=>{
     try {
       let name = decodeURIComponent(new URL(req.url,'http://local.test').pathname);

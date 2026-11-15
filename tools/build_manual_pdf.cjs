@@ -49,7 +49,7 @@ const root=path.resolve(__dirname,'..');
    for(const row of rows){
     const capture=captures.get(row.id);assert(capture);assert.equal(capture.label,row.key);
     assert.equal(row.src,`menu-previews/${release}/${capture.png}`);
-    assert.equal(row.href,'https://itsamachom.github.io/eos_rom_mlv_modifly/'+row.src);
+    assert.equal(row.href,'https://itsamachom.github.io/EOS_ROM_MLV_Modify/'+row.src);
     assert.equal(row.target,'_blank');assert(row.rel.includes('noopener'));
     const entry=explanations.get(row.key);const keys=Object.keys(entry.options);
     for(const key of row.keys){
@@ -78,8 +78,8 @@ const root=path.resolve(__dirname,'..');
   await page.locator('.toc a[href="#setup-7"]').click();assert(page.url().endsWith('#setup-7'));
   assert((await page.locator('#setup-7').innerText()).includes('ไม่ใช่จำนวนไฟล์ภาพ'));
   // Fulfill the full-size image locally: verify popup behavior without external network access.
-  await page.context().route('https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/**',async route=>{
-   const pathname=new URL(route.request().url()).pathname.replace('/eos_rom_mlv_modifly/','');
+  await page.context().route('https://itsamachom.github.io/EOS_ROM_MLV_Modify/menu-previews/**',async route=>{
+   const pathname=new URL(route.request().url()).pathname.replace('/EOS_ROM_MLV_Modify/','');
    await route.fulfill({contentType:'image/png',body:await fs.readFile(path.join(root,'docs',pathname))});
   });
   const fullImage=page.locator('#setup-7 .menu-image-link').first();const destination=await fullImage.getAttribute('href');
@@ -89,7 +89,7 @@ const root=path.resolve(__dirname,'..');
    assert.equal(await a.getAttribute('target'),'_blank');assert((await a.getAttribute('rel')).includes('noopener'));
   }
   for(const a of await page.locator('.references a[href^="https://itsamachom.github.io/"]').all()){
-   const link=new URL(await a.getAttribute('href'));const local=path.join(root,'docs',link.pathname.replace('/eos_rom_mlv_modifly/',''));
+   const link=new URL(await a.getAttribute('href'));const local=path.join(root,'docs',link.pathname.replace('/EOS_ROM_MLV_Modify/',''));
    await fs.access(local);
   }
   const referenceStyles=new Map();

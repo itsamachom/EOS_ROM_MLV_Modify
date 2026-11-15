@@ -16,7 +16,7 @@ Host tests และ ARM build ตรวจคำแปล ฟอนต์ UI/me
 
 เครดิต/ใบอนุญาตต้นทางยังอยู่ครบ เอกสาร release/v3r2 เก็บไว้เพราะเป็น provenance/ใบอนุญาตของไลบรารีที่ยังใช้ corresponding source ของ inherited dietlibc ยังยืนยันไม่ครบ โครงการนี้มี Codex/LLM ช่วยพัฒนา ไม่ใช่บิลด์ที่ Canon หรือ Magic Lantern รับรอง
 
-เว็บไซต์: https://itsamachom.github.io/eos_rom_mlv_modifly/
+เว็บไซต์: https://itsamachom.github.io/EOS_ROM_MLV_Modify/
 
 ผู้พัฒนา: [YouTube Online2easy](https://www.youtube.com/@Online2easy) · [Facebook Online2easy](https://www.facebook.com/online2easy) · [Online2hobby Blog](https://online2hobby.blogspot.com/)
 

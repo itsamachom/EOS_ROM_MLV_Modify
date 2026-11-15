@@ -12,8 +12,8 @@ meta=json.loads((root/f'downloads/{v}/DOWNLOAD_INFO.json').read_text());assert m
 catalog=json.loads((root/'website-content/videos.json').read_text())
 featured=next(item for item in catalog['videos'] if item['id']==catalog['featured'])
 video_url='https://www.youtube.com/watch?v='+featured['youtube_id']
-repo='https://github.com/itsamachom/EOS_ROM_MLV_Modifly'
-raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly'
+repo='https://github.com/itsamachom/EOS_ROM_MLV_Modify'
+raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify'
 github=f'{repo}/blob/site/eos-600d-bilingual/DOWNLOAD.md'
 notes=f'{repo}/blob/{v}/PHOTO_UI_{v.upper()}.md'
 sums=f'{raw}/site/eos-600d-bilingual/downloads/{v}/SHA256SUMS'
@@ -21,7 +21,9 @@ profiles=[('YouTube · Online2easy','https://www.youtube.com/@Online2easy'),('Fa
 css=hashlib.sha256((root/'docs/assets/site.css').read_bytes()).hexdigest()[:12]
 def canonical_repo_url(url):
     # Render current links without rewriting immutable release metadata.
-    return url.replace('https://raw.githubusercontent.com/itsamachom/eos_rom_mlv_modifly/', raw+'/').replace('https://github.com/itsamachom/eos_rom_mlv_modifly/', repo+'/')
+    for old_name in ('eos_rom_mlv_modifly', 'EOS_ROM_MLV_Modifly'):
+        url=url.replace('https://raw.githubusercontent.com/itsamachom/'+old_name+'/', raw+'/').replace('https://github.com/itsamachom/'+old_name+'/', repo+'/')
+    return url
 urls={key:canonical_repo_url(item.get('url') or f'{raw}/site/eos-600d-bilingual/{item["path"]}') for key,item in [(key,meta[key]) for key in ['first_install','camera','source']]}
 mb=lambda item:f'{item["bytes"]/1_000_000:.2f} MB'
 for lang in ['th','en']:
@@ -59,7 +61,7 @@ Canon EOS 600D / Canon firmware **1.0.2** · Public Experimental
 
 **ยังไม่เคยลง Magic Lantern ก็ติดตั้งจากชุด FIRST-INSTALL ได้ ไม่ต้องลง Magic Lantern จาก ZIP อื่นก่อน**
 
-[หน้าเว็บดาวน์โหลด](https://itsamachom.github.io/eos_rom_mlv_modifly/download.html) · [English](https://itsamachom.github.io/eos_rom_mlv_modifly/en/download.html)
+[หน้าเว็บดาวน์โหลด](https://itsamachom.github.io/EOS_ROM_MLV_Modify/download.html) · [English](https://itsamachom.github.io/EOS_ROM_MLV_Modify/en/download.html)
 
 '''
 for i,key in enumerate(['first_install','camera','source']):

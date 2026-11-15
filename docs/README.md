@@ -13,18 +13,18 @@ The owner reported activating GitHub Pages on 5 November 2026. Deployment has no
 
 ## Repository choice
 
-Same repository: simplest start, one place for source/docs/site, project URL includes eos_rom_mlv_modifly. Site commits share the firmware history and repository permissions.
+Same repository: simplest start, one place for source/docs/site, project URL includes EOS_ROM_MLV_Modify. Site commits share the firmware history and repository permissions.
 
 Separate website repository: cleaner website-specific name/history/access, easier to change independently. Requires managing a second repository and updating source/document links. These files can be moved unchanged; the language switch and stylesheet paths are relative.
 
 ## Publish on GitHub Pages
 
-The owner authorized public website publication on 5 November 2026. The site is prepared in this repository. Open [GitHub Pages settings](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/settings/pages), then choose Build and deployment → Source: Deploy from a branch → Branch: `site/eos-600d-bilingual` → Folder: `/docs` → Save. Labels may vary with the GitHub UI. The `.nojekyll` file serves the existing HTML/CSS directly. No Actions workflow or token needs to be added. Website publication is separate from publishing the firmware release.
+The owner authorized public website publication on 5 November 2026. The site is prepared in this repository. Open [GitHub Pages settings](https://github.com/itsamachom/EOS_ROM_MLV_Modify/settings/pages), then choose Build and deployment → Source: Deploy from a branch → Branch: `site/eos-600d-bilingual` → Folder: `/docs` → Save. Labels may vary with the GitHub UI. The `.nojekyll` file serves the existing HTML/CSS directly. No Actions workflow or token needs to be added. Website publication is separate from publishing the firmware release.
 
 The workspace attempt to read/configure Pages through `api.github.com` returned `Forbidden` from the network. Pages settings and remote deployment status could not be verified. Website files have been pushed; this does not establish that Pages is active. The owner subsequently reported that the browser setup succeeded. That is an owner-reported status, not an automated deployment check.
 
 The expected project-site address, if Pages is activated here, is:
-https://itsamachom.github.io/eos_rom_mlv_modifly/
+https://itsamachom.github.io/EOS_ROM_MLV_Modify/
 
 This is the expected URL for the configuration the owner reported enabling. Use the deployment status/link shown in GitHub Pages as the authority.
 

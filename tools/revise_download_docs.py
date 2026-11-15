@@ -13,7 +13,7 @@ meta=json.loads((folder/'DOWNLOAD_INFO.json').read_text())
 revision=meta.get('documentation_revision',0)+1
 guide=(root/'INSTALL_TH.md').read_bytes()
 sha=lambda b:hashlib.sha256(b).hexdigest()
-raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/site/eos-600d-bilingual/'
+raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/site/eos-600d-bilingual/'
 def revised(name):
     return re.sub(r'(-doc\d+)?\.zip$',f'-doc{revision}.zip',name)
 def rewrite_zip(old,new,changes):

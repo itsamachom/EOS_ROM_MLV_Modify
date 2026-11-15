@@ -23,6 +23,6 @@ Generated with `python3 tools/render_menu_catalog.py`.
 
 ภาพเมนูเกม/โมดูลที่ยังไม่ลงทะเบียนตรงกับสถานะยังไม่โหลด โดยไม่ได้รันเกมหรือ firmware updater
 
-Developer: https://itsamachom.github.io/eos_rom_mlv_modifly/
+Developer: https://itsamachom.github.io/EOS_ROM_MLV_Modify/
 
 Code and captures retain the firmware's GPL notices. Noto-derived Thai masks retain their OFL notices; see `assets/fonts/noto-sans-thai/OFL.txt` in the repository.

@@ -50,7 +50,7 @@ with zipfile.ZipFile(source) as z:
         assert z.read(prefix+name) == (root/name).read_bytes()
 info = {
     'project':'FIRMWARE ADD-ON Thai-Menu',
-    'project_website':'https://itsamachom.github.io/eos_rom_mlv_modifly/',
+    'project_website':'https://itsamachom.github.io/EOS_ROM_MLV_Modify/',
     'distribution_status':'Public Experimental; not Stable or source-audit complete',
     'version': version, 'target':'600D.102', 'base_commit':base,
     'source_state':'Exact indexed build/source files and notes; generated DOWNLOAD.md is omitted to avoid checksum self-reference. Base commit plus working changes, not base alone.',

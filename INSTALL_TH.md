@@ -31,7 +31,7 @@
 
 อย่าเปิดกล้องด้วยการ์ดที่ตั้งบูต ML แต่ไม่มี autoexec.bin ที่ใช้งานได้ หากต้องคืนรุ่นเดิม ให้คืน autoexec.bin และ ML/ ที่สำรองไว้ทั้งชุดก่อนใช้งานต่อ การถอน boot flag เป็นคนละขั้นตอนกับการอัปเดต อ่านคู่มือต้นทางก่อนทำ
 
-เว็บไซต์: https://itsamachom.github.io/eos_rom_mlv_modifly/
+เว็บไซต์: https://itsamachom.github.io/EOS_ROM_MLV_Modify/
 ผู้พัฒนา: https://www.youtube.com/@Online2easy · https://www.facebook.com/online2easy · https://online2hobby.blogspot.com/
 
 เก็บเครดิต/ใบอนุญาตเดิม โครงการนี้มี Codex/LLM ช่วยพัฒนา ไม่ใช่บิลด์ที่ Canon/Magic Lantern รับรอง ข้อจำกัดซอร์ส dietlibc เดิมยังอยู่ใน THIRD_PARTY_NOTICES.md และ release/v3r2/PROVENANCE.md
