@@ -117,6 +117,14 @@ int main(void) {
         tone_host_state=initial_state();photo_tone_group=0;photo_tone_selected[0]=0;
         photo_tone_session=(struct photo_tone_session){.active=-1};photo_tone_working=0;photo_tone_confirm=0;
         photo_tone_perform(1);render();
+        if(lang) {
+            /* The complete Thai heading, including below-line vowels, must survive
+             * the subsequent golden badge/thumbnail draw. Compare every mask pixel. */
+            unsigned char heading[720*32];
+            memcpy(heading,framebuffer+350*720,sizeof(heading));
+            assert(photo_thai_text(FONT(FONT_MED,COLOR_CYAN,COLOR_BLACK),420,350,288,"Active JPEG tone"));
+            assert(!memcmp(heading,framebuffer+350*720,sizeof(heading)));
+        }
         char path[64];snprintf(path,sizeof(path),"tone-active-%s",lang?"th":"en");save_proof(path);
         photo_tone_selected[0]=1;render();
         assert(photo_tone_session.active==0); /* Browsing must not change the active recipe. */
@@ -166,7 +174,7 @@ int main(void) {
     photo_tone_opened=1;render();photo_menu_reset();assert(!photo_film_palette_live && !photo_film_art);
     for(int i=80;i<240;i++){assert(palette_registers[i]==0x03000000u+(unsigned)i);assert(palette_registers[i+256]==0x03001000u+(unsigned)i);}
     puts("PASS cached sprites, CRC/short-read fallback, scoped palette refresh/restore, close paths and shelf endpoints");
-    photo_thai_enabled=1;photo_tone_group=0;photo_tone_selected[0]=0;
+    photo_thai_enabled=1;photo_tone_opened=1;photo_tone_group=0;photo_tone_selected[0]=0;
     for(int step=0;step<9;step++){photo_tone_working=1;photo_tone_step=step;render();char name[40];snprintf(name,sizeof(name),"tone-setting-%d",step);save_proof(name);}
     photo_tone_working=0;puts("PASS all tone/category screens and setting-indicator frames stay inside the real framebuffer in Thai/English");
     return 0;

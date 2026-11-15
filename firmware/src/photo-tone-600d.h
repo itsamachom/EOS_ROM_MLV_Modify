@@ -311,7 +311,7 @@ static void photo_tone_detail(void) {
     else if(!photo_film_info_draw(73,16,442,COLOR_CYAN))photo_text(FONT(FONT_MED,COLOR_CYAN,COLOR_BLACK),16,442,688,"SET Apply   MENU Back");
 }
 static void photo_film_pill(const struct photo_tone_recipe *r,int index,int active) {
-    photo_text(FONT(FONT_MED,active?COLOR_CYAN:COLOR_WHITE,COLOR_BLACK),420,364,288,active?"Active JPEG tone":"FLIM TONE");
+    photo_text(FONT(FONT_MED,active?COLOR_CYAN:COLOR_WHITE,COLOR_BLACK),420,350,288,active?"Active JPEG tone":"FLIM TONE");
     photo_film_round(422,393,230,43,12,COLOR_GRAY(10),COLOR_GRAY(7));
     photo_film_round(420,390,230,43,12,COLOR_YELLOW,COLOR_ORANGE);
     for(int y=2;y<41;y++) {
