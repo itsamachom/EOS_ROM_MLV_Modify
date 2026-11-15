@@ -19,7 +19,7 @@ Separate website repository: cleaner website-specific name/history/access, easie
 
 ## Publish on GitHub Pages
 
-The owner authorized public website publication on 5 November 2026. The site is prepared in this repository. Open [GitHub Pages settings](https://github.com/itsamachom/eos_rom_mlv_modifly/settings/pages), then choose Build and deployment → Source: Deploy from a branch → Branch: `site/eos-600d-bilingual` → Folder: `/docs` → Save. Labels may vary with the GitHub UI. The `.nojekyll` file serves the existing HTML/CSS directly. No Actions workflow or token needs to be added. Website publication is separate from publishing the firmware release.
+The owner authorized public website publication on 5 November 2026. The site is prepared in this repository. Open [GitHub Pages settings](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/settings/pages), then choose Build and deployment → Source: Deploy from a branch → Branch: `site/eos-600d-bilingual` → Folder: `/docs` → Save. Labels may vary with the GitHub UI. The `.nojekyll` file serves the existing HTML/CSS directly. No Actions workflow or token needs to be added. Website publication is separate from publishing the firmware release.
 
 The workspace attempt to read/configure Pages through `api.github.com` returned `Forbidden` from the network. Pages settings and remote deployment status could not be verified. Website files have been pushed; this does not establish that Pages is active. The owner subsequently reported that the browser setup succeeded. That is an owner-reported status, not an automated deployment check.
 

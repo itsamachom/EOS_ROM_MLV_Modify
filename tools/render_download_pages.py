@@ -12,14 +12,17 @@ meta=json.loads((root/f'downloads/{v}/DOWNLOAD_INFO.json').read_text());assert m
 catalog=json.loads((root/'website-content/videos.json').read_text())
 featured=next(item for item in catalog['videos'] if item['id']==catalog['featured'])
 video_url='https://www.youtube.com/watch?v='+featured['youtube_id']
-repo='https://github.com/itsamachom/eos_rom_mlv_modifly'
-raw='https://raw.githubusercontent.com/itsamachom/eos_rom_mlv_modifly'
+repo='https://github.com/itsamachom/EOS_ROM_MLV_Modifly'
+raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly'
 github=f'{repo}/blob/site/eos-600d-bilingual/DOWNLOAD.md'
 notes=f'{repo}/blob/{v}/PHOTO_UI_{v.upper()}.md'
 sums=f'{raw}/site/eos-600d-bilingual/downloads/{v}/SHA256SUMS'
 profiles=[('YouTube · Online2easy','https://www.youtube.com/@Online2easy'),('Facebook · Online2easy','https://www.facebook.com/online2easy'),('Blog · Online2hobby','https://online2hobby.blogspot.com/')]
 css=hashlib.sha256((root/'docs/assets/site.css').read_bytes()).hexdigest()[:12]
-urls={key:(item.get('url') or f'{raw}/site/eos-600d-bilingual/{item["path"]}') for key,item in [(key,meta[key]) for key in ['first_install','camera','source']]}
+def canonical_repo_url(url):
+    # Render current links without rewriting immutable release metadata.
+    return url.replace('https://raw.githubusercontent.com/itsamachom/eos_rom_mlv_modifly/', raw+'/').replace('https://github.com/itsamachom/eos_rom_mlv_modifly/', repo+'/')
+urls={key:canonical_repo_url(item.get('url') or f'{raw}/site/eos-600d-bilingual/{item["path"]}') for key,item in [(key,meta[key]) for key in ['first_install','camera','source']]}
 mb=lambda item:f'{item["bytes"]/1_000_000:.2f} MB'
 for lang in ['th','en']:
     th=lang=='th';assets='assets/' if th else '../assets/';other='en/download.html' if th else '../download.html'

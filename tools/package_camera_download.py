@@ -9,7 +9,7 @@ import zipfile
 root=Path(__file__).resolve().parents[1]
 release=(root/'scripts/photo-ui-version.txt').read_text().strip()
 assert re.fullmatch(r'v[0-9][A-Za-z0-9._-]*',release)
-raw='https://raw.githubusercontent.com/itsamachom/eos_rom_mlv_modifly'
+raw='https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly'
 folder=root/f'deliveries/photo-ui-{release}-full'
 full=folder/f'600D-102-PHOTO-UI-{release}-FULL-EXPERIMENTAL.zip'
 source=folder/f'600D-PHOTO-UI-{release}-source.zip'

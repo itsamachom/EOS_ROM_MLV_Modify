@@ -14,9 +14,10 @@ const root = path.resolve(__dirname,'..');
     const item=meta[key];const payload=await fs.readFile(path.join(root,item.path));
     assert.equal(payload.length,item.bytes);
     assert.equal(crypto.createHash('sha256').update(payload).digest('hex'),item.sha256);
-    packages[key]={...item,payload,url:`https://raw.githubusercontent.com/itsamachom/eos_rom_mlv_modifly/site/eos-600d-bilingual/${item.path}`};
+    packages[key]={...item,payload,url:`https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modifly/site/eos-600d-bilingual/${item.path}`};
   }
   const cameraURL=packages.camera.url;
+  const sourceURL=meta.source.url.replace('/eos_rom_mlv_modifly/','/EOS_ROM_MLV_Modifly/');
   const server = http.createServer(async(req,res)=>{
     try {
       let name = decodeURIComponent(new URL(req.url,'http://local.test').pathname);
@@ -60,8 +61,8 @@ const root = path.resolve(__dirname,'..');
         assert((await page.locator('#first-install-steps').innerText()).includes('60'));
         for(const url of ['https://www.youtube.com/@Online2easy','https://www.facebook.com/online2easy','https://online2hobby.blogspot.com/']){const a=page.locator(`footer a[href="${url}"]`);assert.equal(await a.count(),1);assert.equal(await a.getAttribute('target'),'_blank');assert((await a.getAttribute('rel')).includes('noopener'));}
         assert.equal(await page.locator('[data-download="camera"]').getAttribute('href'),cameraURL);
-        assert.equal(await page.locator('[data-download="source"]').getAttribute('href'),meta.source.url);
-        assert.notEqual(cameraURL,meta.source.url);
+        assert.equal(await page.locator('[data-download="source"]').getAttribute('href'),sourceURL);
+        assert.notEqual(cameraURL,sourceURL);
         assert((await page.locator('#camera-download').innerText()).includes(meta.camera.filename));
         assert((await page.locator('#source-download').innerText()).includes(meta.source.filename));
         if(lang==='th')assert((await page.locator('#source-download').innerText()).includes('ซอร์สโค้ดของ fork'));

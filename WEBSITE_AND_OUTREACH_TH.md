@@ -8,7 +8,7 @@ README บน main เป็นจุดเริ่มสำหรับผู�
 
 ค่าที่เตรียมไว้ดู [.github/repository-metadata.json](.github/repository-metadata.json) **GitHub ไม่อ่านไฟล์นี้ไปตั้ง About/topics อัตโนมัติ** เป็นข้อมูลสำหรับบันทึกผ่านหน้าเว็บหรือ API เท่านั้น
 
-1. เข้า [หน้า repository](https://github.com/itsamachom/eos_rom_mlv_modifly) ด้วยบัญชีเจ้าของหรือผู้มีสิทธิ์ดูแล
+1. เข้า [หน้า repository](https://github.com/itsamachom/EOS_ROM_MLV_Modifly) ด้วยบัญชีเจ้าของหรือผู้มีสิทธิ์ดูแล
 2. ที่แถบขวา **About** กดรูปเฟือง
 3. ใส่ Description ด้านล่าง และ Website เป็น `https://itsamachom.github.io/eos_rom_mlv_modifly/`
 4. เพิ่ม Topics จากรายการด้านล่าง แล้วกด **Save changes**
@@ -21,9 +21,9 @@ Topics ที่แนะนำ:
 
 `magic-lantern` · `canon` · `canon-600d` · `eos-600d` · `rebel-t3i` · `kiss-x5` · `firmware-addon` · `camera-firmware` · `thai-menu` · `thai-language` · `photography` · `timelapse` · `open-source`
 
-About คือคำอธิบายสั้น/เว็บไซต์ของ repository; Topics คือคำค้นจัดหมวด ไม่ใช่เลขรุ่น ส่วน **Git tag** เช่น [v3r5](https://github.com/itsamachom/eos_rom_mlv_modifly/tree/v3r5) ระบุจุดในประวัติโค้ด ไม่ควรเปลี่ยน tag เดิมให้ชี้ไปงานใหม่ การแก้คู่มือหรือหน้าเว็บไม่จำเป็นต้องเพิ่มเลขเฟิร์มแวร์
+About คือคำอธิบายสั้น/เว็บไซต์ของ repository; Topics คือคำค้นจัดหมวด ไม่ใช่เลขรุ่น ส่วน **Git tag** เช่น [v3r5](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/tree/v3r5) ระบุจุดในประวัติโค้ด ไม่ควรเปลี่ยน tag เดิมให้ชี้ไปงานใหม่ การแก้คู่มือหรือหน้าเว็บไม่จำเป็นต้องเพิ่มเลขเฟิร์มแวร์
 
-เมื่อใช้ API ได้ ผู้มีสิทธิ์สามารถนำ description/homepage ไป PATCH repository และ topics ไป PUT endpoint `/repos/itsamachom/eos_rom_mlv_modifly/topics` ตามเอกสาร GitHub ไม่ใส่ token ในไฟล์นี้หรือในแชต การเรียก API จากเครื่องคลาวด์ครั้งล่าสุดได้ `Forbidden` จึงยังไม่ได้บันทึก About/topics ผ่าน API
+เมื่อใช้ API ได้ ผู้มีสิทธิ์สามารถนำ description/homepage ไป PATCH repository และ topics ไป PUT endpoint `/repos/itsamachom/EOS_ROM_MLV_Modifly/topics` ตามเอกสาร GitHub ไม่ใส่ token ในไฟล์นี้หรือในแชต การเรียก API จากเครื่องคลาวด์ครั้งล่าสุดได้ `Forbidden` จึงยังไม่ได้บันทึก About/topics ผ่าน API
 
 ## ป้าย GPL-2.0 ใช้ได้หรือไม่
 

@@ -112,7 +112,7 @@ for p, (slug, badge, title) in enumerate(groups):
         screenshot = f'{BASE}menu-previews/{release}/th/th-{p+1:02d}-{i+1:02d}-item-01.png'
         source = source_for_item.get(key, source_for_menu[menu])
         assert (ROOT / source).is_file()
-        src = f'https://github.com/itsamachom/eos_rom_mlv_modifly/blob/{data["reviewed_source_commit"]}/{source}'
+        src = f'https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/{data["reviewed_source_commit"]}/{source}'
         overview = thai_captures[p, i, 'item', 1]
         assert overview['label'] == key
         body += (f'<article class="menu-entry" id="{ident}" data-menu-key="{esc(key, quote=True)}"><h3 id="{ident}-title">{esc(name)}</h3>'

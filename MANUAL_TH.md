@@ -44,7 +44,7 @@
 - ตัวอย่าง: ถ่ายทุก 5 วินาที จำนวน 120 ภาพ ใช้เวลาประมาณ 10 นาที; เวลาจริงขึ้นกับความพร้อมของกล้อง
 - ตรวจจำนวนภาพต่อครั้งใน ตั้งค่าการถ่ายภาพ ด้วย หากต้องการหนึ่งภาพต่อรอบให้ใช้ 1 (OFF)
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### ตั้งเวลาชัตเตอร์ B (Bulb Timer)
 
@@ -55,7 +55,7 @@
 
 - การลดนอยส์จากการเปิดรับแสงนานของ Canon อาจทำให้ต้องรอเพิ่มหลังถ่าย ระยะห่างระหว่างภาพจึงอาจยาวกว่าระยะเปิดรับแสง
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### ถ่ายคร่อม (Bracketing)
 
@@ -69,7 +69,7 @@
 - ป้ายไทย “ค่าแสง (TV, AV)” ตรงกับ Exposure (Tv,Ae) ในต้นทาง: โหมด M เปลี่ยนชัตเตอร์ โหมดอื่นเปลี่ยนค่าชดเชยแสง ไม่ได้หมายความว่าปรับรูรับแสงทุกโหมด การคร่อมรูรับแสงใช้ DOF (Aperture)
 - ปิด Canon AEB ก่อนใช้การคร่อมชุดนี้ เพื่อไม่ให้การตั้งค่าซ้อนกัน
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### ล็อคกระจกสะท้อน (Mirror Lockup)
 
@@ -81,7 +81,7 @@
 - ฟังก์ชันนี้ใช้ในโหมดภาพนิ่งนอก Live View และไม่มีตัวเลือกถือกล้องด้วยมือในบิลด์ 600D นี้
 - เวลาหน่วงนี้ไม่ใช่เวลาห่างระหว่างภาพ และไม่ใช่ตัวตั้งเวลาถ่าย 2/10 วินาทีของ Canon
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### ตั้งค่าแฟลช (Flash Tweaks)
 
@@ -92,7 +92,7 @@
 
 - ผลขึ้นกับรุ่นแฟลช โหมด และการเชื่อมต่อ ไม่ควรตีความว่าแฟลชทุกตัวรองรับ
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### ตั้งค่าการถ่ายภาพ (Shoot Preferences)
 
@@ -102,7 +102,7 @@
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-06-options-01.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-06-options-01.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าการถ่ายภาพ — ตัวเลือกหน้า 1"></a><br>ตัวเลือกหน้า 1 | <strong>จำนวนภาพต่อชุด (Pics at once)</strong><br>จำนวนภาพต่อหนึ่งเหตุการณ์สั่งถ่าย มี 1 (OFF) ถึง 9; ถ้าต้องการหนึ่งภาพต่อรอบให้ตั้ง 1 (OFF)<br><br><strong>ใช้โฟกัสอัตโนมัติ (Use Autofocus)</strong><br>ให้ฟังก์ชันถ่ายอัตโนมัติที่รองรับเรียก AF ก่อนถ่าย หากหาโฟกัสไม่ได้อาจไม่ถ่าย เหมาะกับเลนส์และโหมดที่รองรับ AF<br><br><strong>สคริปต์หลังถ่าย (Post scripts)</strong><br>สร้างข้อมูล/สคริปต์ช่วยรวมภาพจากการคร่อมและคร่อมโฟกัส: OFF, Enfuse, Align+Enfuse หรือ File List ไม่ได้หมายความว่ากล้องรวมภาพเสร็จให้ทันที<br><br> |
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-06-options-02.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-06-options-02.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าการถ่ายภาพ — ตัวเลือกหน้า 2"></a><br>ตัวเลือกหน้า 2 | <strong>สคริปต์ถ่ายตามช่วงเวลา (Intervalometer Script)</strong><br>สร้างสคริปต์จัดเรียงชุดภาพ Timelapse บนคอมพิวเตอร์: OFF, Bash, MS-DOS หรือ File List<br><br><strong>จำลองการกดชัตเตอร์ (Snap Simulation)</strong><br>จำลองการถ่ายเพื่อทดสอบ โดยส่งสัญญาณไฟ/เสียงแทนการถ่ายจริง หากต้องการไฟล์ภาพจริงให้ใช้ OFF<br><br> |
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-01-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ## F · โฟกัส
 
@@ -115,7 +115,7 @@
 - OFF ปิดฟังก์ชัน; Hold AF button ทำงานขณะกดปุ่ม AF; Continuous ทำงานต่อเนื่องตามเงื่อนไขในโค้ด
 - นอก Live View ต้องมีเลนส์ที่สื่อสารกับกล้องได้ การตรวจโฟกัสขึ้นกับเลนส์และแสง จึงต้องทดลองก่อนใช้งานจริง
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/focus.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/focus.c)
 
 ### ถ่ายคร่อมโฟกัส (Focus Stacking)
 
@@ -127,7 +127,7 @@
 
 - ภาพยังต้องนำไปรวมด้วยซอฟต์แวร์ภายนอก โปรแกรมไม่ได้ทำภาพชัดลึกสำเร็จบนกล้อง
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/focus.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/focus.c)
 
 ### ย้ายระยะโฟกัส (Rack Focus)
 
@@ -138,7 +138,7 @@
 - ต้นทางระบุ SET สำหรับสั่งเลื่อน และ PLAY สำหรับเลื่อนพร้อมเริ่มบันทึกเมื่อเรียกผ่านตัวควบคุมเดิม การทำงานของปุ่มใน Photo UI ขึ้นกับแถวคำสั่งที่เลือก
 - ใช้เลนส์ AF ที่กล้องสั่งโฟกัสได้ ความเร็วและความเรียบขึ้นกับเลนส์กับ Focus Settings
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/focus.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/focus.c)
 
 ### ควบคุมโฟกัส (Follow Focus)
 
@@ -149,7 +149,7 @@
 - ขนาดและจังหวะขยับใช้ค่าจาก Focus Settings
 - ข้อกำหนดต้นทางคือ Live View/AF และไม่ใช้ Continuous AF; ระหว่างบันทึก MENU มีหน้าที่เกี่ยวกับการเก็บจุดโฟกัสในระบบเดิม จึงควรอ่านคำใบ้บนหน้าที่กำลังใช้อยู่
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/focus.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/focus.c)
 
 ### จุดสิ้นสุดโฟกัส (Focus End Point)
 
@@ -160,7 +160,7 @@
 - คำใบ้เดิมระบุ Q ตั้งปลายทาง และ SET ร่วมกับซ้าย/ขวาสำหรับต้นทาง; Photo UI ใช้ Q เพื่อเปิดตัวแก้ไขเดิมก่อน
 - ต้องใช้ Live View กับเลนส์ AF ที่รองรับคำสั่งขยับ
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/focus.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/focus.c)
 
 ### ตั้งค่าโฟกัส (Focus Settings)
 
@@ -170,7 +170,7 @@
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-06-options-01.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-06-options-01.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าโฟกัส — ตัวเลือกหน้า 1"></a><br>ตัวเลือกหน้า 1 | <strong>ระยะเลื่อนโฟกัส (Step Size)</strong><br>ขนาดก้าวคำสั่งโฟกัส 1–3 เป็นระดับคำสั่งแบบ EOS Utility ไม่ใช่ระยะทางจริง<br><br><strong>หน่วงระหว่างเลื่อน (Step Delay)</strong><br>ช่วงรอระหว่างคำสั่งโฟกัสสองครั้ง เพิ่มค่านี้เมื่ออยากให้ส่งคำสั่งห่างขึ้น<br><br><strong>รอให้เลื่อนเสร็จ (Step Wait)</strong><br>รอสัญญาณยืนยันว่าเลนส์โฟกัสเสร็จก่อนส่งคำสั่งถัดไป<br><br> |
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-06-options-02.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-06-options-02.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าโฟกัส — ตัวเลือกหน้า 2"></a><br>ตัวเลือกหน้า 2 | <strong>ทิศทางซ้าย/ขวา (Left/Right dir)</strong><br>สลับทิศใกล้/ไกลของปุ่มซ้ายและขวา<br><br><strong>ทิศทางขึ้น/ลง (Up/Down dir)</strong><br>สลับทิศใกล้/ไกลของปุ่มขึ้นและลง<br><br><strong>หน่วงก่อนเริ่ม (Start Delay)</strong><br>หน่วงเป็นวินาทีก่อนเริ่มการขยับโฟกัส<br><br> |
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/focus.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/focus.c)
 
 ### ตั้งค่าระยะชัด (DOF Settings)
 
@@ -179,7 +179,7 @@
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-07-item-01.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-07-item-01.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าระยะชัด — หน้ารายการ"></a><br>หน้ารายการ | ตั้งค่าการคำนวณและแสดงระยะชัด ไม่ได้เปลี่ยนคุณสมบัติทางกายภาพของเลนส์<br><br><strong>วิธีใช้:</strong> ใช้เพื่ออ่านข้อมูลประกอบการถ่าย โดยตรวจภาพขยายจริงร่วมด้วย |
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-07-options-01.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-07-options-01.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าระยะชัด — ตัวเลือกหน้า 1"></a><br>ตัวเลือกหน้า 1 | <strong>วงกลมความคลาด (Circle of Confusion)</strong><br>เกณฑ์วงกลมความพร่าในการคำนวณระยะชัด ค่ายิ่งเข้มงวด ระยะที่ถือว่าชัดยิ่งแคบ ค่าต้นทางแนะนำ 19 สำหรับ APS-C<br><br><strong>สูตรคำนวณระยะชัด (DOF formula)</strong><br>Simple คิดจากความพร่าเพราะหลุดโฟกัส; Diffraction-aware พิจารณาผลเลี้ยวเบนของแสงร่วมด้วย<br><br><strong>ข้อมูลระยะชัดใน LV (DOF info in LiveView)</strong><br>เปิด/ปิดข้อมูลระยะชัดบริเวณข้อมูลระยะโฟกัสใน Live View<br><br> |
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/focus.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-02-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/focus.c)
 
 ## E · ค่าแสง
 
@@ -192,7 +192,7 @@
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-01-options-02.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-01-options-02.png" width="220" alt="ภาพจำลองเมนู สมดุลแสงขาว — ตัวเลือกหน้า 2"></a><br>ตัวเลือกหน้า 2 | <strong>ปรับสมดุลน้ำเงิน/อำพัน (WBShift B/A)</strong><br>ชดเชยไปทางฟ้า (Blue) หรือส้มอำพัน (Amber)<br><br><strong>ตัวคูณสีแดง (R multiplier)</strong><br>ตัวคูณช่องสีแดงของ Custom White Balance เป็นการปรับขั้นสูง<br><br><strong>ตัวคูณสีเขียว (G multiplier)</strong><br>ตัวคูณช่องสีเขียวของ Custom White Balance<br><br> |
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-01-options-03.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-01-options-03.png" width="220" alt="ภาพจำลองเมนู สมดุลแสงขาว — ตัวเลือกหน้า 3"></a><br>ตัวเลือกหน้า 3 | <strong>ตัวคูณสีน้ำเงิน (B multiplier)</strong><br>ตัวคูณช่องสีน้ำเงินของ Custom White Balance<br><br><strong>เคลวิน + G/M ออโต้ (Auto adjust Kelvin + G/M)</strong><br>ปรับ Kelvin และ G/M อัตโนมัติหนึ่งครั้งจาก Live View ไม่ใช่การติดตามสีขาวต่อเนื่องทุกเฟรม<br><br> |
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### ISO
 
@@ -204,7 +204,7 @@
 
 - ค่าที่แสดงและการปรับได้ขึ้นกับโหมดภาพนิ่ง/วิดีโอและข้อจำกัดของ Canon
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### ความเร็วชัตเตอร์ (Shutter)
 
@@ -215,7 +215,7 @@
 - เวลารับแสงนานขึ้นทำให้ภาพสว่างขึ้นและเบลอจากการเคลื่อนไหวมากขึ้น
 - ตัวแก้ไขค่าละเอียดอาจเปิดผ่าน Q และยังเป็นหน้าควบคุมเดิม
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### รูรับแสง (Aperture)
 
@@ -226,7 +226,7 @@
 - f-number ต่ำคือรูรับแสงกว้างและมักได้ระยะชัดตื้น; f-number สูงคือรูแคบและมักได้ระยะชัดมากขึ้น
 - ต้องใช้เลนส์ที่กล้องควบคุมรูรับแสงได้ เลนส์มือหมุนอาจต้องปรับที่เลนส์
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/shoot.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/shoot.c)
 
 ### รูปแบบภาพ (Picture Style)
 
@@ -239,7 +239,7 @@
 
 - Picture Style มีผลกับ JPEG และภาพวิดีโอที่ประมวลผลแล้ว สำหรับ RAW ค่าบางส่วนเป็นข้อมูลประกอบการแสดง/แปลง ไม่ใช่การเปลี่ยนข้อมูลเซนเซอร์แบบเดียวกับ JPEG
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/picstyle.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/picstyle.c)
 
 ### Dual ISO
 
@@ -252,7 +252,7 @@
 - ไม่ใช่การถ่ายคร่อมสองภาพตามปกติ และไม่ใช่ฟังก์ชันที่เปิดแล้วได้ JPEG HDR สำเร็จทันที
 - เมนูจะยังใช้งานไม่ได้เมื่อโมดูลไม่ได้ลงทะเบียน การมีชื่อ Dual ISO ใน Photo UI ไม่ยืนยันว่าเปิดใช้งานบนกล้องสำเร็จแล้ว
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/modules/dual_iso/dual_iso.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/modules/dual_iso/dual_iso.c)
 
 ### ETTR อัตโนมัติ (Auto ETTR)
 
@@ -266,7 +266,7 @@
 
 - ตัวเลือกขั้นสูงบางรายการถูกซ่อนตามโหมด/การรองรับ และบางตัวเลือกปรากฏเมื่อเปิดโมดูลที่เกี่ยวข้องเท่านั้น
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/modules/ettr/ettr.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-03-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/modules/ettr/ettr.c)
 
 ## O · ตัวช่วยแสดงภาพ
 
@@ -281,7 +281,7 @@
 
 - ลายบนจอเป็นตัวช่วย ไม่ได้เขียนทับเป็นลายลงในไฟล์ภาพตามปกติ ควรแยกเกณฑ์ RAW ออกจาก JPEG/Live View
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/zebra.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/zebra.c)
 
 ### Focus Peaking
 
@@ -293,7 +293,7 @@
 
 - Peaking เป็นตัวช่วยประเมิน ไม่ใช่การรับรองว่าโฟกัสตรงทุกครั้ง ตรวจภาพขยายร่วมด้วย
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/zebra.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/zebra.c)
 
 ### ขยายช่วยโฟกัส (Magic Zoom)
 
@@ -305,7 +305,7 @@
 
 - เป็นกรอบช่วยดู ไม่ใช่การเพิ่มระยะซูมจริงให้ไฟล์บันทึก
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/zebra.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/zebra.c)
 
 ### Histogram
 
@@ -317,7 +317,7 @@
 
 - กราฟจากภาพแสดงผลไม่จำเป็นต้องตรงกับขอบเขต RAW ทั้งหมด
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/zebra.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/zebra.c)
 
 ### วัดความสว่างจุด (Spotmeter)
 
@@ -328,7 +328,7 @@
 
 - ค่า RAW EV ใช้ได้เมื่อมีข้อมูล RAW ที่ระบบรองรับ ไม่ใช่การวัดแสงสะท้อนภายนอกกล้อง
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/zebra.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/zebra.c)
 
 ### เส้นกรอบภาพ (Cropmarks)
 
@@ -340,7 +340,7 @@
 
 - กรอบช่วยจัดองค์ประกอบ ไม่ได้ตัดขอบไฟล์ภาพให้จริงโดยอัตโนมัติ
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/cropmarks.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/cropmarks.c)
 
 ### Waveform
 
@@ -351,7 +351,7 @@
 
 - Waveform เป็นตัวช่วยแสดงผลบนจอ และอาจใช้ทรัพยากรประมวลผลเพิ่ม
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/zebra.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/zebra.c)
 
 ### เปิดตัวช่วยแสดงภาพ (Global Draw)
 
@@ -362,7 +362,7 @@
 - ตัวเลือกอาจแยก OFF, LiveView, QuickReview และ ON, all modes ตามที่แสดงในโหมดปัจจุบัน
 - ตัวช่วยบางอย่างยังขึ้นกับเงื่อนไขเฉพาะของตัวเอง แม้เปิดสวิตช์หลักแล้ว
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-08-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/zebra.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-04-08-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/zebra.c)
 
 ## V · วิดีโอ
 
@@ -376,7 +376,7 @@
 
 - ไม่ได้ปลดข้อจำกัดเวลาหรือขนาดไฟล์ทุกอย่างของ Canon และบิตเรตสูงเกินไปอาจทำให้บันทึกหยุด
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/bitrate.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/bitrate.c)
 
 ### เวลาในการบันทึก (Time Indicator)
 
@@ -387,7 +387,7 @@
 - Elapsed คือเวลาที่บันทึกไปแล้ว; Remain.Card คือเวลาที่ประเมินจากพื้นที่การ์ด; Remain.4GB คือเวลาที่ประเมินก่อนถึงขนาดไฟล์ 4 GB
 - ค่าเวลาคงเหลือเป็นการประมาณและขึ้นกับบิตเรต ไม่ใช่การรับรองว่าจะบันทึกได้เท่านั้นแน่นอน
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/bitrate.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/bitrate.c)
 
 ### ปุ่มบันทึกวิดีโอ (REC key)
 
@@ -398,7 +398,7 @@
 
 - เมนูนี้เปลี่ยนหน้าที่ปุ่มระหว่างโหมดวิดีโอ จึงควรทดลองก่อนถ่ายงานจริง
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/movtweaks.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/movtweaks.c)
 
 ### ตั้งค่าวิดีโอ (Movie Tweaks)
 
@@ -408,7 +408,7 @@
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-04-options-01.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-04-options-01.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าวิดีโอ — ตัวเลือกหน้า 1"></a><br>ตัวเลือกหน้า 1 | <strong>เริ่มบันทึกใหม่อัตโนมัติ (Movie Restart)</strong><br>พยายามเริ่มบันทึกใหม่เมื่อวิดีโอหยุด ไม่รับประกันความต่อเนื่องและอาจมีช่วงภาพขาดระหว่างไฟล์<br><br><strong>แสดงสถานะบันทึก/รอ (REC/STBY notify)</strong><br>แจ้งสถานะบันทึก/พร้อมด้วยเครื่องหมาย ข้อความ หรือเสียงตามตัวเลือก<br><br><strong>เปิด LiveView ค้าง (Force LiveView)</strong><br>กำหนดให้พยายามเปิด/คง Live View ในสถานการณ์ที่รองรับ เช่น เปลี่ยนเลนส์หรือใช้เลนส์มือหมุน<br><br> |
 | <a href="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-04-options-02.png" target="_blank" rel="noopener noreferrer"><img src="https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-04-options-02.png" width="220" alt="ภาพจำลองเมนู ตั้งค่าวิดีโอ — ตัวเลือกหน้า 2"></a><br>ตัวเลือกหน้า 2 | <strong>ล็อกค่าชัตเตอร์ (Shutter Lock)</strong><br>ล็อกการเปลี่ยนชัตเตอร์ในโหมดวิดีโอ โดยให้เปลี่ยนผ่านเมนูค่าแสงของ Magic Lantern แทน<br><br> |
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/movtweaks.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-05-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/movtweaks.c)
 
 ## + · ตั้งค่า
 
@@ -421,7 +421,7 @@
 - ไม่ได้เปลี่ยนภาษาเมนู Canon หรือแปลทุกหน้า Classic/ทุกโมดูล
 - หากฟอนต์ PHOTO_TH.BIN ไม่ครบหรือไม่ตรงรุ่น ระบบอาจกลับไปใช้ภาษาอังกฤษ
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/menu.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/menu.c)
 
 ### โมดูลเสริม (Modules)
 
@@ -433,7 +433,7 @@
 - OFF คือยังไม่เปิด; ???/Err/FileErr ไม่ใช่สถานะสำเร็จ ให้เก็บข้อความปัญหาเพื่อตรวจต่อ
 - รายชื่อจริงขึ้นกับไฟล์ใน ML/modules/ คู่มือนี้ไม่ได้สมมุติว่าโมดูลทุกตัวถูกโหลดแล้ว
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/module.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/module.c)
 
 ### การตั้งค่า (Preferences)
 
@@ -444,7 +444,7 @@
 - นี่เป็นทางเข้าเมนู Classic ไม่ใช่เมนูย่อยตายตัวชุดเดียว รายการขึ้นกับฟีเจอร์และโมดูลที่ลงทะเบียน
 - ใช้ INFO กลับมาที่ Photo UI เมื่อไม่ได้บันทึกวิดีโอ อ่านคำใบ้ของหน้าระบบเดิมก่อนเปลี่ยนค่า
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/menu.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/menu.c)
 
 ### การแสดงผล (Display)
 
@@ -455,7 +455,7 @@
 - รายการภายในขึ้นกับการตั้งค่าและฟีเจอร์ ไม่ได้เปลี่ยนความละเอียดไฟล์ภาพเพียงเพราะปรับการแสดงผล
 - ออกด้วยปุ่มตามคำใบ้ของหน้าที่ใช้อยู่ หรือ INFO กลับ Photo UI เมื่อไม่ได้บันทึก
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/tweaks.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/tweaks.c)
 
 ### เวอร์ชั่น (Version)
 
@@ -466,7 +466,7 @@
 
 - ชื่อไฟล์เอกสารลงท้าย -doc1 หมายถึงแก้เอกสารในแพ็ก ไม่ได้หมายความว่ารุ่นเฟิร์มแวร์เปลี่ยนจาก v3r5
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/photo-camera-info-600d.h)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/photo-camera-info-600d.h)
 
 ### ข้อมูลกล้อง (Camera Info)
 
@@ -477,7 +477,7 @@
 
 - ข้อมูลหน้านี้อ่านอย่างเดียว แก้รุ่นกล้องหรือ Canon firmware จากหน้านี้ไม่ได้
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/photo-camera-info-600d.h)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-06-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/photo-camera-info-600d.h)
 
 ### จำนวนชัตเตอร์ (Shutter Count)
 
@@ -489,7 +489,7 @@
 - หากอ่านตัวนับไม่ได้จะแสดงว่ายังใช้งานไม่ได้ ไม่ใช่แสดงว่าถ่ายไปแล้วศูนย์ภาพ
 - ภาพจำลองในแกลเลอรีไม่ใช่ตัวนับจริงจากกล้องของคุณ
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/photo-camera-info-600d.h)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-06-07-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/photo-camera-info-600d.h)
 
 ## G · เกมและสคริปต์
 
@@ -503,7 +503,7 @@
 - หน้าเริ่มเกมใช้ซ้าย/ขวาผ่านหน้าเริ่มและเริ่มลูกบอล ซ้าย/ขวาขยับไม้ SET หยุด/เล่นต่อ Q กลับหน้าเริ่ม ตามเกมเดิม
 - ออกโดยปิดเมนู Magic Lantern เช่น ปุ่มถังขยะหรือชัตเตอร์ครึ่งหนึ่งตามหน้าควบคุมเดิม
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/modules/arkanoid/arkanoid.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-01-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/modules/arkanoid/arkanoid.c)
 
 ### Pong
 
@@ -515,7 +515,7 @@
 - ขึ้น/ลงหรือวงล้อเลื่อนไม้ MENU หยุด/เล่นต่อ ปิดเมนู Magic Lantern เพื่อออก
 - ไม่ต้องเปิด Autorun เพื่อเล่นครั้งเดียว
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/scripts/pong.lua)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-02-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/scripts/pong.lua)
 
 ### Sokoban
 
@@ -527,7 +527,7 @@
 - ปุ่มทิศทางขยับตัวละคร/ดันกล่อง Q, MENU หรือถังขยะออกตามหน้าควบคุมเกม
 - เก็บโฟลเดอร์ ML/scripts/lib/ จากแพ็กไว้ครบ เพราะเกมใช้ helper ร่วมกัน
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/scripts/sokoban.lua)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-03-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/scripts/sokoban.lua)
 
 ### โมดูลเสริม (Modules)
 
@@ -539,7 +539,7 @@
 - OFF คือยังไม่เปิด; ???/Err/FileErr ไม่ใช่สถานะสำเร็จ ให้เก็บข้อความปัญหาเพื่อตรวจต่อ
 - รายชื่อจริงขึ้นกับไฟล์ใน ML/modules/ คู่มือนี้ไม่ได้สมมุติว่าโมดูลทุกตัวถูกโหลดแล้ว
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/src/module.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-04-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/src/module.c)
 
 ### สคริปต์ (Scripts)
 
@@ -550,7 +550,7 @@
 - Autorun ใช้ให้สคริปต์เริ่มตอนบูต จึงไม่จำเป็นสำหรับการเปิดเกมชั่วคราว
 - รายการที่เห็นขึ้นกับไฟล์ใน ML/scripts/ และผลการโหลด Lua
 
-[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/eos_rom_mlv_modifly/blob/b835d83/firmware/modules/lua/lua.c)
+[ภาพเมนูจำลอง](https://itsamachom.github.io/eos_rom_mlv_modifly/menu-previews/v3r5/th/th-07-05-item-01.png) · [อ้างอิงโค้ด](https://github.com/itsamachom/EOS_ROM_MLV_Modifly/blob/b835d83/firmware/modules/lua/lua.c)
 
 ## ตัวอย่างการตั้งค่า
 
