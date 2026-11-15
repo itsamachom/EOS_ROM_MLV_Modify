@@ -29,6 +29,7 @@ static const struct photo_item photo_shoot[] = {
     {"Mirror Lockup", "Shoot", "Mirror Lockup"},
     {"Flash Tweaks", "Shoot", "Flash Tweaks"},
     {"Shoot Preferences", "Shoot", "Shoot Preferences"},
+    {"LUT JPEG", "Shoot", "LUT JPEG"},
 };
 static const struct photo_item photo_focus[] = {
     {"Trap Focus", "Focus", "Trap Focus"},

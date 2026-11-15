@@ -31,3 +31,13 @@ zip_contents::
 	$(CP) $(TOP_DIR)/data/photo_thai/TONEINFO.BIN $(ZIP_DIR)/ML/data/
 	$(CP) $(TOP_DIR)/../assets/fonts/noto-sans-thai/OFL.txt $(ZIP_DIR)/ML/data/TONEINFO_OFL.txt
 	$(CP) $(TOP_DIR)/../assets/fonts/noto-sans-thai/OFL.txt $(ZIP_DIR)/ML/fonts/NOTO_THAI_OFL.txt
+
+# LUT prototype: built after the core has produced its matching math archives.
+zip_contents::
+	$(MAKE) -C $(TOP_DIR)/modules/lutjpeg
+	$(CP) $(TOP_DIR)/modules/lutjpeg/build/lutjpeg.mo $(ZIP_DIR)/ML/modules/
+	mkdir -p $(ZIP_DIR)/ML/LUTDATA
+	$(CP) $(TOP_DIR)/data/lutjpeg/LOOK*.LUT $(TOP_DIR)/data/lutjpeg/TABLES.json $(ZIP_DIR)/ML/LUTDATA/
+	$(CP) $(TOP_DIR)/modules/lutjpeg/upstream/COPYING $(ZIP_DIR)/ML/LUTDATA/
+	mkdir -p $(ZIP_DIR)/ML/SETTINGS
+	touch $(ZIP_DIR)/ML/SETTINGS/lutjpeg.en

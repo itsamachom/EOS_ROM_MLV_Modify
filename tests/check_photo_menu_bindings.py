@@ -60,14 +60,14 @@ for s in sections:
 
 header = (root / "firmware/src/photo-menu-600d.h").read_text()
 bindings = re.findall(r'\{"[^"]+", "([^"]+)", "([^"]+)"\}', header)
-module_bindings = {("Shoot", "Silent Picture"), ("Expo", "Dual ISO"), ("Expo", "Auto ETTR"), ("Games", "Arkanoid")}
+module_bindings = {("Shoot", "Silent Picture"), ("Expo", "Dual ISO"), ("Expo", "Auto ETTR"), ("Games", "Arkanoid"), ("Shoot", "LUT JPEG")}
 for menu, entry in bindings:
     if (menu, entry) == ("Shoot", "FLIM TONE"):
         assert {"photo_jpeg_style_read","photo_jpeg_style_write","photo_tone_recipes"} <= linked_symbols
         assert b"FLIM TONE\0" in data and b"Portra 400\0" in data
     elif (menu, entry) in module_bindings:
         # Modules are resolved dynamically on the camera. Check packaged strings.
-        mod = {"Silent Picture": "silent", "Dual ISO": "dual_iso", "Auto ETTR": "ettr", "Arkanoid": "arkanoid"}[entry]
+        mod = {"Silent Picture": "silent", "Dual ISO": "dual_iso", "Auto ETTR": "ettr", "Arkanoid": "arkanoid", "LUT JPEG": "lutjpeg"}[entry]
         blob = (path.parent / "zip/ML/modules" / (mod + ".mo")).read_bytes()
         assert entry.encode() + b"\0" in blob, (menu, entry)
     elif menu == "Scripts":

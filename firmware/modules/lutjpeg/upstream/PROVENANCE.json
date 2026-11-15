@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/HNGSeries/mfilm-canon-film-simulation",
+  "commit": "3a5b0d8506d6279b1b223f78612dfa6db47405e8",
+  "license": "GPL-2.0-only",
+  "files": {
+    "fos_dev.c": "f5c54c0bf79299925513f6ebf4e098815712e842c6840f766280269b7272c6fc",
+    "fos_dev.h": "d76c2a34c4ab0cd3b9f495390f7255f8df1c44681555b38c6f873e1f163e6d25",
+    "fos_jpeg.c": "32d5c4a65efb84604fbb4c6f07c3471b39714438f4c759ccc721d4c9dbbea8ef",
+    "fos_jpeg.h": "7c9ede5d06f1b389df51bd26c5fdc609847fda56f33f13cbe292fc817aff78bc",
+    "fos_print.c": "43df3a12d83a30ac13a2b6cf3641abd255f0545d4a0ab18e12a412011a18a14f",
+    "fos_looks.c": "c37e28da571deab374496760ff05e957d6f523d267ab88ea0735ae7ae2febfcb",
+    "fos.h": "5131e5a3f5b9c6f63d68b9eaa4fb57d68a87828b1b7248c05a4cb9bd95622f35",
+    "fos_gfx.h": "d07624fcac047d8735b0ff20f7e65f3b456e8255145a368775265d53df9279c7"
+  },
+  "extracted_catalog_inputs": {
+    "fos_film.c": "63793622c631a1d16f6d96041226780bd986fcde5dab0f3d74273b1e55d2df34",
+    "fos_gfx.c": "82e356fd629384b373ef66e78b7adb83132f8d4b70757fe042b677abc346e079"
+  },
+  "catalog_scope": "Eight builtin film/look identities retained for upstream table indices; UI exposes only indices 0/2/7. Model and fixed colors/isqrt extracted; UI/RAW library fonts not imported.",
+  "test_fixture": "tests/lutjpeg/mkcr2.c derives from upstream sim/tools/mkcr2.c; matrix/white level adjusted for synthetic 600D processing tests. Not a physical camera capture."
+}

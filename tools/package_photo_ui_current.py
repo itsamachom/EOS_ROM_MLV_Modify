@@ -42,7 +42,10 @@ if b'ML/data/TONEINFO.BIN' in binary:
     assert payload['ML/data/TONEINFO.BIN']==(root/'firmware/data/photo_thai/TONEINFO.BIN').read_bytes()
     assert payload['ML/data/TONEINFO_OFL.txt']==(root/'assets/fonts/noto-sans-thai/OFL.txt').read_bytes()
 assert sha256(payload['ML-SETUP.FIR']) == '7e33d8a2a71ad92c412d291fb0ecb6de0b9404c212571d51fd82f839688070e3'
-assert {Path(n).stem for n in payload if n.endswith('.mo')} == {'adv_int','autoexpo','deflick','dual_iso','ettr','file_man','img_name','pic_view','arkanoid','lua'}
+assert {Path(n).stem for n in payload if n.endswith('.mo')} == {'adv_int','autoexpo','deflick','dual_iso','ettr','file_man','img_name','pic_view','arkanoid','lua','lutjpeg'}
+for name in ['LOOK00.LUT','LOOK02.LUT','LOOK07.LUT']:
+    assert payload['ML/LUTDATA/'+name]==(root/'firmware/data/lutjpeg'/name).read_bytes()
+assert payload['ML/LUTDATA/COPYING']==(root/'firmware/modules/lutjpeg/upstream/COPYING').read_bytes()
 # Only indexed project sources: do not sweep local files or build outputs into the archive.
 indexed = subprocess.check_output(['git','ls-files','-z'], cwd=root, text=True).split('\0')
 files = sorted(n for n in indexed if n and n != 'DOWNLOAD.md' and (n.split('/')[0] in {'firmware','scripts','tests','tools','assets','translations','previews','release','research'} or '/' not in n or n=='baseline-600d-102/bootstrap-toolchain.sh'))

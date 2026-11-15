@@ -370,7 +370,7 @@ int main(void)
     press(BGMT_PRESS_DOWN);assert(photo_page_index==0);
     press(BGMT_PRESS_DOWN);assert(photo_page_index==1);
     press(BGMT_PRESS_RIGHT);assert(photo_pane==PHOTO_ITEMS && actions==0);
-    press(BGMT_PRESS_UP);assert(photo_page_index==0 && photo_selection[0]==6);
+    press(BGMT_PRESS_UP);assert(photo_page_index==0 && photo_selection[0]==7);
     press(BGMT_PRESS_DOWN);assert(photo_page_index==1 && photo_selection[1]==0);
     press(BGMT_PRESS_LEFT);assert(photo_pane==PHOTO_CATEGORIES && photo_page_index==1);
     puts("PASS vertical category/item navigation and horizontal pane focus without setting changes");
