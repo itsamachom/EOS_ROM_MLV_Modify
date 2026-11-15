@@ -1,0 +1,45 @@
+{
+  "version": "v3r6-lut2",
+  "target": "600D.102",
+  "status": "Public Experimental",
+  "audience": "First installation or existing ML: choose the matching package",
+  "project": "FIRMWARE ADD-ON Thai-Menu",
+  "project_website": "https://itsamachom.github.io/eos_rom_mlv_modifly/",
+  "firmware_source_tag": "v3r6-lut2",
+  "firmware_source_commit": null,
+  "source_base_commit": "481459bd426b7e52fd83547e0208769e9612c2d5",
+  "full_zip_sha256": "5e0b90b59ff1c08aab01c189c82baf4ca08c9cf23c238dac86a0da2657ffae7b",
+  "autoexec_sha256": "530b720addbd0a5412cb869287e52aba788d9c349623669d655d95b2aae2d86c",
+  "installer_sha256": "7e33d8a2a71ad92c412d291fb0ecb6de0b9404c212571d51fd82f839688070e3",
+  "first_install": {
+    "filename": "600D-102-Thai-Menu-v3r6-lut2-FIRST-INSTALL.zip",
+    "path": "downloads/v3r6-lut2/first_install/600D-102-Thai-Menu-v3r6-lut2-FIRST-INSTALL.zip",
+    "bytes": 2669533,
+    "sha256": "6128f0a24c51316d418bbc9d57100c95709b3038a384c006c0f1326888553058"
+  },
+  "camera": {
+    "filename": "600D-102-Thai-Menu-v3r6-lut2-UPDATE.zip",
+    "path": "downloads/v3r6-lut2/camera/600D-102-Thai-Menu-v3r6-lut2-UPDATE.zip",
+    "bytes": 2603484,
+    "sha256": "70b4314f97822139d822c76e6eeaadd011b063a06aa729de43f1105b61f0b947"
+  },
+  "source": {
+    "filename": "600D-PHOTO-UI-v3r6-lut2-source.zip",
+    "url": "https://raw.githubusercontent.com/itsamachom/eos_rom_mlv_modifly/v3r6-lut2/deliveries/photo-ui-v3r6-lut2-full/600D-PHOTO-UI-v3r6-lut2-source.zip",
+    "bytes": 34418672,
+    "sha256": "b52340d3bf9bf37622b1fbff6298c47dc901f2bdf7f11a8caaaf034a57dde5f8"
+  },
+  "verified": [
+    "ZIP CRC",
+    "runtime bytes match Full ZIP in both packages",
+    "original installer size/hash and source-tree identity",
+    "FIR absent in update",
+    "source ZIP identity",
+    "licenses and upstream instructions retained"
+  ],
+  "camera_tested": false,
+  "first_install_hardware_tested": false,
+  "qemu_tested": false,
+  "installer_rebuilt": false,
+  "inherited_dependency_source_verified": false
+}
