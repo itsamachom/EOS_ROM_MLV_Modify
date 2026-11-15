@@ -146,10 +146,13 @@ static struct menu_entry * photo_resolve(const struct photo_item * item, struct 
         if (!streq(m->name, item->menu)) continue;
         *parent = m;
         if (!item->entry) return NULL;
-        for (struct menu_entry * e = m->children; e; e = e->next)
-            if (streq(e->name, item->entry) && !e->shidden && !e->placeholder)
-                return e;
-        return NULL;
+        struct menu_entry * lut_loader = NULL;
+        for (struct menu_entry * e = m->children; e; e = e->next) {
+            if (e->shidden || e->placeholder) continue;
+            if (streq(e->name, item->entry)) return e;
+            if (streq(item->entry,"LUT JPEG") && streq(e->name,"LUT JPEG loader")) lut_loader=e;
+        }
+        return lut_loader;
     }
     return NULL;
 }
@@ -638,6 +641,12 @@ static int photo_menu_key_locked(int key, struct photo_pending_action * pending)
         {
             photo_armed_identity = photo_display_identity;
             photo_editing = 1; photo_confirm = 0;
+        }
+        else if (action && streq(e->name,"LUT JPEG loader"))
+        {
+            /* Loading the requested engine is reversible; no second confirmation. */
+            photo_invalidate();
+            *pending = (struct photo_pending_action){.parent=parent,.depth=depth,.mode=3};
         }
         else if (action)
         {

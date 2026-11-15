@@ -3362,7 +3362,17 @@ extern MENU_UPDATE_FUNC(lcd_release_display);
 
 extern int voice_tags; // beep.c
 
+#include "lutjpeg-loader-600d.h"
 static struct menu_entry shoot_menus[] = {
+    #ifdef CONFIG_600D
+    {
+        .name = "LUT JPEG loader",
+        .select = photo_lut_load_select,
+        .update = photo_lut_load_update,
+        .icon_type = IT_ACTION,
+        .help = "SET: load LUT engine directly, without the Modules page.",
+    },
+    #endif
     #ifdef FEATURE_HDR_BRACKETING
     {
         .name = "Advanced Bracket",

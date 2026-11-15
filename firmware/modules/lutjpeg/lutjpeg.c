@@ -129,10 +129,12 @@ static struct menu_entry entries[]={
   {.name="Conversion status",.update=show_status,.help="Progress and last output folder."},
   {.name="Cancel conversion",.select=cancel_convert,.help="Stop processing; source RAW is preserved."},MENU_EOL}},
 };
-static unsigned int init(void){menu_add("Shoot",entries,COUNT(entries));return 0;}
+static int registered;
+unsigned int lutjpeg_abi(void){return 0x4c554932;}
+unsigned int lutjpeg_bootstrap(void){if(!registered){menu_add("Shoot",entries,COUNT(entries));registered=1;}return 0;}
 /* Module shutdown must wait for cancellation/close; loader ignores deinit returns. */
-static unsigned int deinit(void){cancel=1;while(running)msleep(20);menu_remove("Shoot",entries,COUNT(entries));return 0;}
+unsigned int lutjpeg_shutdown(void){cancel=1;while(running)msleep(20);if(registered){menu_remove("Shoot",entries,COUNT(entries));registered=0;}return 0;}
 MODULE_INFO_START()
- MODULE_INIT(init)
- MODULE_DEINIT(deinit)
+ MODULE_INIT(lutjpeg_bootstrap)
+ MODULE_DEINIT(lutjpeg_shutdown)
 MODULE_INFO_END()

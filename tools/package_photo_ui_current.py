@@ -45,6 +45,10 @@ assert sha256(payload['ML-SETUP.FIR']) == '7e33d8a2a71ad92c412d291fb0ecb6de0b940
 assert {Path(n).stem for n in payload if n.endswith('.mo')} == {'adv_int','autoexpo','deflick','dual_iso','ettr','file_man','img_name','pic_view','arkanoid','lua','lutjpeg'}
 for name in ['LOOK00.LUT','LOOK02.LUT','LOOK07.LUT']:
     assert payload['ML/LUTDATA/'+name]==(root/'firmware/data/lutjpeg'/name).read_bytes()
+assert b'LUT JPEG loader' in binary
+assert b'ML/LUTLOAD.LOG' in binary
+assert b'lutjpeg_bootstrap' in payload['ML/modules/lutjpeg.mo']
+assert b'lutjpeg_abi' in payload['ML/modules/lutjpeg.mo']
 assert payload['ML/LUTDATA/COPYING']==(root/'firmware/modules/lutjpeg/upstream/COPYING').read_bytes()
 # Only indexed project sources: do not sweep local files or build outputs into the archive.
 indexed = subprocess.check_output(['git','ls-files','-z'], cwd=root, text=True).split('\0')

@@ -42,6 +42,8 @@ CONFIG_INT("module.show_hidden", module_show_hidden, 0);
 char *module_lockfile = MODULE_PATH"LOADING.LCK";
 
 static struct msg_queue * module_mq = 0;
+static volatile int module_startup_done;
+int module_startup_complete(void){return module_startup_done;}
 // #define MSG_MODULE_LOAD_ALL 1
 // #define MSG_MODULE_UNLOAD_ALL 2
 #define MSG_MODULE_LOAD_OFFLINE_STRINGS 3 /* argument: module index in high half (FFFF0000) */
@@ -2175,6 +2177,9 @@ static void module_load_task(void* unused)
             /* uh, it seems the camera didnt shut down cleanly, skip module loading this time */
             msleep(1000);
             NotifyBox(10000, "Camera was not shut down cleanly.\r\nSkipping module loading." );
+            /* Still list modules so the user can inspect/re-enable them. */
+            _module_load_all(1);
+            module_menu_update();
         }
         else
         {
@@ -2196,6 +2201,8 @@ static void module_load_task(void* unused)
         _module_load_all(1);
         module_menu_update();
     }
+
+    module_startup_done=1;
 
     /* main loop, also wait until clean shutdown */
     TASK_LOOP
@@ -2250,6 +2257,10 @@ void module_save_configs()
 /* clean shutdown, unlink lockfile */
 int module_shutdown()
 {
+#ifdef CONFIG_600D
+    extern void photo_lut_shutdown(void);
+    photo_lut_shutdown();
+#endif
     _module_unload_all();
     
     if(!module_autoload_disabled)

@@ -10,17 +10,17 @@
     {
       "name": "portra400",
       "jpeg_sha256": "22281f971e5dd9b1e23815b5a64536e7cfab5dfd67274c3ba39a5c3ebaf64698",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 155 ms, expose 13, finish 23, jpeg 19, palette 15, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 29 steps\n"
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 148 ms, expose 12, finish 24, jpeg 17, palette 16, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 29 steps\n"
     },
     {
       "name": "ektar100",
       "jpeg_sha256": "e12075b5506e36ca73b513ceca67507265e05a2ef81d8bfc291aa1bde27dac8f",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 167 ms, expose 11, finish 22, jpeg 18, palette 15, big print 0 (0 x 0), write 0\nHost peak processing allocation: 5542696 bytes; 30 steps\n"
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 154 ms, expose 12, finish 23, jpeg 18, palette 15, big print 0 (0 x 0), write 0\nHost peak processing allocation: 5542696 bytes; 29 steps\n"
     },
     {
       "name": "trix400",
       "jpeg_sha256": "70e7d9a1ca4118f0116cc05c35457fce0933cfdbaeed8338952731ea40676d60",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 161 ms, expose 13, finish 23, jpeg 20, palette 15, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 29 steps\n"
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 160 ms, expose 12, finish 22, jpeg 20, palette 15, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 29 steps\n"
     }
   ],
   "adapter_checks": "PASS actual adapter: DMA bounce, selected LUT, distinct outputs, collision avoidance, missing RAW",

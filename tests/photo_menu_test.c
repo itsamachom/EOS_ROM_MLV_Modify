@@ -448,6 +448,24 @@ int main(void)
     assert(actions==0 && !photo_editing);render();assert(strstr(output,"Unavailable"));
     puts("PASS unloaded modules cannot activate stale settings");
 
+    reset();
+    struct menu_entry lut_loader={.name="LUT JPEG loader",.icon_type=IT_ACTION};
+    struct menu_entry lut_engine={.name="LUT JPEG",.next=&lut_loader};
+    struct menu lut_shoot={.name="Shoot",.children=&lut_loader};
+    menus=&lut_shoot;
+    struct menu *lut_parent=NULL;
+    const struct photo_item lut_item={"LUT JPEG","Shoot","LUT JPEG"};
+    assert(photo_resolve(&lut_item,&lut_parent)==&lut_loader && lut_parent==&lut_shoot);
+    lut_shoot.children=&lut_engine;
+    assert(photo_resolve(&lut_item,&lut_parent)==&lut_engine);
+    lut_engine.shidden=1;assert(photo_resolve(&lut_item,&lut_parent)==&lut_loader);
+    lut_engine.shidden=0;lut_engine.placeholder=1;assert(photo_resolve(&lut_item,&lut_parent)==&lut_loader);
+    lut_engine.placeholder=0;lut_shoot.children=&lut_loader;lut_loader.parent_menu=&lut_shoot;
+    photo_page_index=0;photo_selection[0]=7;photo_pane=PHOTO_DETAILS;photo_detail_index=0;render();
+    press(BGMT_PRESS_SET);assert(actions==1 && !photo_confirm && last_entry==&lut_loader);
+    lut_loader.shidden=1;assert(!photo_resolve(&lut_item,&lut_parent));
+    puts("PASS LUT entry has a core loader without Modules, preferring the live engine after registration");
+
     reset();go_peak();press(BGMT_PRESS_DOWN);press(BGMT_PRESS_DOWN);
     press(BGMT_PRESS_SET);assert(photo_confirm && actions==0);
     press(BGMT_MENU);assert(!photo_confirm && run_actions==0 && close_requests==0);
