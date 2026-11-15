@@ -178,6 +178,7 @@ static void entry_default_display_info(struct menu_entry * e,struct menu_display
     info->name=name;info->value=value;info->help=help;info->warning=warning;
 }
 void menu_open_submenu(void * priv, int delta) { (void)priv; (void)delta; submenu_level++; }
+void photo_tone_open_picker(void *priv,int delta);
 static void menu_entry_select(struct menu * m,int mode)
 {
     assert(locks==0);assert(m->selected || IS_SUBMENU(m));actions++;last_mode=mode;
@@ -196,7 +197,7 @@ static void menu_entry_select(struct menu * m,int mode)
             if(e->select)e->select(e->priv, mode==0?1:-1);
             else if(e->priv)*(int*)e->priv=MOD(*(int*)e->priv-e->min+(mode==0?1:-1),e->max-e->min+1)+e->min;
         }
-        if(mode==3 && e->icon_type==IT_ACTION)run_actions++;
+        if(mode==3 && e->icon_type==IT_ACTION){run_actions++;if(e->select==photo_tone_open_picker)e->select(NULL,0);}
         if((mode==3 && e->select==menu_open_submenu) || (mode==2 && e->children))submenu_level++;
         return;
     }
@@ -288,6 +289,12 @@ static struct menu options={.name="Focus Peak",.children=&threshold,.icon=ICON_M
     .parent_menu=&overlay,.parent_entry=&peak};
 static struct menu prefs={.name="Prefs"};
 
+static void film_loader_select(void *p,int d){(void)p;(void)d;}
+static void film_loader_update(struct menu_entry *e,struct menu_display_info *i){(void)e;snprintf(i->value,MENU_MAX_VALUE_LEN,"SET Load");}
+static struct menu_entry film_children[2];
+static struct menu_entry film_root={.name="FLIM TONE",.children=film_children};
+static struct menu film_shoot={.name="Shoot",.children=&film_root};
+static struct menu film_options={.name="FLIM TONE",.children=film_children,.icon=ICON_ML_SUBMENU,.parent_menu=&film_shoot,.parent_entry=&film_root};
 static void reset(void)
 {
     init_palette();
@@ -301,7 +308,11 @@ static void reset(void)
     threshold.parent_menu=action.parent_menu=&options;
     action.selected=action.shidden=action.hidden=0;action.next=NULL;
     wrong.next=&peak;wrong.selected=1;
-    overlay.next=&prefs;prefs.next=&options;options.next=NULL;menus=&overlay;
+    overlay.next=&prefs;prefs.next=&options;options.next=&film_shoot;film_shoot.next=&film_options;film_options.next=NULL;menus=&overlay;
+    film_root.next=NULL;film_root.parent_menu=&film_shoot;film_root.shidden=film_root.placeholder=0;
+    film_children[0]=(struct menu_entry){.name="Open menu",.select=photo_tone_open_picker,.icon_type=IT_ACTION,.parent_menu=&film_options};
+    film_children[1]=(struct menu_entry){.name="LUT JPEG",.icon_type=IT_ACTION,.select=film_loader_select,.update=film_loader_update,.parent_menu=&film_options};
+    film_children[0].next=&film_children[1];
     overlay.selected=1;prefs.selected=0;output[0]=0;text_count=0;
 }
 static void render(void) { output[0]=0;assert(photo_menu_draw());assert(!owns_menu_lock); }
@@ -370,7 +381,7 @@ int main(void)
     press(BGMT_PRESS_DOWN);assert(photo_page_index==0);
     press(BGMT_PRESS_DOWN);assert(photo_page_index==1);
     press(BGMT_PRESS_RIGHT);assert(photo_pane==PHOTO_ITEMS && actions==0);
-    press(BGMT_PRESS_UP);assert(photo_page_index==0 && photo_selection[0]==7);
+    press(BGMT_PRESS_UP);assert(photo_page_index==0 && photo_selection[0]==6);
     press(BGMT_PRESS_DOWN);assert(photo_page_index==1 && photo_selection[1]==0);
     press(BGMT_PRESS_LEFT);assert(photo_pane==PHOTO_CATEGORIES && photo_page_index==1);
     puts("PASS vertical category/item navigation and horizontal pane focus without setting changes");
@@ -449,22 +460,27 @@ int main(void)
     puts("PASS unloaded modules cannot activate stale settings");
 
     reset();
-    struct menu_entry lut_loader={.name="LUT JPEG loader",.icon_type=IT_ACTION};
-    struct menu_entry lut_engine={.name="LUT JPEG",.next=&lut_loader};
-    struct menu lut_shoot={.name="Shoot",.children=&lut_loader};
-    menus=&lut_shoot;
-    struct menu *lut_parent=NULL;
-    const struct photo_item lut_item={"LUT JPEG","Shoot","LUT JPEG"};
-    assert(photo_resolve(&lut_item,&lut_parent)==&lut_loader && lut_parent==&lut_shoot);
-    lut_shoot.children=&lut_engine;
-    assert(photo_resolve(&lut_item,&lut_parent)==&lut_engine);
-    lut_engine.shidden=1;assert(photo_resolve(&lut_item,&lut_parent)==&lut_loader);
-    lut_engine.shidden=0;lut_engine.placeholder=1;assert(photo_resolve(&lut_item,&lut_parent)==&lut_loader);
-    lut_engine.placeholder=0;lut_shoot.children=&lut_loader;lut_loader.parent_menu=&lut_shoot;
-    photo_page_index=0;photo_selection[0]=7;photo_pane=PHOTO_DETAILS;photo_detail_index=0;render();
-    press(BGMT_PRESS_SET);assert(actions==1 && !photo_confirm && last_entry==&lut_loader);
-    lut_loader.shidden=1;assert(!photo_resolve(&lut_item,&lut_parent));
-    puts("PASS LUT entry has a core loader without Modules, preferring the live engine after registration");
+    photo_page_index=0;photo_selection[0]=0;photo_pane=PHOTO_ITEMS;render();
+    press(BGMT_PRESS_SET);assert(photo_pane==PHOTO_DETAILS && !photo_tone_opened);
+    assert(strstr(output,"Open menu") && strstr(output,"LUT JPEG"));
+    press(BGMT_PRESS_SET);assert(photo_tone_opened && !photo_confirm);
+    photo_tone_opened=0;
+    int lut_count;
+    assert(photo_detail_entry(&film_root,1,&lut_count)==&film_children[1] && lut_count==2);
+    struct menu_entry live_engine={.name="LUT JPEG"};
+    film_root.next=&live_engine;live_engine.parent_menu=&film_shoot;
+    assert(photo_detail_entry(&film_root,1,&lut_count)==&live_engine && lut_count==2);
+    live_engine.select=menu_open_submenu;live_engine.children=&film_children[0];
+    photo_pane=PHOTO_DETAILS;photo_detail_index=1;render();
+    press(BGMT_PRESS_SET);assert(submenu_level==1 && last_entry==&live_engine && !photo_confirm);
+    submenu_level=0;
+    live_engine.shidden=1;assert(photo_detail_entry(&film_root,1,&lut_count)==&film_children[1]);
+    film_root.next=NULL;
+    puts("PASS FLIM TONE has Open menu / LUT JPEG, directly opens picker and prefers loaded engine");
+    for(int lang=0;lang<2;lang++){
+        reset();photo_thai_enabled=lang;photo_page_index=0;photo_selection[0]=0;photo_pane=PHOTO_DETAILS;render();
+        save_proof(lang?"film-menu-th":"film-menu-en");
+    }
 
     reset();go_peak();press(BGMT_PRESS_DOWN);press(BGMT_PRESS_DOWN);
     press(BGMT_PRESS_SET);assert(photo_confirm && actions==0);

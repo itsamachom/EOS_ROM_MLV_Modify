@@ -601,7 +601,7 @@ static void _module_load_all(uint32_t list_only)
             snprintf(enable_file, sizeof(enable_file), "%s%s.en", get_config_dir(), module_list[module_cnt].name);
             
             /* if enable-file is nonexistent, dont load module */
-            if(!config_flag_file_setting_load(enable_file))
+            if(!config_flag_file_setting_load(enable_file) || (streq(module_name,"lutjpeg") && is_file("ML/LUTDATA/DIRECT.ON")))
             {
                 module_list[module_cnt].enabled = 0;
                 snprintf(module_list[module_cnt].status, sizeof(module_list[module_cnt].status), "OFF");

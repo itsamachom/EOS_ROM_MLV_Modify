@@ -8,7 +8,7 @@ env=dict(os.environ,ASAN_OPTIONS='detect_leaks=0') # LSan unavailable under mana
 with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch') as temp:
  t=Path(temp)
  core=[module/'catalog.c']+[up/n for n in ['fos_dev.c','fos_jpeg.c','fos_print.c','fos_looks.c']]
- flags=['gcc','-O1','-g','-DCONFIG_600D=1','-fsanitize=address,undefined','-fno-omit-frame-pointer','-I'+str(up),'-I'+str(root/'tests/lutjpeg')]
+ flags=['gcc','-Werror=format','-Wno-error=format-truncation','-O1','-g','-DCONFIG_600D=1','-fsanitize=address,undefined','-fno-omit-frame-pointer','-I'+str(up),'-I'+str(root/'tests/lutjpeg')]
  def run(args,ok=True,**kw):
   p=subprocess.run(list(map(str,args)),env=env,capture_output=True,text=True,**kw)
   assert (p.returncode==0)==ok,(args,p.returncode,p.stderr)

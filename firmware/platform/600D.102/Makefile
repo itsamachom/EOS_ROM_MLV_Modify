@@ -40,4 +40,6 @@ zip_contents::
 	$(CP) $(TOP_DIR)/data/lutjpeg/LOOK*.LUT $(TOP_DIR)/data/lutjpeg/TABLES.json $(ZIP_DIR)/ML/LUTDATA/
 	$(CP) $(TOP_DIR)/modules/lutjpeg/upstream/COPYING $(ZIP_DIR)/ML/LUTDATA/
 	mkdir -p $(ZIP_DIR)/ML/SETTINGS
-	touch $(ZIP_DIR)/ML/SETTINGS/lutjpeg.en
+	rm -f $(ZIP_DIR)/ML/SETTINGS/lutjpeg.en
+	touch $(ZIP_DIR)/ML/LUTDATA/DIRECT.ON
+	$(PYTHON) $(TOP_DIR)/../tools/pack_lutjpeg_overlay.py --core-build $(BUILD_DIR) --arm-bin $(ARM_BINPATH)

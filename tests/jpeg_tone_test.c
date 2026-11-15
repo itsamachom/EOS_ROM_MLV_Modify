@@ -63,6 +63,7 @@ int main(void) {
     reset();tone_host_ready=1;tone_host_state=initial_state();tone_host_write_calls=0;
     photo_tone_session=(struct photo_tone_session){.active=-1};photo_tone_group=0;memset(photo_tone_selected,0,sizeof(photo_tone_selected));
     photo_page_index=0;photo_selection[0]=0;photo_pane=PHOTO_ITEMS;render();
+    press(BGMT_PRESS_SET);assert(!photo_tone_opened && photo_pane==PHOTO_DETAILS);
     press(BGMT_PRESS_SET);assert(photo_tone_opened && !tone_host_write_calls);
     press(BGMT_PRESS_RIGHT);press(BGMT_PRESS_DOWN);press(BGMT_PRESS_LEFT);assert(!tone_host_write_calls);
     assert(photo_tone_animation_pending());

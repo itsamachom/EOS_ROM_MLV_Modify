@@ -1,6 +1,6 @@
 """Compile the real startup branch: crash recovery must list without loading."""
 from pathlib import Path
-import tempfile,subprocess
+import tempfile,subprocess,os
 root=Path(__file__).resolve().parents[1];source=(root/'firmware/src/module.c').read_text()
 body=source.split('static void module_load_task(void* unused) \n{',1)[1].split('    /* main loop, also wait until clean shutdown */',1)[0]
 pre=r'''
@@ -34,5 +34,6 @@ with tempfile.TemporaryDirectory() as d:
  subprocess.run([p/'test'],check=True)
  subprocess.run(['gcc','-O1','-g','-fsanitize=address,undefined','-I'+str(root/'firmware/src'),str(root/'tests/lutjpeg/loader.c'),'-o',str(p/'loader')],check=True)
  import os
- subprocess.run([p/'loader'],check=True,env=dict(os.environ,ASAN_OPTIONS='detect_leaks=0'))
+ (p/'ML/LUTDATA').mkdir(parents=True);(p/'ML/modules').mkdir()
+ subprocess.run([p/'loader'],cwd=p,check=True,env=dict(os.environ,ASAN_OPTIONS='detect_leaks=0'))
 print('PASS crash guard preserves read-only module listing and startup-ready state')

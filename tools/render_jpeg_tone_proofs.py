@@ -15,7 +15,7 @@ with tempfile.TemporaryDirectory(prefix='jpeg-tone-proof-') as tmp:
   rgb=struct.unpack_from('<I',meta,16+i*4)[0];palette[80+i]=((rgb>>16)&255,(rgb>>8)&255,rgb&255)
  frames=[];zooms=[];records=[]
  for p in sorted(Path(tmp).glob('*.pgm')):
-  if not p.name.startswith(('tones-','tone-setting-','tone-active-','tone-browsing-','tone-changed-','tone-detail-','tone-zoom-')):continue
+  if not p.name.startswith(('tones-','tone-setting-','tone-active-','tone-browsing-','tone-changed-','tone-detail-','tone-zoom-','film-menu-')):continue
   raw=Image.open(p);assert raw.size==(720,480);assert set(raw.tobytes())<=palette.keys()
   image=Image.frombytes('RGB',raw.size,b''.join(bytes(palette[v]) for v in raw.tobytes()))
   proof=Image.new('RGB',(720,510),'#111111');proof.paste(image,(0,30))

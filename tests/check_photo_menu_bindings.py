@@ -65,10 +65,12 @@ for menu, entry in bindings:
     if (menu, entry) == ("Shoot", "FLIM TONE"):
         assert {"photo_jpeg_style_read","photo_jpeg_style_write","photo_tone_recipes"} <= linked_symbols
         assert b"FLIM TONE\0" in data and b"Portra 400\0" in data
+        assert ("Shoot","FLIM TONE") in registered and b"Open menu\0" in data
+        assert {"photo_lut_load_task","photo_tone_open_picker"} <= linked_symbols
     elif (menu, entry) in module_bindings:
         # Modules are resolved dynamically on the camera. Check packaged strings.
         if entry == "LUT JPEG":
-            assert ("Shoot","LUT JPEG loader") in registered
+            assert ("Shoot","FLIM TONE") in registered
             assert {"photo_lut_load_task","module_startup_complete","photo_lut_shutdown"} <= linked_symbols
         mod = {"Silent Picture": "silent", "Dual ISO": "dual_iso", "Auto ETTR": "ettr", "Arkanoid": "arkanoid", "LUT JPEG": "lutjpeg"}[entry]
         blob = (path.parent / "zip/ML/modules" / (mod + ".mo")).read_bytes()

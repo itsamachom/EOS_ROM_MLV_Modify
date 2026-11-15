@@ -49,7 +49,7 @@ static void convert_task(void *unused){
     (void)unused;int ok=0;
     struct fos_dev *d=NULL;
     char table_dir[64],jpeg_part[128],print_part[128];
-    snprintf(table_dir,sizeof(table_dir),"%c:/ML/LUTDATA",get_shooting_card()->drive_letter);
+    snprintf(table_dir,sizeof(table_dir),"%s:/ML/LUTDATA",get_shooting_card()->drive_letter);
     snprintf(jpeg_part,sizeof(jpeg_part),"%s",output);char *ext=strrchr(jpeg_part,'.');if(ext)strcpy(ext,".TMP");
     snprintf(print_part,sizeof(print_part),"%s",print);ext=strrchr(print_part,'.');if(ext)strcpy(ext,".PART");
     bounce=fio_malloc(8192);
@@ -105,7 +105,7 @@ static MENU_SELECT_FUNC(start_convert){
     if(!found){NotifyBox(5000,"Latest image has no RAW.\nSet Canon RAW+JPEG, then take a photo.");return;}
     chosen=COERCE(selected,0,2);
     char parent[64],dir[80];
-    snprintf(parent,sizeof(parent),"%c:/ML/LUTOUT",card->drive_letter);
+    snprintf(parent,sizeof(parent),"%s:/ML/LUTOUT",card->drive_letter);
     FIO_CreateDirectory(parent);
     snprintf(dir,sizeof(dir),"%s/%s",parent,dirs[chosen]);FIO_CreateDirectory(dir);
     int slot;
@@ -122,7 +122,7 @@ static MENU_SELECT_FUNC(start_convert){
 static MENU_SELECT_FUNC(cancel_convert){(void)priv;(void)delta;if(running)cancel=1;}
 static MENU_UPDATE_FUNC(show_status){MENU_SET_VALUE("%s",running?"Working":"Ready");MENU_SET_RINFO("%d%%",percent);MENU_SET_HELP("%s",status);}
 static struct menu_entry entries[]={
- {.name="LUT JPEG",.update=show_status,.help="Experimental RAW to LUT to JPEG. 600D.102 only.",.submenu_width=710,
+ {.name="LUT JPEG",.select=menu_open_submenu,.icon_type=IT_SUBMENU,.update=show_status,.help="Experimental RAW to LUT to JPEG. 600D.102 only.",.submenu_width=710,
  .children=(struct menu_entry[]){
   {.name="Film LUT",.priv=&selected,.min=0,.max=2,.choices=CHOICES("Portra 400","Ektar 100","Tri-X 400"),.help="Real LUT processing; does not change ISO or Canon Picture Style."},
   {.name="Convert latest RAW",.select=start_convert,.help="After shooting: SET to create a new 720x480 JPEG.",.help2="Canon RAW/RAW+JPEG required. Output: ML/LUTOUT. Originals kept."},
@@ -130,7 +130,7 @@ static struct menu_entry entries[]={
   {.name="Cancel conversion",.select=cancel_convert,.help="Stop processing; source RAW is preserved."},MENU_EOL}},
 };
 static int registered;
-unsigned int lutjpeg_abi(void){return 0x4c554932;}
+unsigned int lutjpeg_abi(void){return 0x4c554933;}
 unsigned int lutjpeg_bootstrap(void){if(!registered){menu_add("Shoot",entries,COUNT(entries));registered=1;}return 0;}
 /* Module shutdown must wait for cancellation/close; loader ignores deinit returns. */
 unsigned int lutjpeg_shutdown(void){cancel=1;while(running)msleep(20);if(registered){menu_remove("Shoot",entries,COUNT(entries));registered=0;}return 0;}

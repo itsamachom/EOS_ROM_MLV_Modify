@@ -45,8 +45,17 @@ assert sha256(payload['ML-SETUP.FIR']) == '7e33d8a2a71ad92c412d291fb0ecb6de0b940
 assert {Path(n).stem for n in payload if n.endswith('.mo')} == {'adv_int','autoexpo','deflick','dual_iso','ettr','file_man','img_name','pic_view','arkanoid','lua','lutjpeg'}
 for name in ['LOOK00.LUT','LOOK02.LUT','LOOK07.LUT']:
     assert payload['ML/LUTDATA/'+name]==(root/'firmware/data/lutjpeg'/name).read_bytes()
-assert b'LUT JPEG loader' in binary
+assert b'ML/LUTDATA/LUTJPEG.BIN' in binary
+assert b'Open menu' in binary
+assert 'ML/LUTDATA/DIRECT.ON' in payload
+assert 'ML/SETTINGS/lutjpeg.en' not in payload
+import zlib
+hdr=struct.unpack('<16I',payload['ML/LUTDATA/LUTJPEG.BIN'][:64])
+assert hdr[13]==zlib.crc32(binary) and hdr[14]==len(binary)
+assert hdr[11]==zlib.crc32(payload['ML/modules/600D_102.sym'])
+assert hdr[15]==zlib.crc32(payload['ML/LUTDATA/LUTJPEG.BIN'][:60])
 assert b'ML/LUTLOAD.LOG' in binary
+assert b'Module startup busy; retry' not in binary
 assert b'lutjpeg_bootstrap' in payload['ML/modules/lutjpeg.mo']
 assert b'lutjpeg_abi' in payload['ML/modules/lutjpeg.mo']
 assert payload['ML/LUTDATA/COPYING']==(root/'firmware/modules/lutjpeg/upstream/COPYING').read_bytes()

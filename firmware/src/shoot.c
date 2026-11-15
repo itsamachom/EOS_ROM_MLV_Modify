@@ -3363,14 +3363,20 @@ extern MENU_UPDATE_FUNC(lcd_release_display);
 extern int voice_tags; // beep.c
 
 #include "lutjpeg-loader-600d.h"
+#ifdef CONFIG_600D
+extern MENU_SELECT_FUNC(photo_tone_open_picker);
+#endif
 static struct menu_entry shoot_menus[] = {
     #ifdef CONFIG_600D
     {
-        .name = "LUT JPEG loader",
-        .select = photo_lut_load_select,
-        .update = photo_lut_load_update,
-        .icon_type = IT_ACTION,
-        .help = "SET: load LUT engine directly, without the Modules page.",
+        .name = "FLIM TONE",
+        .select = menu_open_submenu,
+        .help = "Open the film picker or LUT JPEG conversion.",
+        .children = (struct menu_entry[]) {
+            {.name="Open menu",.select=photo_tone_open_picker,.icon_type=IT_ACTION,.help="Open the native JPEG film picker."},
+            {.name="LUT JPEG",.select=photo_lut_load_select,.update=photo_lut_load_update,.icon_type=IT_ACTION,.help="Load LUT JPEG directly; no Modules page needed."},
+            MENU_EOL,
+        },
     },
     #endif
     #ifdef FEATURE_HDR_BRACKETING

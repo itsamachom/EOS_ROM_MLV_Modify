@@ -1,10 +1,18 @@
 {
-  "release": "v3r6-tone8",
+  "release": "v3r6-lut3",
   "kind": "production UI host capture, simulated properties",
   "color_effect_preview": false,
   "selection_animation": "Three cached-art selection frames; GIF40ms illustrates the transition, not measured camera timing",
   "animation": "Illustration of acknowledged settings stages, not measured camera latency or post-shot processing",
   "files": [
+    {
+      "file": "film-menu-en.png",
+      "sha256": "f88e0d7c85b65b11dba80b344ac7f2b48436307cc5cb42f20fbb25f1a0d2e734"
+    },
+    {
+      "file": "film-menu-th.png",
+      "sha256": "6da2f31ef344f6dc292e3ba90ff77029097b9265d311b1c6d3a4e3b92510cbe6"
+    },
     {
       "file": "tone-active-en.png",
       "sha256": "c13be36ef5e79627b19972077b03ad4e3de211747ce099ba14959ea60117710d"

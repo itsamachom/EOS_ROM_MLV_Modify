@@ -29,7 +29,6 @@ static const struct photo_item photo_shoot[] = {
     {"Mirror Lockup", "Shoot", "Mirror Lockup"},
     {"Flash Tweaks", "Shoot", "Flash Tweaks"},
     {"Shoot Preferences", "Shoot", "Shoot Preferences"},
-    {"LUT JPEG", "Shoot", "LUT JPEG"},
 };
 static const struct photo_item photo_focus[] = {
     {"Trap Focus", "Focus", "Trap Focus"},
@@ -146,13 +145,11 @@ static struct menu_entry * photo_resolve(const struct photo_item * item, struct 
         if (!streq(m->name, item->menu)) continue;
         *parent = m;
         if (!item->entry) return NULL;
-        struct menu_entry * lut_loader = NULL;
         for (struct menu_entry * e = m->children; e; e = e->next) {
             if (e->shidden || e->placeholder) continue;
             if (streq(e->name, item->entry)) return e;
-            if (streq(item->entry,"LUT JPEG") && streq(e->name,"LUT JPEG loader")) lut_loader=e;
         }
-        return lut_loader;
+        return NULL;
     }
     return NULL;
 }
@@ -195,6 +192,11 @@ static void photo_text(int font, int x, int y, int width, const char * text)
 }
 
 #include "photo-tone-600d.h"
+void photo_tone_open_picker(void *priv,int delta) {
+    (void)priv;(void)delta;take_semaphore(menu_sem,0);
+    photo_tone_opened=1;photo_tone_confirm=0;
+    give_semaphore(menu_sem);menu_redraw();
+}
 
 static void photo_read_info(struct menu_entry * entry, struct menu_display_info * info)
 {
@@ -223,7 +225,15 @@ static struct menu_entry * photo_detail_entry(struct menu_entry * root, int inde
         for (struct menu_entry * e = root->children; e; e = e->next)
         {
             if (!is_visible(e) || e->placeholder) continue;
-            if (n == index) result = e;
+            if (n == index) {
+                result=e;
+                if(streq(root->name,"FLIM TONE") && streq(e->name,"LUT JPEG")) {
+                    struct menu *parent;
+                    const struct photo_item lut={"LUT JPEG","Shoot","LUT JPEG"};
+                    struct menu_entry *engine=photo_resolve(&lut,&parent);
+                    if(engine)result=engine;
+                }
+            }
             n++;
         }
     }
@@ -399,7 +409,7 @@ static int photo_menu_draw(void)
     photo_display_identity.valid = 0;
     photo_display_page = page_index;
     photo_display_item = index;
-    if (item->entry && streq(item->entry,"FLIM TONE"))
+    if (item->entry && streq(item->entry,"FLIM TONE") && !entry)
     {
         photo_detail_row(0,"FLIM TONE","SET: Open",0);
         snprintf(help,sizeof(help),"%d native JPEG presets; no RAW development.",PHOTO_TONE_COUNT);
@@ -612,11 +622,6 @@ static int photo_menu_key_locked(int key, struct photo_pending_action * pending)
     if (photo_pane < PHOTO_DETAILS && (right || set || q))
     {
         const struct photo_item * item = &page->items[photo_selection[photo_page_index]];
-        if (photo_pane == PHOTO_ITEMS && item->entry && streq(item->entry,"FLIM TONE"))
-        {
-            photo_tone_opened=1;photo_tone_confirm=0;
-            return 1;
-        }
         if (photo_pane == PHOTO_ITEMS && !item->entry)
         {
             struct menu * parent;
@@ -642,7 +647,8 @@ static int photo_menu_key_locked(int key, struct photo_pending_action * pending)
             photo_armed_identity = photo_display_identity;
             photo_editing = 1; photo_confirm = 0;
         }
-        else if (action && streq(e->name,"LUT JPEG loader"))
+        else if (action && page->items[photo_selection[photo_page_index]].entry && streq(page->items[photo_selection[photo_page_index]].entry,"FLIM TONE") &&
+                 (streq(e->name,"Open menu") || streq(e->name,"LUT JPEG")))
         {
             /* Loading the requested engine is reversible; no second confirmation. */
             photo_invalidate();
