@@ -56,3 +56,7 @@ The v3r6-lut2 fix uses Codex/LLM assistance for the always-present core LUT load
 The v3r6-lut3 experiment uses Codex/LLM assistance for the requested FLIM TONE two-item submenu, offline binding/rebasing and direct RAM image loader independent of camera-side TCC/startup readiness, integrity/core-match validation, direct-engine ownership/shutdown, correct char-pointer card-drive paths and faithful fixtures, tests and packaging. The underlying credited M-Film RAW/LUT/JPEG engine and three color tables are unchanged. ARM relocation arithmetic and loader logic were tested; actual execution on 600D/QEMU remains unverified.
 
 - v3r6-lut5: Codex/LLM-assisted automatic startup/RAW format request, bounded capture queue, large-JPEG integration, animated bilingual progress renderer, complete attributed Caduceus recipe-data import and independent Canon colour interpretation, illustrative gallery, tests and packaging. Imported recipe JSON and CC0 photographic inputs retain their original authorship and licenses. No upstream implementation code is represented as newly authored or as hardware validated.
+
+## v3r6-lut6
+
+Codex assisted with the seven-film UI/art, independently authored Live View mapping, 600D bridge, JPEG/preview error separation, DCIM companion backup/restore, persistent ML result viewer, test fixtures, documentation and packaging. Host renders and synthetic RAW tests are not hardware validation. See PHOTO_UI_V3R6-LUT6.md for camera-test limitations.

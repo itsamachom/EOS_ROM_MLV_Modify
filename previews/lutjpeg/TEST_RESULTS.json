@@ -10,20 +10,20 @@
     {
       "name": "portra400",
       "jpeg_sha256": "389302d3c958e48e768c5cc6afb9deaa946bb5f82ba3d4845eb124502fe96c81",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 219 ms, expose 16, finish 25, jpeg 21, palette 19, big print 0 (0 x 0), write 0\nJPEG size: 720x480\nHost peak processing allocation: 5542696 bytes; 33 steps\n"
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 192 ms, expose 12, finish 24, jpeg 20, palette 17, big print 0 (0 x 0), write 1\nJPEG size: 720x480\nHost peak processing allocation: 5539240 bytes; 31 steps\n"
     },
     {
       "name": "ektar100",
       "jpeg_sha256": "e6ab910d32b059c09a5cbb522d16756479353fb9c5924eb3ee2a1328da27b5bd",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 225 ms, expose 14, finish 29, jpeg 22, palette 22, big print 0 (0 x 0), write 0\nJPEG size: 720x480\nHost peak processing allocation: 5542696 bytes; 35 steps\n"
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 205 ms, expose 13, finish 25, jpeg 18, palette 18, big print 0 (0 x 0), write 1\nJPEG size: 720x480\nHost peak processing allocation: 5539240 bytes; 32 steps\n"
     },
     {
       "name": "trix400",
       "jpeg_sha256": "51698ff1eed48225ba4ee35c1d5dd6365183d0072fa6bc5c90361ac338d86b06",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 208 ms, expose 13, finish 25, jpeg 35, palette 31, big print 0 (0 x 0), write 1\nJPEG size: 720x480\nHost peak processing allocation: 5542696 bytes; 34 steps\n"
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 211 ms, expose 14, finish 25, jpeg 21, palette 17, big print 0 (0 x 0), write 0\nJPEG size: 720x480\nHost peak processing allocation: 5539240 bytes; 33 steps\n"
     }
   ],
-  "adapter_checks": "PASS actual automatic adapter: baseline, new-shot detection, stable RAW, film snapshot, burst queue, overflow, cancellation, settings, output collisions, DMA and I/O failure cleanup",
+  "adapter_checks": "PASS seven-film automatic adapter: Canon 8.3 fault reproduction, JPEG kept on optional print failure, DCIM companion, RAW kept, persistent on-camera review/palette, counts, queue, DMA, cancel and I/O faults",
   "large_output_checks": [
     {
       "index": 17,
@@ -31,7 +31,7 @@
         2601,
         1732
       ],
-      "host_log": "dev: a 2601 x 1732 print too (the sensor 2 x 2 to a pixel, 26396 KB in 26 pieces)\ndev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 286 ms, expose 9, finish 32, jpeg 0, palette 19, big print 876 (2601 x 1732), write 3\nJPEG size: 2601x1732\nHost peak processing allocation: 33336554 bytes; 97 steps\n"
+      "host_log": "dev: a 2601 x 1732 print too (the sensor 2 x 2 to a pixel, 26396 KB in 26 pieces)\ndev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 268 ms, expose 10, finish 31, jpeg 0, palette 19, big print 802 (2601 x 1732), write 1\nJPEG size: 2601x1732\nHost peak processing allocation: 33333098 bytes; 92 steps\n"
     },
     {
       "index": 37,
@@ -39,7 +39,7 @@
         2601,
         1732
       ],
-      "host_log": "dev: a 2601 x 1732 print too (the sensor 2 x 2 to a pixel, 26396 KB in 26 pieces)\ndev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 299 ms, expose 11, finish 22, jpeg 0, palette 19, big print 685 (2601 x 1732), write 1\nJPEG size: 2601x1732\nHost peak processing allocation: 33336554 bytes; 96 steps\n"
+      "host_log": "dev: a 2601 x 1732 print too (the sensor 2 x 2 to a pixel, 26396 KB in 26 pieces)\ndev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 279 ms, expose 10, finish 16, jpeg 0, palette 17, big print 673 (2601 x 1732), write 1\nJPEG size: 2601x1732\nHost peak processing allocation: 33333098 bytes; 94 steps\n"
     }
   ],
   "checks": [

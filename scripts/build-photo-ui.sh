@@ -11,7 +11,9 @@ fi
 if [[ -d /workspace/ml-env/venv/bin ]]; then
     export PATH=/workspace/ml-env/venv/bin:$PATH
 fi
+python3 "$project_root/tools/generate_photo_thai.py"
 python3 "$project_root/tools/bake_lutjpeg_tables.py" --check
+python3 "$project_root/tools/bake_film_liveview.py" --check
 "$arm_bin/arm-none-eabi-gcc" --version | head -1
 cd "$project_root/firmware"
 if [[ ${1:-} == --clean ]]; then

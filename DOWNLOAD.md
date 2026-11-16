@@ -1,3 +1,13 @@
+# รุ่นทดลองล่าสุด: v3r6-lut6 / 600D 1.0.2
+
+[ดาวน์โหลด UPDATE](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/v3r6-lut6/downloads/v3r6-lut6/camera/600D-102-Thai-Menu-v3r6-lut6-UPDATE.zip) · [วิธีใช้และข้อจำกัด](PHOTO_UI_V3R6-LUT6.md) · [SHA256](downloads/v3r6-lut6/SHA256SUMS)
+
+เลือกฟิล์มหน้าเดียว 7 สูตร พร้อม Live View แบบประมาณและ JPEG หลังถ่าย รุ่นทดลองยังไม่ทดสอบบนกล้องจริง คัดลอก autoexec.bin และ ML/ ทั้งชุด
+
+---
+
+เอกสารและลิงก์รุ่นเก่าด้านล่าง:
+
 # FIRMWARE ADD-ON Thai-Menu v3r5 — ดาวน์โหลด / Downloads
 
 Canon EOS 600D / Canon firmware **1.0.2** · Public Experimental

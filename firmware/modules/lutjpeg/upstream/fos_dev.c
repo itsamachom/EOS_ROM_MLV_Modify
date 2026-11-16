@@ -2789,7 +2789,8 @@ static int dev_step(struct fos_dev *d, int budget_ms)
                     fos_port_free(d->sums); d->sums = 0; d->lin = 0;
                     /* the bigger print comes after the palette, which its zoom file is in; it is the JPEG then */
                     if (!d->big) { fos_port_free(d->glow); d->glow = 0; }
-                    d->stage = d->big ? ST_QUANT : d->jpeg[0] ? ST_JPEG : ST_QUANT;
+                    d->stage = d->big ? (d->print[0] || d->zoom[0] ? ST_QUANT : ST_BIG) : d->jpeg[0] ? ST_JPEG : ST_QUANT;
+                    if(d->stage==ST_BIG)d->row=-1;
                 }
                 break;
             case ST_JPEG:
@@ -2806,7 +2807,7 @@ static int dev_step(struct fos_dev *d, int budget_ms)
                     fos_port_log(msg);
                     return fail(d,"JPEG write failed");
                 }
-                d->stage = ST_QUANT;
+                d->stage = d->print[0] ? ST_QUANT : ST_WRITE;
                 break;
             }
             case ST_QUANT:
@@ -2830,9 +2831,12 @@ static int dev_step(struct fos_dev *d, int budget_ms)
                 }
                 break;
             case ST_WRITE:
-                if (!write_print(d->print, d->film, d->frame, d->when, d->fstop, d->pal, d->npal, d->idx, d->thumb,
+                if (d->print[0] && !write_print(d->print, d->film, d->frame, d->when, d->fstop, d->pal, d->npal, d->idx, d->thumb,
                                  d->rows_axis_x ? d->ox0 : 0, d->rows_axis_x ? d->ow : W))
-                    return fail(d, "can't write the print");
+                    {
+                        if(!d->jpeg[0])return fail(d,"Cannot save preview image");
+                        fos_port_log("Auxiliary preview failed; JPEG is kept");
+                    }
                 d->stage = ST_DONE;
                 return 1000;
             case ST_DONE:
@@ -2923,3 +2927,8 @@ int fos_dev_preview(const struct fos_dev *d, uint8_t *lum, int w, int h)
     }
     return 1;
 }
+
+const uint8_t *fos_dev_screen_rgb(const struct fos_dev *d){return d && d->stage==ST_DONE?d->rgb:0;}
+
+const uint8_t *fos_dev_screen_indices(const struct fos_dev *d){return d && d->stage==ST_DONE?d->idx:0;}
+const uint8_t *fos_dev_screen_palette(const struct fos_dev *d){return d && d->stage==ST_DONE?(const uint8_t*)d->pal:0;}

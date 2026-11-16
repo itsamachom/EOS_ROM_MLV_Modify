@@ -51,6 +51,10 @@ assert {Path(n).stem for n in payload if n.endswith('.mo')} == {'adv_int','autoe
 for name in ['LOOK00.LUT','LOOK02.LUT','LOOK07.LUT']:
     assert payload['ML/LUTDATA/'+name]==(root/'firmware/data/lutjpeg'/name).read_bytes()
 assert payload['ML/LUTDATA/RECIPES.json'] == (root/'firmware/data/lutjpeg/RECIPES.json').read_bytes()
+if release == 'v3r6-lut6':
+    for name in ['FILM7.BIN'] + [f'LV{i:03d}.FLV' for i in [8,9,11,15,19,20,26]]:
+        assert payload['ML/LUTDATA/'+name] == (root/'firmware/data/lutjpeg'/name).read_bytes()
+    assert len([n for n in payload if n.endswith('.FLV')]) == 7
 table_info = json.loads(payload['ML/LUTDATA/TABLES.json'])
 catalog_bytes=payload['ML/LUTDATA/caduceus/CATALOG.json']
 assert sha256(catalog_bytes)==table_info['catalog_sha256']

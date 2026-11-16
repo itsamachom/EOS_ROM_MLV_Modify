@@ -3251,6 +3251,10 @@ int display_filter_enabled()
     mdf = module_display_filter_enabled();
     #endif
     
+    #ifdef CONFIG_600D
+    extern int photo_film_filter_active(void);
+    mdf = mdf || photo_film_filter_active();
+    #endif
     int fp = focus_peaking_as_display_filter();
     if (!(defish_preview || anamorphic_preview || fp || mdf)) return 0;
     if (!zebra_should_run()) return 0;
@@ -3382,6 +3386,11 @@ void display_filter_step(int k)
     //~ if (!HALFSHUTTER_PRESSED) return;
     
     #ifdef CONFIG_MODULES
+    #ifdef CONFIG_600D
+    extern int photo_film_filter_update(void);
+    if(photo_film_filter_update()){}
+    else
+    #endif
     if (module_display_filter_update())
     {
     }

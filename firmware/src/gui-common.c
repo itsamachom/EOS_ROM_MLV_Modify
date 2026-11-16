@@ -505,6 +505,10 @@ int handle_common_events_by_feature(struct event * event)
     if (handle_zoom_overlay(event) == 0) return 0;
     #endif
 
+    #ifdef CONFIG_600D
+    extern int photo_film_key(int key);
+    if(photo_film_key(event->param)==0)return 0;
+    #endif
     if (handle_module_keys(event) == 0) return 0;
     if (handle_flexinfo_keys(event) == 0) return 0;
 

@@ -20,12 +20,16 @@
   "test_fixture": "tests/lutjpeg/mkcr2.c derives from upstream sim/tools/mkcr2.c; matrix/white level adjusted for synthetic 600D processing tests. Not a physical camera capture.",
   "fork_modifications": {
     "fos_dev.c": {
-      "description": "lut5: generated recipe identity; independent Canon row-based recipe FX after lookup; propagate small/large JPEG write failures. Original RAW decode/large geometry retained.",
-      "sha256": "1ae6551dbf4eb680f4846a0a2d33279749fb473d7fa518e02b2e3e6540c5e119"
+      "description": "lut6: retain lut5 recipe renderer; optional print failure no longer discards successful JPEG; expose completed preview buffers.",
+      "sha256": "135dc484bd1873454f281a6d23adfe1b009e066dd9969de3d41f0e4b38f400db"
     },
     "fos_looks.c": {
       "description": "Append generated neutral look identities for 128 external recipe tables. Original eight look models retained.",
       "sha256": "08932f8774f98f0e46fee33d9235f1f9876eea118b6289dd9498bc2e63adf0ee"
+    },
+    "fos_dev.h": {
+      "description": "lut6: 144-colour adaptive preview and accessors for the camera viewer; original RAW/JPEG processing interfaces retained.",
+      "sha256": "8913071400c935c4277bb3c5ff70e6550f35fced148ddf4c08bec05a3a653328"
     }
   }
 }

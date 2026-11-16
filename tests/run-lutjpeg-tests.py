@@ -45,6 +45,8 @@ with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch
  with Image.open(t/'fallback.JPG') as im:
   im.load();assert im.size==(720,480),im.size
  assert 'JPEG size: 720x480' in p.stderr
+ p=run([t/'host',8,root/'firmware/data/lutjpeg',t/'chart.CR2',t/'missing-parent/aux.PART',t/'kept.JPG'])
+ with Image.open(t/'kept.JPG') as kept:kept.load();assert kept.size==(720,480)
  # All failures must clean core allocations (host asserts balance returns to zero).
  (t/'missing').mkdir()
  run([t/'host',0,t/'missing',t/'chart.CR2',t/'bad.BMP',t/'bad.JPG'],ok=False)
@@ -69,6 +71,8 @@ with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch
  (t/'A:/DCIM/100CANON').mkdir(parents=True);(t/'A:/ML/LUTDATA').mkdir(parents=True)
  shutil.copy(t/'chart.CR2',t/'A:/DCIM/100CANON/IMG_0001.CR2')
  for f in (root/'firmware/data/lutjpeg').glob('*.LUT'):shutil.copy(f,t/'A:/ML/LUTDATA'/f.name)
+ for f in (root/'firmware/data/lutjpeg').glob('*.FLV'):shutil.copy(f,t/'ML/LUTDATA'/f.name)
+ shutil.copy(root/'firmware/data/lutjpeg/FILM7.BIN',t/'ML/LUTDATA/FILM7.BIN')
  p=run([t/'adapter'],cwd=t)
  assert hashlib.sha256((t/'A:/DCIM/100CANON/IMG_0001.CR2').read_bytes()).hexdigest()==original
  (proofs/'TEST_RESULTS.json').write_text(json.dumps({'kind':'Synthetic RAW processed by actual production core; not a camera photograph or camera timing','matrix':'600D','size':[720,480],'color_mae_portra_ektar':mae,'results':results,'adapter_checks':p.stdout.strip(),'large_output_checks':large_results,'checks':['ASAN/UBSAN','three distinct LUT JPEGs','monochrome output','DMA bounce chunk bounds','output collision avoidance','original RAW unchanged','cancel','write failure','missing RAW','missing/corrupt table','recipe revision mismatch','rename failure','truncated RAW','low memory']},indent=2)+'\n')

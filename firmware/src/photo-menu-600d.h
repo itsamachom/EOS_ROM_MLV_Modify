@@ -200,6 +200,9 @@ static void photo_text(int font, int x, int y, int width, const char * text)
 /* Exported for the bound film lab's progress screen. */
 void photo_film_text(int font,int x,int y,int width,const char *text){photo_text(font,x,y,width,text);}
 #include "photo-tone-600d.h"
+#ifndef PHOTO_TONE_TEST_ADAPTER
+#include "film-core-600d.h"
+#endif
 void photo_tone_open_picker(void *priv,int delta) {
     (void)priv;(void)delta;take_semaphore(menu_sem,0);
     photo_tone_opened=1;photo_tone_confirm=0;
@@ -339,6 +342,9 @@ static void photo_detail_row(int row, const char * name, const char * value, int
 static int photo_menu_draw(void)
 {
     take_semaphore(menu_sem, 0);
+    #ifndef PHOTO_TONE_TEST_ADAPTER
+    if(photo_film_draw()){give_semaphore(menu_sem);return 1;}
+    #endif
     if (photo_tone_opened) { int result=photo_tone_draw();give_semaphore(menu_sem);return result; }
     if (photo_native_busy)
     {
@@ -656,7 +662,7 @@ static int photo_menu_key_locked(int key, struct photo_pending_action * pending)
             photo_editing = 1; photo_confirm = 0;
         }
         else if (action && page->items[photo_selection[photo_page_index]].entry && streq(page->items[photo_selection[photo_page_index]].entry,"FLIM TONE") &&
-                 (streq(e->name,"Open menu") || streq(e->name,"LUT JPEG")))
+                 (streq(e->name,"Open menu") || streq(e->name,"LUT JPEG") || streq(e->name,"Choose film") || streq(e->name,"View film photo")))
         {
             /* Loading the requested engine is reversible; no second confirmation. */
             photo_invalidate();

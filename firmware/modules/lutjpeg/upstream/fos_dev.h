@@ -47,7 +47,7 @@ void fos_film_color(const struct fos_look *f, const float lin[3], float out[3]);
 #define FOS_PRINT_W         720
 #define FOS_PRINT_H         480
 #endif
-#define FOS_PRINT_COLOURS   240         /* palette indices 1..240 */
+#define FOS_PRINT_COLOURS   144         /* palette indices 1..240 */
 #define FOS_FIXED_BASE      241         /* 241..254: the same in every palette */
 #define FOS_FIXED_N         14          /* 241..254 */
 #define FOS_THUMB_W         120
@@ -135,6 +135,9 @@ struct fos_dev *fos_dev_start(const char *cr2, const char *print, int film, int 
  * is written, or < 0 when the frame can't be developed */
 int fos_dev_step(struct fos_dev *d, int budget_ms);
 /* the finished frame, small, RGB: for the contact sheet and the animation */
+const uint8_t *fos_dev_screen_rgb(const struct fos_dev *d);
+const uint8_t *fos_dev_screen_indices(const struct fos_dev *d);
+const uint8_t *fos_dev_screen_palette(const struct fos_dev *d);
 const uint8_t *fos_dev_thumb(const struct fos_dev *d);
 const char *fos_dev_error(const struct fos_dev *d);
 /* what it is doing, for the darkroom's animation */

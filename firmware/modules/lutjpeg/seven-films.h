@@ -1,0 +1,4 @@
+/* Trial set: one visible choice per complete recipe. */
+static const int films[]={8,9,11,15,19,20,26};
+static const char *film_names[]={"Velvia","Astia","Classic Neg","Bleach Byp.","Gold 200","Ektachrome","Fujicolor200"};
+static const char *film_notes[]={"Saturated landscape slide film: deep skies, dense greens, crushed shadows. Split: magenta-leaning shade.","Soft slide film: gentle contrast, clean skin, slightly richer skies.","Superia-style negative: teal-green cast, punchy mids, light skies; cyan-green shadows, magenta highlights.","Silver-retained cinema look: near-monochrome, harsh contrast. Split: steely blue-cyan shadows.","Golden consumer negative: sunny yellows, muted cyan skies. Split: yellow-tinted whites.","Clean, cool slide film: neutral skin, bright saturated blues. Split: blue shade.","Fujicolor C200 (J. Bloomer, om-recipes): warm yellows, fresh greens, soft contrast. Split: green-yellow shadows."};
