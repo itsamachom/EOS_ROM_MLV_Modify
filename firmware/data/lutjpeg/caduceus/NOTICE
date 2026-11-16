@@ -1,0 +1,40 @@
+Caduceus — firmware patches for the Olympus PEN E-P7
+Copyright 2026 cakelesscoder
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository contains no Olympus / OM Digital Solutions firmware. The builder downloads the
+official firmware from OM's own server on the user's machine.
+
+Third-party:
+- external/oly_fw_analysis (git submodule, fishcu, pinned at a61498e): PEN-F firmware research, the container
+  format tools and the MN103 emulator harness, used by the developer build and verification tools only. It is not
+  part of Caduceus and keeps its own licences: its original contributions are Apache-2.0 (since a61498e), with the
+  exceptions it documents in its RIGHTS-AND-PROVENANCE.md (GPL-3.0 for the GNU simulator integration, font-derived
+  artwork, third-party material). It is not needed to build or install Caduceus.
+- webapp/src/om3.ts, webapp/src/om3names.ts, webapp/src/split.ts, webapp/src/om3films.ts, webapp/src/data/om3films.json
+  (its film sims, androidfanman's own designs) and webapp/tests/om3.test.ts are from Caduceus for OM-3
+  (androidfanman/caduceus-om3 @ c209b69, its v0.29.5, Apache-2.0, Copyright 2026 androidfanman), unchanged, with a
+  source line added to each .ts file (the test file also has our library path and three cases skipped). The OM-3 WB
+  mode list, Kelvin range and film-WB parser in webapp/src/pack.ts (WB_MODES, KELVIN, parseFilmWb) are from its
+  webapp/src/pack.ts at the same commit. webapp/tests/om3-v0.29.5-looks.ts holds its releases/v0.29.5/LOOKS.BIN
+  (its 20 film sims) as base64, as a test fixture.
+- The colour-grain method (CPU grain on the developed photo through the bus window) follows Caduceus for OM-3
+  (androidfanman/caduceus-om3, Apache-2.0), research/grain/model.py and firmware/src/xblock.s. The E-P7 code in
+  patches/grain_cpu is our own.
+- The Control Panel preview's before / after divider (the original on a clipped canvas over the look, a draggable
+  line set by a --cut variable) follows the design of the Look Lab panel in Caduceus for OM-3 (androidfanman/caduceus-om3,
+  Apache-2.0). The code in webapp/src/main.ts and webapp/src/style.css is our own.
+- webapp/public/fonts/om3label.woff2: a renamed ASCII subset of DejaVu Sans Condensed (Bitstream Vera
+  licence; DejaVu changes public domain), see webapp/public/fonts/FONT-LICENSE.txt.
+- 65:24 aspect fixes adapted from flickering-star's work (fork of oly_fw_analysis), with thanks.
+  patches/aspect_fix (issue #23) uses that fork's site list and approach (branch ep7-aperture-ar, GPL-3.0);
+  the stubs and data there are written for our ids 6/7, see docs/ASPECT.md section 1i.
+- Community film recipes are credited to their authors in docs/LIBRARY_V1.md.
+
+"Olympus", "PEN", "OM SYSTEM" and film names are trademarks of their respective owners. Not affiliated
+with OM Digital Solutions, Fujifilm or Kodak.
+
+Research contributions:
+- E-M5 III 1.7 address-mapping correction and reproducibility notes: Roy Kittrell,
+  with AI-assisted preparation; static evidence only, no camera validation.

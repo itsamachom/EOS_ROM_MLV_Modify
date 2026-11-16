@@ -10,7 +10,8 @@ with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch
  core=[module/'catalog.c']+[up/n for n in ['fos_dev.c','fos_jpeg.c','fos_print.c','fos_looks.c']]
  flags=['gcc','-Werror=format','-Wno-error=format-truncation','-O1','-g','-DCONFIG_600D=1','-fsanitize=address,undefined','-fno-omit-frame-pointer','-I'+str(up),'-I'+str(root/'tests/lutjpeg')]
  def run(args,ok=True,**kw):
-  p=subprocess.run(list(map(str,args)),env=env,capture_output=True,text=True,**kw)
+  run_env=kw.pop('env',env)
+  p=subprocess.run(list(map(str,args)),env=run_env,capture_output=True,text=True,**kw)
   assert (p.returncode==0)==ok,(args,p.returncode,p.stderr)
   assert 'runtime error:' not in p.stderr and 'ERROR: AddressSanitizer' not in p.stderr,p.stderr
   return p
@@ -30,6 +31,20 @@ with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch
  mae=float(np.mean(np.abs(arrays[0]-arrays[1])));assert mae>2,mae
  assert np.max(np.abs(arrays[2][:,:,0]-arrays[2][:,:,1]))<=2
  assert np.max(np.abs(arrays[2][:,:,1]-arrays[2][:,:,2]))<=2
+ # Verify current Caduceus colour/mono outputs and the existing large RAW path.
+ large_results=[]
+ for index,label in [(17,'caduceus-portra'),(37,'caduceus-acros')]:
+  p=run([t/'host',index,root/'firmware/data/lutjpeg',t/'chart.CR2',t/(label+'.BMP'),t/(label+'.JPG')],env=dict(env,LUT_TEST_SIZE='2',LUT_TEST_MEM=str(64*1024*1024)))
+  with Image.open(t/(label+'.JPG')) as im:
+   im.load();assert im.size==(2601,1732),im.size
+   if index==37:
+    a=np.asarray(im.convert('RGB')).astype(int);assert np.max(np.abs(a[:,:,0]-a[:,:,1]))<=2
+  large_results.append({'index':index,'size':[2601,1732],'host_log':p.stderr})
+ # Low-memory large request must remain decodable and report the actual fallback.
+ p=run([t/'host',17,root/'firmware/data/lutjpeg',t/'chart.CR2',t/'fallback.BMP',t/'fallback.JPG'],env=dict(env,LUT_TEST_SIZE='2',LUT_TEST_MEM=str(8*1024*1024)))
+ with Image.open(t/'fallback.JPG') as im:
+  im.load();assert im.size==(720,480),im.size
+ assert 'JPEG size: 720x480' in p.stderr
  # All failures must clean core allocations (host asserts balance returns to zero).
  (t/'missing').mkdir()
  run([t/'host',0,t/'missing',t/'chart.CR2',t/'bad.BMP',t/'bad.JPG'],ok=False)
@@ -49,10 +64,12 @@ with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch
  p=subprocess.run([str(t/'host'),'0',str(root/'firmware/data/lutjpeg'),str(t/'chart.CR2'),str(t/'bad.BMP'),str(t/'bad.JPG')],env=dict(env,LUT_TEST_MEM='1048576'),capture_output=True,text=True)
  assert p.returncode==2 and 'runtime error:' not in p.stderr,p.stderr
  # Actual adapter, using mocked Canon FIO which verifies DMA buffers and chunk sizes.
+ (t/'ML/SETTINGS').mkdir(parents=True)
+ (t/'ML/LUTDATA').mkdir(parents=True)
  (t/'A:/DCIM/100CANON').mkdir(parents=True);(t/'A:/ML/LUTDATA').mkdir(parents=True)
  shutil.copy(t/'chart.CR2',t/'A:/DCIM/100CANON/IMG_0001.CR2')
  for f in (root/'firmware/data/lutjpeg').glob('*.LUT'):shutil.copy(f,t/'A:/ML/LUTDATA'/f.name)
  p=run([t/'adapter'],cwd=t)
  assert hashlib.sha256((t/'A:/DCIM/100CANON/IMG_0001.CR2').read_bytes()).hexdigest()==original
- (proofs/'TEST_RESULTS.json').write_text(json.dumps({'kind':'Synthetic RAW processed by actual production core; not a camera photograph or camera timing','matrix':'600D','size':[720,480],'color_mae_portra_ektar':mae,'results':results,'adapter_checks':p.stdout.strip(),'checks':['ASAN/UBSAN','three distinct LUT JPEGs','monochrome output','DMA bounce chunk bounds','output collision avoidance','original RAW unchanged','cancel','write failure','missing RAW','missing/corrupt table','recipe revision mismatch','rename failure','truncated RAW','low memory']},indent=2)+'\n')
+ (proofs/'TEST_RESULTS.json').write_text(json.dumps({'kind':'Synthetic RAW processed by actual production core; not a camera photograph or camera timing','matrix':'600D','size':[720,480],'color_mae_portra_ektar':mae,'results':results,'adapter_checks':p.stdout.strip(),'large_output_checks':large_results,'checks':['ASAN/UBSAN','three distinct LUT JPEGs','monochrome output','DMA bounce chunk bounds','output collision avoidance','original RAW unchanged','cancel','write failure','missing RAW','missing/corrupt table','recipe revision mismatch','rename failure','truncated RAW','low memory']},indent=2)+'\n')
  print('PASS production RAW/LUT/JPEG and camera adapter; Portra/Ektar RGB mean difference:',round(mae,2))

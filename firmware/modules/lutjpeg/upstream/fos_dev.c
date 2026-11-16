@@ -1908,6 +1908,33 @@ static __attribute__((noinline)) void dither_rows(struct fos_dev *d, int y0, int
     }
 }
 
+/* Fork: Canon approximation of recipe spatial FX, after the external colour
+ * table, on each output row. Uses existing scratch memory, no extra full image.
+ * This is a horizontal soft-light/local-contrast approximation, not the EP7 ISP. */
+#include "../film-effects.h"
+static void recipe_effect(struct fos_dev *d,uint8_t *rgb,int w,uint16_t *scratch)
+{
+    if(d->film<8 || d->film>=(int)(sizeof(film_effects)/sizeof(film_effects[0])))return;
+    const struct film_effect *fx=&film_effects[d->film];
+    if(!fx->kind || !fx->strength)return;
+    int radius=w/160;if(radius<2)radius=2;
+    for(int c=0;c<3;c++) {
+        unsigned sum=0;int left=0,right=0;
+        for(int x=0;x<w;x++) {
+            int end=x+radius;if(end>=w)end=w-1;
+            while(right<=end)sum+=rgb[3*right+++c];
+            while(left<x-radius)sum-=rgb[3*left+++c];
+            scratch[3*x+c]=sum/(right-left);
+        }
+    }
+    for(int x=0;x<w;x++)for(int c=0;c<3;c++) {
+        int v=rgb[3*x+c],blur=scratch[3*x+c],out;
+        if(fx->kind==2)out=v+(v-blur)*fx->strength/8;
+        else out=v+((blur*fx->tint[c]/256)-v)*fx->strength/20;
+        rgb[3*x+c]=(uint8_t)(out<0?0:out>255?255:out);
+    }
+}
+
 /* ---------------------------------------------------------------- one frame */
 
 struct fos_dev *fos_dev_start(const char *cr2, const char *print, int film, int frame,
@@ -2345,6 +2372,7 @@ static __attribute__((noinline)) void stage_finish(struct fos_dev *d, int y)
     finish_pos(d->lin + 3 * (y * W + px0), d->pos, pw, 4096 - d->vig_y[y], d->vig_x,
                d->glow ? grow : 0, d->gx + px0, d->fx + px0, hal);
     finish_lut(d->pos, o + 3 * px0, pw);
+    recipe_effect(d,o+3*px0,pw,(uint16_t*)d->pos);
     int grain = (int) (L->grain * 255 * 0.55f * 256);
     if (grain) d->seed = finish_grain(o + 3 * px0, pw, d->seed, grain, L->mono);
 }
@@ -2579,6 +2607,7 @@ static __attribute__((noinline)) void big_finish(struct fos_dev *d, int y, uint8
     }
     finish_pos(d->blin, d->bcam, bw, 4096 - d->bvig_y[y], d->bvig_x, d->glow ? grow : 0, d->bgx, d->bfx, hal);
     finish_lut(d->bcam, rgb, bw);
+    recipe_effect(d,rgb,bw,d->bcam);
     int grain = (int) (L->grain * 255 * 0.55f * 256);
     if (grain) d->seed = big_grain(rgb, bw, d->seed, grain, L->mono);
     stamp_row(d->smask[1], d->sm_w[1], d->sm_h[1], rgb, bw, d->bh, y);
@@ -2775,6 +2804,7 @@ static int dev_step(struct fos_dev *d, int budget_ms)
                     char msg[200];
                     snprintf(msg, sizeof(msg), "dev: can't write %s", d->jpeg);
                     fos_port_log(msg);
+                    return fail(d,"JPEG write failed");
                 }
                 d->stage = ST_QUANT;
                 break;
@@ -2795,6 +2825,7 @@ static int dev_step(struct fos_dev *d, int budget_ms)
                 if (d->row >= d->bh)
                 {
                     big_end(d);
+                    if(d->bfail)return fail(d,"JPEG write failed");
                     d->stage = ST_WRITE;
                 }
                 break;

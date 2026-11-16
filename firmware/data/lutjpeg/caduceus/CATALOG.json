@@ -1,0 +1,10185 @@
+{
+  "repository": "https://github.com/cakelesscoder/caduceus-ep7",
+  "commit": "a0c351f5398a4e7b69738103bda3e5c92f81971d",
+  "license": "Apache-2.0",
+  "scope": "All nine published webapp pack JSON files, including both legacy Standard revisions; no recipe fields removed. Data assets retained separately from GPL processing code.",
+  "files": {
+    "standard-1.2.json": "3792e73287872214a7ac038e202eea30ec799344cea8e035322d0fa1e16f30d8",
+    "tokyo-days-1.0.json": "840d55bf3a36d8bfb593167bc4f7beca1f6dc2ebee53a7261d2cec002271eeba",
+    "tokyo-nights-1.0.json": "9cb652c69d44625da726adb75174fd9a817249526c31ad24066885c079c79239",
+    "summer-1.0.json": "b018ad56a205552419867cdd8807bc1940a2465f51ccfbd02753158c4b8f0145",
+    "autumn-1.0.json": "9c193dbaef96ef05c54b6e98f6af87b7b35e0ba6f8a0f7298436ed78b82bf095",
+    "winter-1.0.json": "41e04b138b50e6e03a0482f9ccc8269dbe32c54aae6a39ae73b656cf75ccb5cc",
+    "film-noir-1.0.json": "db932d9f63b9a73130c64e10a688ff0d325c2bb5b58eb548f821d1365acfc8ca",
+    "standard-1.1.json": "ee5ea8589a4a1d435247e5830a6953d4adebeecc3029e0f9f3bfbb20c5ba2218",
+    "standard-1.0.json": "a243252271302a0d312dbcdddf2942ac12d50f41590a4025a2aab5f969c7facc"
+  },
+  "looks": [
+    {
+      "index": 8,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Velvia",
+        "notes": "Saturated landscape slide film: deep skies, dense greens, crushed shadows. Split: magenta-leaning shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          2,
+          2,
+          -2,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          4,
+          3,
+          3,
+          4,
+          3,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -4,
+          "midtones": 0,
+          "blacks": -2,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -4,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 4,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        },
+        "matrix": [
+          -4,
+          -2,
+          -4,
+          -4,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Astia",
+        "notes": "Soft slide film: gentle contrast, clean skin, slightly richer skies.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          0
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 10,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Cl. Chrome",
+        "notes": "Documentary look: muted greens and yellows, cyan skies, hard shadows.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          -1,
+          0,
+          0,
+          3,
+          1,
+          -2,
+          -2,
+          -2,
+          2,
+          0,
+          -2
+        ],
+        "light": [
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        "sat": [
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -3,
+          -2,
+          -2,
+          -1,
+          -3,
+          -3,
+          -3
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "matrix": [
+          4,
+          2,
+          2,
+          10,
+          2,
+          6
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Classic Neg",
+        "notes": "Superia-style negative: teal-green cast, punchy mids, light skies; cyan-green shadows, magenta highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          7,
+          6,
+          -4,
+          -3,
+          6,
+          7,
+          5,
+          0
+        ],
+        "light": [
+          -2,
+          -3,
+          -3,
+          -2,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -3,
+          -5,
+          -4
+        ],
+        "sat": [
+          -2,
+          -1,
+          -1,
+          1,
+          0,
+          -4,
+          -1,
+          -1,
+          0,
+          -3,
+          -3,
+          -3
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 4,
+          "shadows": -2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 4,
+            "shadows": -2,
+            "midtones": 1
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 4,
+          "hl": 1
+        },
+        "matrix": [
+          7,
+          1,
+          3,
+          1,
+          3,
+          7
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Provia 400",
+        "notes": "Fujichrome Provia 400X slide: magenta-red cast, lavender skies, rich blues, deep reds, dark greens, fast fall to black, fine grain. Advice: contrast +1.",
+        "kind": "colour",
+        "hue": [
+          -3,
+          -2,
+          -2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -2,
+          -1
+        ],
+        "sat": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 0,
+          "g_m": -3
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": -1,
+          "blacks": -1,
+          "whites": -3
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": -1
+          },
+          "contrast": 1
+        },
+        "matrix": [
+          0,
+          0,
+          -4,
+          -4,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "index": 13,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Reala Ace",
+        "notes": "Accurate, crisp modern negative: true hues, restrained greens.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -3,
+          -3,
+          -3,
+          -1,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -2,
+          -3,
+          -3,
+          -2
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 3,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 3,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 14,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Eterna",
+        "notes": "Cinema negative: flat, open shadows, quiet teal-leaning colour. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          -2,
+          -4,
+          -3,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          -1,
+          -1,
+          -2,
+          -3,
+          -3,
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sat": [
+          -1,
+          -1,
+          -2,
+          -1,
+          -1,
+          -2,
+          -3,
+          -4,
+          -1,
+          -2,
+          -2,
+          -2
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 4,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 4,
+            "midtones": 0
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "curve": "auto",
+        "matrix": [
+          6,
+          -2,
+          2,
+          8,
+          -4,
+          6
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Bleach Byp.",
+        "notes": "Silver-retained cinema look: near-monochrome, harsh contrast. Split: steely blue-cyan shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -2,
+          -3,
+          0,
+          0,
+          -3,
+          -7,
+          -5,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          -2,
+          -3,
+          -4,
+          -5,
+          -4,
+          -3,
+          -1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 4,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -2,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 4,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 7,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        },
+        "matrix": [
+          26,
+          5,
+          13,
+          5,
+          13,
+          26
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Kodachrome64",
+        "notes": "Rich deep reds, golden yellows, dense cyan-blue skies, olive greens. Split: warm highlights, slightly cool shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          -1,
+          -2,
+          -2,
+          -2,
+          -1,
+          -1,
+          -2,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2
+        ],
+        "sat": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          -1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 7,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "matrix": [
+          4,
+          0,
+          -8,
+          6,
+          -4,
+          4
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Portra 400",
+        "notes": "Warm pastel portrait negative: glowing skin, soft contrast. Split: peachy highlights.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -1
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 1
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "matrix": [
+          8,
+          1,
+          3,
+          1,
+          -2,
+          2
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Ektar 100",
+        "notes": "Ultra-vivid fine-grain negative: saturated reds and blues. Split: warm highlights, blue deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          1,
+          3,
+          3,
+          2,
+          0,
+          1,
+          1
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "matrix": [
+          -3,
+          -1,
+          -2,
+          -1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "index": 19,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Gold 200",
+        "notes": "Golden consumer negative: sunny yellows, muted cyan skies. Split: yellow-tinted whites.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          3,
+          2,
+          0,
+          0,
+          -1,
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          0,
+          2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 0,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 0,
+            "midtones": 1
+          }
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 0,
+          "hl": 1
+        },
+        "matrix": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          -6
+        ]
+      }
+    },
+    {
+      "index": 20,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Ektachrome",
+        "notes": "Clean, cool slide film: neutral skin, bright saturated blues. Split: blue shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          -1,
+          0,
+          0,
+          2,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          0
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        },
+        "matrix": [
+          0,
+          -2,
+          0,
+          -6,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "CineStill800",
+        "notes": "Tungsten cinema film: cool cast, red bloom (bloom_tint red: the glow's Cr spreads far more than its luma, docs/HALATION_RED.md section 8) plus red/orange light. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          2,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          0,
+          2,
+          3,
+          0,
+          0,
+          2,
+          2,
+          2,
+          -1,
+          -2,
+          -2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": -2,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 4,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 2,
+            "midtones": 0
+          }
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "curve": "auto",
+        "matrix": [
+          0,
+          -4,
+          0,
+          6,
+          -6,
+          0
+        ]
+      }
+    },
+    {
+      "index": 22,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Pro 400H",
+        "notes": "Airy pastel negative: minty greens, light cyan skies. Split: green-cyan shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "sat": [
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 3,
+          "midtones": 2,
+          "blacks": 1,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 3,
+            "midtones": 2
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        },
+        "matrix": [
+          -4,
+          0,
+          0,
+          4,
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "index": 23,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Faux IR",
+        "notes": "Infrared-inspired false colour (golden/orange foliage, deep blue skies). Not true Aerochrome: the hue range can't turn green red. Sat advice: strong (+3..+5). Split: blue shadows, orange highlights.",
+        "kind": "colour",
+        "hue": [
+          -7,
+          3,
+          5,
+          7,
+          7,
+          7,
+          0,
+          3,
+          7,
+          -5,
+          -5,
+          -5
+        ],
+        "light": [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          -7,
+          -3,
+          -2,
+          0,
+          2,
+          1
+        ],
+        "sat": [
+          4,
+          -1,
+          2,
+          3,
+          3,
+          3,
+          2,
+          5,
+          5,
+          3,
+          5,
+          5
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "matrix": [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "index": 24,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Kodachrome25",
+        "notes": "Kodachrome 25 slide (GarethB, mu-43): dense, rich reds, muted cyan/green, deep shadows. Advice: contrast +2, H-2 M+3 S-5. Split: slightly cool deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -2,
+          1,
+          1,
+          -1,
+          -1,
+          2,
+          -3,
+          -2,
+          -4,
+          -3,
+          -3,
+          -4
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 0,
+          "g_m": 1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": -5,
+          "midtones": 3,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": -5,
+            "midtones": 3
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        },
+        "matrix": [
+          4,
+          0,
+          -6,
+          4,
+          -2,
+          6
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Portra 160",
+        "notes": "Fine-grain portrait negative (I. Mitropoulos, om-recipes): natural skin, quiet greens, soft contrast.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -2,
+          1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          -1
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        },
+        "matrix": [
+          4,
+          1,
+          2,
+          1,
+          -2,
+          4
+        ]
+      }
+    },
+    {
+      "index": 26,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Fujicolor200",
+        "notes": "Fujicolor C200 (J. Bloomer, om-recipes): warm yellows, fresh greens, soft contrast. Split: green-yellow shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          2,
+          3,
+          3,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 2,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -3,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -3,
+            "midtones": 1
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 11,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        },
+        "matrix": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -6
+        ]
+      }
+    },
+    {
+      "index": 27,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Cuban Neg",
+        "notes": "Inspired by Osan's Classic Cuban Neg: warm Classic Neg, golden cast (WB A+4), deep blues/reds, gritty grain, bloom 3. Sat: +2 warm, -2 greens. Split: golden highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          7,
+          6,
+          -4,
+          -3,
+          6,
+          7,
+          5,
+          0
+        ],
+        "light": [
+          -1,
+          -2,
+          -3,
+          -3,
+          -1,
+          0,
+          -1,
+          -2,
+          -2,
+          -3,
+          -5,
+          -4
+        ],
+        "sat": [
+          2,
+          2,
+          2,
+          2,
+          0,
+          -2,
+          1,
+          1,
+          1,
+          -2,
+          -1,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 3,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 3
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -3,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -3,
+            "midtones": 1
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 0,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 28,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Cibachrome",
+        "notes": "Cibachrome print (Jay, om-recipes): glossy magenta-reds, deep blues, rich darks. Split: cool deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          0,
+          2,
+          -1
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 1,
+          "g_m": -1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": -2,
+          "midtones": 1,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": -2,
+            "midtones": 1
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        },
+        "matrix": [
+          -2,
+          -1,
+          -2,
+          -1,
+          2,
+          -2
+        ]
+      }
+    },
+    {
+      "index": 29,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "UltraMax 400",
+        "notes": "Kodak consumer negative: warm, punchy reds/yellows, olive greens, visible grain. Split: yellow highlights, blue-violet shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "sat": [
+          3,
+          2,
+          2,
+          2,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          2
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 5,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 1
+        },
+        "matrix": [
+          4,
+          0,
+          0,
+          0,
+          -4,
+          3
+        ]
+      }
+    },
+    {
+      "index": 30,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Agfa Vista",
+        "notes": "Agfa Vista 200: vivid magenta-leaning reds, deep blues, cool cheap-film punch. Split: red highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          1,
+          3,
+          3,
+          2,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 0,
+          "g_m": -1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 3,
+          "hl": 1
+        },
+        "matrix": [
+          0,
+          0,
+          -4,
+          -4,
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "CineStill50D",
+        "notes": "Daylight cinema stock: clean, slightly cool, rich blues, soft highlights, faint red glow.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          1,
+          0
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 2,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 0
+          },
+          "contrast": -1
+        },
+        "curve": "auto",
+        "matrix": [
+          0,
+          -2,
+          0,
+          -4,
+          -2,
+          0
+        ]
+      }
+    },
+    {
+      "index": 32,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Vision3 250D",
+        "notes": "Kodak daylight cinema negative: flat, wide latitude, gentle teal/orange separation. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          0,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": 3,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": 3,
+            "midtones": 0
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "curve": "auto",
+        "matrix": [
+          5,
+          -3,
+          2,
+          6,
+          -3,
+          4
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Vision3 500T",
+        "notes": "Tungsten cinema negative in daylight: cool teal cast, warm lights, open shadows. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          2,
+          0
+        ],
+        "light": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -1,
+          0,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -2,
+          -2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 3,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 3,
+            "midtones": 0
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        },
+        "curve": "auto",
+        "matrix": [
+          3,
+          -3,
+          1,
+          6,
+          -5,
+          3
+        ]
+      }
+    },
+    {
+      "index": 34,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Polaroid",
+        "notes": "Integral instant film: punchy, narrow dynamic range (bright highlights, deep shadows), pink highlights, green shadows.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 1
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 2,
+          "tint": "warm"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 2,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 2,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 10,
+          "sh": 1,
+          "hl_color": 4,
+          "hl": 1
+        },
+        "matrix": [
+          8,
+          2,
+          4,
+          2,
+          4,
+          8
+        ]
+      }
+    },
+    {
+      "index": 35,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Cross Proc.",
+        "notes": "E-6 slide in C-41: hard contrast, yellow-green highlights, cyan skies, yellowed skin.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "sat": [
+          2,
+          2,
+          2,
+          3,
+          1,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": 1,
+          "g_m": 1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 2,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 2,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 11,
+          "hl": 2
+        },
+        "matrix": [
+          0,
+          0,
+          6,
+          10,
+          -10,
+          -5
+        ]
+      }
+    },
+    {
+      "index": 36,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Atrophy",
+        "notes": "Inspired by GxAce's Atrophy: urban-decay grade, near-grey base, muted greens/skies, rust and reds kept, gritty clarity. Sat advice: greens/blues -4..-5. Split: teal-grey shadows, rusty highlights.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          -1,
+          0,
+          0,
+          2,
+          1,
+          -2,
+          -1,
+          0,
+          2,
+          2,
+          -1
+        ],
+        "light": [
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -1,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -1,
+          -1,
+          1,
+          1,
+          -3,
+          -4,
+          -3,
+          -3,
+          -3,
+          -3,
+          -3,
+          -3
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "clarity",
+          "strength": 3
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 2,
+          "hl": 1
+        },
+        "matrix": [
+          2,
+          0,
+          0,
+          8,
+          0,
+          10
+        ]
+      }
+    },
+    {
+      "index": 37,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Acros",
+        "notes": "Fine-grain mono: deep blacks, smooth tones, darker reds.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1,
+          "mono_filter": {
+            "colour": "green",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 38,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "Tri-X 400",
+        "notes": "Classic gritty reportage mono: punchy contrast, darker skies.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2,
+          "mono_filter": {
+            "colour": "yellow",
+            "strength": 2
+          }
+        }
+      }
+    },
+    {
+      "index": 39,
+      "pack": "standard-1.2",
+      "pack_name": "Standard 1.2",
+      "recipe": {
+        "name": "HP5 Plus",
+        "notes": "Soft, grainy mono with wide latitude and open shadows.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "mono_filter": {
+            "colour": "none",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 40,
+      "pack": "tokyo-days-1.0",
+      "pack_name": "Tokyo Days 1.0",
+      "recipe": {
+        "name": "C200 Airy",
+        "notes": "Fujicolor C200 rated a stop over: bright mids, lighter skies, warm yellows, fresh greens, soft contrast. Split: green-yellow shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          2,
+          2,
+          2,
+          1,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 2,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 2
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 11,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 41,
+      "pack": "tokyo-days-1.0",
+      "pack_name": "Tokyo Days 1.0",
+      "recipe": {
+        "name": "Superia 400",
+        "notes": "Fuji Superia 400 in daylight: teal-leaning greens, cyan-green shade, a magenta lift in the highlights, punchy mids.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          4,
+          3,
+          -2,
+          -2,
+          4,
+          5,
+          3,
+          0
+        ],
+        "light": [
+          -1,
+          -2,
+          -2,
+          -1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -1,
+          -1,
+          -1,
+          0,
+          -1,
+          -3,
+          -1,
+          -1,
+          0,
+          -2,
+          -2,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 2,
+          "shadows": -1,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 2,
+            "shadows": -1,
+            "midtones": 1
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 4,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 42,
+      "pack": "tokyo-days-1.0",
+      "pack_name": "Tokyo Days 1.0",
+      "recipe": {
+        "name": "400H Overex",
+        "notes": "Pro 400H overexposed 1-2 stops: the airy pastel look. Milky lifted blacks, soft unclipped highlights, minty greens. Split: green-cyan shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          3,
+          3
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "sat": [
+          -3,
+          -3,
+          -3,
+          -2,
+          -2,
+          -2,
+          -1,
+          0,
+          0,
+          -1,
+          -2,
+          -3
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": 3,
+          "midtones": 2,
+          "blacks": 2,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": 3,
+            "midtones": 2
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 43,
+      "pack": "tokyo-days-1.0",
+      "pack_name": "Tokyo Days 1.0",
+      "recipe": {
+        "name": "Pro 160NS",
+        "notes": "Fuji Pro 160NS: neutral grey balance, restrained colour, slightly pink skin and a faint purple lean, good greens, soft contrast.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 0,
+          "g_m": -1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 1,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 1,
+            "midtones": 1
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 44,
+      "pack": "tokyo-days-1.0",
+      "pack_name": "Tokyo Days 1.0",
+      "recipe": {
+        "name": "Acros",
+        "notes": "Fine-grain mono: deep blacks, smooth tones, darker reds.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1,
+          "mono_filter": {
+            "colour": "green",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 45,
+      "pack": "tokyo-nights-1.0",
+      "pack_name": "Tokyo Nights 1.0",
+      "recipe": {
+        "name": "800T Neon",
+        "notes": "CineStill 800T under neon: tungsten-balanced, teal shade, red halation round signs and lamps, richer magentas and blues. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          0,
+          2,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          0,
+          2,
+          3,
+          2,
+          1,
+          2,
+          2,
+          2,
+          -1,
+          -2,
+          -2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": -2,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 4,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 1,
+            "midtones": 0
+          }
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 2,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 46,
+      "pack": "tokyo-nights-1.0",
+      "pack_name": "Tokyo Nights 1.0",
+      "recipe": {
+        "name": "Natura 1600",
+        "notes": "Fuji Natura 1600, the Japan-only night film: natural, slightly muted colour, soft contrast, blacks not quite deep. Split: night skies drift blue.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 47,
+      "pack": "tokyo-nights-1.0",
+      "pack_name": "Tokyo Nights 1.0",
+      "recipe": {
+        "name": "Portra 800",
+        "notes": "Portra 800 under street lamps: warm natural skin, colour that holds up in low light, soft contrast, plain glow (antihalation layer: no red halo). Split: warm highlights.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -2,
+          -1
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 0
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 48,
+      "pack": "tokyo-nights-1.0",
+      "pack_name": "Tokyo Nights 1.0",
+      "recipe": {
+        "name": "Superia Nite",
+        "notes": "Fuji Superia shot at night: underexposed shade goes green, highlights lean magenta, teal-leaning greens. Split: green shadows, magenta highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          -2,
+          -1,
+          3,
+          3,
+          3,
+          0
+        ],
+        "light": [
+          -1,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -2,
+          -2,
+          -2
+        ],
+        "sat": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 10,
+          "sh": 1,
+          "hl_color": 4,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 49,
+      "pack": "tokyo-nights-1.0",
+      "pack_name": "Tokyo Nights 1.0",
+      "recipe": {
+        "name": "400H Night",
+        "notes": "Pro 400H after dark: its fourth colour layer keeps fluorescent light clean; cool pastel colour, minty greens, a little more blue for signage. Split: green-cyan shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          3,
+          3
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "sat": [
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 2,
+            "midtones": 1
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 50,
+      "pack": "tokyo-nights-1.0",
+      "pack_name": "Tokyo Nights 1.0",
+      "recipe": {
+        "name": "Tri-X Push",
+        "notes": "Tri-X pushed to EI 1600: hard contrast, blocked shadows, burnt-in greys, the grainy Shinjuku-at-night street style. Advice: contrast +2, shadows -4.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -4,
+            "midtones": 0
+          },
+          "contrast": 2,
+          "mono_filter": {
+            "colour": "yellow",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 51,
+      "pack": "summer-1.0",
+      "pack_name": "Summer 1.0",
+      "recipe": {
+        "name": "Ektar 100",
+        "notes": "Ultra-vivid fine-grain negative: saturated reds and blues. Split: warm highlights, blue deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          2,
+          3,
+          3,
+          2,
+          1,
+          4,
+          4,
+          2,
+          0,
+          1,
+          1
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 52,
+      "pack": "summer-1.0",
+      "pack_name": "Summer 1.0",
+      "recipe": {
+        "name": "Velvia Lite",
+        "notes": "Velvia toned down for people in summer light: rich skies and greens without the crushed shadows or blown saturation. Split: magenta-leaning shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          2,
+          2,
+          -2,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 4,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 53,
+      "pack": "summer-1.0",
+      "pack_name": "Summer 1.0",
+      "recipe": {
+        "name": "UltraMax 400",
+        "notes": "Kodak consumer negative: warm, punchy reds/yellows, olive greens, visible grain. Split: yellow highlights, blue-violet shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "sat": [
+          3,
+          2,
+          2,
+          2,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          2
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 5,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 54,
+      "pack": "summer-1.0",
+      "pack_name": "Summer 1.0",
+      "recipe": {
+        "name": "X-Pro Sunny",
+        "notes": "Gentler cross-processing (E-6 in C-41): high contrast, yellow-green highlights, cyan skies, warm skin, less extreme than Cross Proc. Split: yellow-green highlights.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          0,
+          0,
+          -1,
+          -2,
+          -1,
+          -2,
+          -3,
+          -2,
+          -3,
+          -3,
+          -3
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "sat": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          0,
+          2,
+          2,
+          2,
+          1,
+          2,
+          3
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 11,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 55,
+      "pack": "summer-1.0",
+      "pack_name": "Summer 1.0",
+      "recipe": {
+        "name": "Sun Bleach",
+        "notes": "Negative overexposed in hard sun: bleached pastels, lifted shadows, soft rolled-off whites, pale skies, warm cast. Split: yellow highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "sat": [
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -3,
+          -3,
+          -2,
+          -2,
+          -2,
+          -1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": 3,
+          "midtones": 2,
+          "blacks": 2,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": 3,
+            "midtones": 2
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 0,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 56,
+      "pack": "autumn-1.0",
+      "pack_name": "Autumn 1.0",
+      "recipe": {
+        "name": "Gold 200",
+        "notes": "Golden consumer negative: sunny yellows, muted cyan skies. Split: yellow-tinted whites.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          4,
+          2,
+          0,
+          0,
+          -1,
+          -1,
+          -2,
+          -2,
+          -3,
+          -2,
+          0,
+          2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 0,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 0,
+            "midtones": 1
+          }
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 0,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 57,
+      "pack": "autumn-1.0",
+      "pack_name": "Autumn 1.0",
+      "recipe": {
+        "name": "Portra 400",
+        "notes": "Warm pastel portrait negative: glowing skin, soft contrast. Split: peachy highlights.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          -3,
+          -3,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 1
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 58,
+      "pack": "autumn-1.0",
+      "pack_name": "Autumn 1.0",
+      "recipe": {
+        "name": "Ektar Autumn",
+        "notes": "Ektar 100 for foliage: saturated reds and oranges, yellow-green leaves pushed golden, deep blue skies. Split: warm highlights, blue deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          3,
+          3,
+          3,
+          3,
+          1,
+          0,
+          3,
+          3,
+          1,
+          -1,
+          0,
+          1
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 59,
+      "pack": "autumn-1.0",
+      "pack_name": "Autumn 1.0",
+      "recipe": {
+        "name": "ColorPlus200",
+        "notes": "Kodak ColorPlus 200: warm, a little less yellow than Gold, moderate saturation, budget-film softness; shade drifts blue-purple. Split: violet shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          2,
+          1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -1,
+          1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -1,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -1,
+            "midtones": 1
+          }
+        },
+        "split": {
+          "sh_color": 5,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 60,
+      "pack": "autumn-1.0",
+      "pack_name": "Autumn 1.0",
+      "recipe": {
+        "name": "Faded Amber",
+        "notes": "Faded warm print (a grade, not a stock): lifted blacks, low saturation, weak blues and greens, amber whites. Split: orange highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          -1,
+          -2,
+          -2,
+          -3,
+          -3,
+          -4,
+          -4,
+          -4,
+          -3,
+          -3,
+          -2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 2,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 1,
+          "blacks": 3,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 1
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 61,
+      "pack": "winter-1.0",
+      "pack_name": "Winter 1.0",
+      "recipe": {
+        "name": "Portra Cool",
+        "notes": "Portra 160 in snow and overcast light: natural skin, quiet colour, one WB step cooler for winter shade (a grading choice). Split: blue-cyan shade.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -2,
+          1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -1,
+          -2,
+          -2,
+          -2,
+          -3,
+          -2
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 7,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 62,
+      "pack": "winter-1.0",
+      "pack_name": "Winter 1.0",
+      "recipe": {
+        "name": "Pro 400H",
+        "notes": "Airy pastel negative: minty greens, light cyan skies. Split: green-cyan shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          3,
+          3
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "sat": [
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 3,
+          "midtones": 2,
+          "blacks": 1,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 3,
+            "midtones": 2
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 63,
+      "pack": "winter-1.0",
+      "pack_name": "Winter 1.0",
+      "recipe": {
+        "name": "E100 Snow",
+        "notes": "Ektachrome E100 for snow: clean neutral whites with highlights held, blue shade, crisp but slightly calmer blues than Ektachrome. Split: blue shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          -1,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 64,
+      "pack": "winter-1.0",
+      "pack_name": "Winter 1.0",
+      "recipe": {
+        "name": "Eterna",
+        "notes": "Cinema negative: flat, open shadows, quiet teal-leaning colour. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          -2,
+          -6,
+          -4,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          -1,
+          -1,
+          -2,
+          -3,
+          -3,
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sat": [
+          -2,
+          -2,
+          -3,
+          -2,
+          -2,
+          -3,
+          -4,
+          -5,
+          -2,
+          -3,
+          -3,
+          -3
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 4,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 4,
+            "midtones": 0
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 65,
+      "pack": "winter-1.0",
+      "pack_name": "Winter 1.0",
+      "recipe": {
+        "name": "Acros",
+        "notes": "Fine-grain mono: deep blacks, smooth tones, darker reds.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1,
+          "mono_filter": {
+            "colour": "green",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 66,
+      "pack": "film-noir-1.0",
+      "pack_name": "Film Noir 1.0",
+      "recipe": {
+        "name": "Tri-X 400",
+        "notes": "Classic gritty reportage mono: punchy contrast, darker skies.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2,
+          "mono_filter": {
+            "colour": "yellow",
+            "strength": 2
+          }
+        }
+      }
+    },
+    {
+      "index": 67,
+      "pack": "film-noir-1.0",
+      "pack_name": "Film Noir 1.0",
+      "recipe": {
+        "name": "Tri-X Push",
+        "notes": "Tri-X pushed to EI 1600: hard contrast, blocked shadows, burnt-in greys, the grainy Shinjuku-at-night street style. Advice: contrast +2, shadows -4.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -4,
+            "midtones": 0
+          },
+          "contrast": 2,
+          "mono_filter": {
+            "colour": "yellow",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 68,
+      "pack": "film-noir-1.0",
+      "pack_name": "Film Noir 1.0",
+      "recipe": {
+        "name": "HP5 Plus",
+        "notes": "Soft, grainy mono with wide latitude and open shadows.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "mono_filter": {
+            "colour": "none",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 69,
+      "pack": "film-noir-1.0",
+      "pack_name": "Film Noir 1.0",
+      "recipe": {
+        "name": "Acros",
+        "notes": "Fine-grain mono: deep blacks, smooth tones, darker reds.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1,
+          "mono_filter": {
+            "colour": "green",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 70,
+      "pack": "film-noir-1.0",
+      "pack_name": "Film Noir 1.0",
+      "recipe": {
+        "name": "Pan F 50",
+        "notes": "Ilford Pan F Plus 50: very fine grain, high contrast, deep rich blacks, crisp edges. Bright light. Advice: contrast +2, shadows -3.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2,
+          "mono_filter": {
+            "colour": "none",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 71,
+      "pack": "film-noir-1.0",
+      "pack_name": "Film Noir 1.0",
+      "recipe": {
+        "name": "Bleach Byp.",
+        "notes": "Silver-retained cinema look: near-monochrome, harsh contrast. Split: steely blue-cyan shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -2,
+          -3,
+          0,
+          0,
+          -3,
+          -7,
+          -5,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          -2,
+          -3,
+          -4,
+          -5,
+          -4,
+          -3,
+          -1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 4,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -2,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 4,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 7,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 72,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Velvia",
+        "notes": "Saturated landscape slide film: deep skies, dense greens, crushed shadows. Split: magenta-leaning shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          2,
+          2,
+          -2,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          4,
+          4,
+          4,
+          5,
+          3,
+          4,
+          5,
+          5,
+          3,
+          3,
+          4,
+          4
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -4,
+          "midtones": 0,
+          "blacks": -2,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -4,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 4,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 73,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Astia",
+        "notes": "Soft slide film: gentle contrast, clean skin, slightly richer skies.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          0
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 74,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Cl. Chrome",
+        "notes": "Documentary look: muted greens and yellows, cyan skies, hard shadows.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          -1,
+          0,
+          0,
+          3,
+          1,
+          -2,
+          -4,
+          -2,
+          2,
+          0,
+          -2
+        ],
+        "light": [
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        "sat": [
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -3,
+          -3,
+          -3,
+          -1,
+          -3,
+          -4,
+          -4
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 75,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Classic Neg",
+        "notes": "Superia-style negative: teal-green cast, punchy mids, light skies; cyan-green shadows, magenta highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          7,
+          6,
+          -4,
+          -3,
+          6,
+          7,
+          5,
+          0
+        ],
+        "light": [
+          -2,
+          -3,
+          -3,
+          -2,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -3,
+          -5,
+          -4
+        ],
+        "sat": [
+          -3,
+          -2,
+          -2,
+          0,
+          -1,
+          -5,
+          -2,
+          -2,
+          -1,
+          -4,
+          -4,
+          -4
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 4,
+          "shadows": -2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 4,
+            "shadows": -2,
+            "midtones": 1
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 4,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 76,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Provia 400",
+        "notes": "Fujichrome Provia 400X slide: magenta-red cast, lavender skies, rich blues, deep reds, dark greens, fast fall to black, fine grain. Advice: contrast +1.",
+        "kind": "colour",
+        "hue": [
+          -3,
+          -2,
+          -2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -2,
+          -1
+        ],
+        "sat": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          2,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 0,
+          "g_m": -3
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": -1,
+          "blacks": -1,
+          "whites": -3
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": -1
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 77,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Reala Ace",
+        "notes": "Accurate, crisp modern negative: true hues, restrained greens.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -3,
+          -3,
+          -3,
+          -1,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -2,
+          -3,
+          -3,
+          -2
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 3,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 3,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 78,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Eterna",
+        "notes": "Cinema negative: flat, open shadows, quiet teal-leaning colour. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          -2,
+          -6,
+          -4,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          -1,
+          -1,
+          -2,
+          -3,
+          -3,
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sat": [
+          -2,
+          -2,
+          -3,
+          -2,
+          -2,
+          -3,
+          -4,
+          -5,
+          -2,
+          -3,
+          -3,
+          -3
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 4,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 4,
+            "midtones": 0
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 79,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Bleach Byp.",
+        "notes": "Silver-retained cinema look: near-monochrome, harsh contrast. Split: steely blue-cyan shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -2,
+          -3,
+          0,
+          0,
+          -3,
+          -7,
+          -5,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          -2,
+          -3,
+          -4,
+          -5,
+          -4,
+          -3,
+          -1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 4,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -2,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 4,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 7,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 80,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Kodachrome64",
+        "notes": "Rich deep reds, golden yellows, dense cyan-blue skies, olive greens. Split: warm highlights, slightly cool shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          -2,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          -1,
+          -2,
+          -2,
+          -2,
+          -1,
+          -1,
+          -2,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2
+        ],
+        "sat": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          -1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 7,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 81,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Portra 400",
+        "notes": "Warm pastel portrait negative: glowing skin, soft contrast. Split: peachy highlights.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          -3,
+          -3,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 1
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 82,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Ektar 100",
+        "notes": "Ultra-vivid fine-grain negative: saturated reds and blues. Split: warm highlights, blue deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          2,
+          3,
+          3,
+          2,
+          1,
+          4,
+          4,
+          2,
+          0,
+          1,
+          1
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 83,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Gold 200",
+        "notes": "Golden consumer negative: sunny yellows, muted cyan skies. Split: yellow-tinted whites.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          4,
+          2,
+          0,
+          0,
+          -1,
+          -1,
+          -2,
+          -2,
+          -3,
+          -2,
+          0,
+          2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 0,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 0,
+            "midtones": 1
+          }
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 0,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 84,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Ektachrome",
+        "notes": "Clean, cool slide film: neutral skin, bright saturated blues. Split: blue shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          -1,
+          0,
+          0,
+          2,
+          3,
+          4,
+          4,
+          3,
+          1,
+          1,
+          0
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 85,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "CineStill800",
+        "notes": "Tungsten cinema film: cool cast, red bloom (bloom_tint red: the glow's Cr spreads far more than its luma, docs/HALATION_RED.md section 8) plus red/orange light. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          0,
+          2,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          0,
+          2,
+          3,
+          0,
+          0,
+          2,
+          2,
+          2,
+          -1,
+          -2,
+          -2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": -2,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 4,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 2,
+            "midtones": 0
+          }
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 86,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Pro 400H",
+        "notes": "Airy pastel negative: minty greens, light cyan skies. Split: green-cyan shade.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          3,
+          3
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "sat": [
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 3,
+          "midtones": 2,
+          "blacks": 1,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 3,
+            "midtones": 2
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 87,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Faux IR",
+        "notes": "Infrared-inspired false colour (golden/orange foliage, deep blue skies). Not true Aerochrome: the hue range can't turn green red. Sat advice: strong (+3..+5). Split: blue shadows, orange highlights.",
+        "kind": "colour",
+        "hue": [
+          -7,
+          3,
+          5,
+          7,
+          7,
+          7,
+          0,
+          3,
+          7,
+          -7,
+          -7,
+          -7
+        ],
+        "light": [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          -7,
+          -3,
+          -2,
+          0,
+          2,
+          1
+        ],
+        "sat": [
+          4,
+          -1,
+          2,
+          3,
+          3,
+          3,
+          2,
+          5,
+          5,
+          3,
+          5,
+          5
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 88,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Kodachrome25",
+        "notes": "Kodachrome 25 slide (GarethB, mu-43): dense, rich reds, muted cyan/green, deep shadows. Advice: contrast +2, H-2 M+3 S-5. Split: slightly cool deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -2,
+          1,
+          1,
+          -1,
+          -1,
+          2,
+          -3,
+          -2,
+          -4,
+          -4,
+          -4,
+          -5
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 0,
+          "g_m": 1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": -5,
+          "midtones": 3,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": -5,
+            "midtones": 3
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 89,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Portra 160",
+        "notes": "Fine-grain portrait negative (I. Mitropoulos, om-recipes): natural skin, quiet greens, soft contrast.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -2,
+          1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -1,
+          -2,
+          -2,
+          -2,
+          -3,
+          -2
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 90,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Fujicolor200",
+        "notes": "Fujicolor C200 (J. Bloomer, om-recipes): warm yellows, fresh greens, soft contrast. Split: green-yellow shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          3,
+          3,
+          3,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 2,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -3,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -3,
+            "midtones": 1
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 11,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 91,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Cuban Neg",
+        "notes": "Inspired by Osan's Classic Cuban Neg: warm Classic Neg, golden cast (WB A+4), deep blues/reds, gritty grain, bloom 3. Sat: +2 warm, -2 greens. Split: golden highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          7,
+          6,
+          -4,
+          -3,
+          6,
+          7,
+          5,
+          0
+        ],
+        "light": [
+          -1,
+          -2,
+          -3,
+          -3,
+          -1,
+          0,
+          -1,
+          -2,
+          -2,
+          -3,
+          -5,
+          -4
+        ],
+        "sat": [
+          2,
+          2,
+          2,
+          2,
+          0,
+          -2,
+          1,
+          1,
+          1,
+          -2,
+          -1,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 3,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 3
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -3,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -3,
+            "midtones": 1
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 0,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 92,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Cibachrome",
+        "notes": "Cibachrome print (Jay, om-recipes): glossy magenta-reds, deep blues, rich darks. Split: cool deep shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          3,
+          4,
+          3,
+          4,
+          2,
+          2,
+          4,
+          3,
+          0,
+          2,
+          -1
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 1,
+          "g_m": -1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": -2,
+          "midtones": 1,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": -2,
+            "midtones": 1
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 6,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 0
+        }
+      }
+    },
+    {
+      "index": 93,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "UltraMax 400",
+        "notes": "Kodak consumer negative: warm, punchy reds/yellows, olive greens, visible grain. Split: yellow highlights, blue-violet shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "sat": [
+          3,
+          2,
+          2,
+          2,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          2
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 5,
+          "sh": 1,
+          "hl_color": 0,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 94,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Agfa Vista",
+        "notes": "Agfa Vista 200: vivid magenta-leaning reds, deep blues, cool cheap-film punch. Split: red highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          1,
+          3,
+          4,
+          2,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 0,
+          "g_m": -1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 3,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 95,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "CineStill50D",
+        "notes": "Daylight cinema stock: clean, slightly cool, rich blues, soft highlights, faint red glow.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          1,
+          0
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 2,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 96,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Vision3 250D",
+        "notes": "Kodak daylight cinema negative: flat, wide latitude, gentle teal/orange separation. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -2,
+          -1,
+          1,
+          1,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -1,
+          0,
+          0,
+          -1,
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": 3,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": 3,
+            "midtones": 0
+          },
+          "contrast": -2
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 97,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Vision3 500T",
+        "notes": "Tungsten cinema negative in daylight: cool teal cast, warm lights, open shadows. Split: cyan shadows, warm highlights.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          1,
+          2,
+          0
+        ],
+        "light": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -1,
+          0,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -2,
+          -2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 3,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 3,
+            "midtones": 0
+          },
+          "contrast": -1
+        },
+        "split": {
+          "sh_color": 8,
+          "sh": 1,
+          "hl_color": 1,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 98,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Polaroid",
+        "notes": "Integral instant film: punchy, narrow dynamic range (bright highlights, deep shadows), pink highlights, green shadows.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          -3,
+          -3,
+          -2,
+          -1,
+          -2,
+          -1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 1
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 2,
+          "tint": "warm"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 2,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 2,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 10,
+          "sh": 1,
+          "hl_color": 4,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 99,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Cross Proc.",
+        "notes": "E-6 slide in C-41: hard contrast, yellow-green highlights, cyan skies, yellowed skin.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          0,
+          0,
+          -1,
+          -2,
+          -1,
+          -2,
+          -3,
+          -2,
+          -3,
+          -3,
+          -3
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "sat": [
+          3,
+          2,
+          2,
+          3,
+          1,
+          0,
+          2,
+          3,
+          3,
+          2,
+          3,
+          4
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": 1,
+          "g_m": 1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 2,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 2,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2
+        },
+        "split": {
+          "sh_color": 0,
+          "sh": 0,
+          "hl_color": 11,
+          "hl": 2
+        }
+      }
+    },
+    {
+      "index": 100,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Atrophy",
+        "notes": "Inspired by GxAce's Atrophy: urban-decay grade, near-grey base, muted greens/skies, rust and reds kept, gritty clarity. Sat advice: greens/blues -4..-5. Split: teal-grey shadows, rusty highlights.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          -1,
+          0,
+          0,
+          2,
+          1,
+          -2,
+          -1,
+          0,
+          2,
+          2,
+          -1
+        ],
+        "light": [
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -1,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -2,
+          -1,
+          1,
+          1,
+          -3,
+          -4,
+          -4,
+          -4,
+          -4,
+          -5,
+          -5,
+          -5
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": {
+          "type": "clarity",
+          "strength": 3
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        },
+        "split": {
+          "sh_color": 9,
+          "sh": 1,
+          "hl_color": 2,
+          "hl": 1
+        }
+      }
+    },
+    {
+      "index": 101,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Acros",
+        "notes": "Fine-grain mono: deep blacks, smooth tones, darker reds.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1,
+          "mono_filter": {
+            "colour": "green",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 102,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "Tri-X 400",
+        "notes": "Classic gritty reportage mono: punchy contrast, darker skies.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2,
+          "mono_filter": {
+            "colour": "yellow",
+            "strength": 2
+          }
+        }
+      }
+    },
+    {
+      "index": 103,
+      "pack": "standard-1.1",
+      "pack_name": "Standard 1.1",
+      "recipe": {
+        "name": "HP5 Plus",
+        "notes": "Soft, grainy mono with wide latitude and open shadows.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "mono_filter": {
+            "colour": "none",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 104,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Velvia",
+        "notes": "Saturated landscape slide film: deep skies, dense greens, crushed shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          1,
+          2,
+          2,
+          -2,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          4,
+          4,
+          4,
+          5,
+          3,
+          4,
+          5,
+          5,
+          3,
+          3,
+          4,
+          4
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -4,
+          "midtones": 0,
+          "blacks": -2,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -4,
+            "midtones": 0
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 105,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Astia",
+        "notes": "Soft slide film: gentle contrast, clean skin, slightly richer skies.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          0
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 106,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Cl. Chrome",
+        "notes": "Documentary look: muted greens and yellows, cyan skies, hard shadows.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          -1,
+          0,
+          0,
+          3,
+          1,
+          -2,
+          -4,
+          -2,
+          2,
+          0,
+          -2
+        ],
+        "light": [
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -1
+        ],
+        "sat": [
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -3,
+          -3,
+          -3,
+          -1,
+          -3,
+          -4,
+          -4
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 107,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Classic Neg",
+        "notes": "Superia-style negative: teal-green cast, punchy mids, light skies.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          7,
+          6,
+          -4,
+          -3,
+          6,
+          7,
+          5,
+          0
+        ],
+        "light": [
+          -2,
+          -3,
+          -3,
+          -2,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -3,
+          -5,
+          -4
+        ],
+        "sat": [
+          -3,
+          -2,
+          -2,
+          0,
+          -1,
+          -5,
+          -2,
+          -2,
+          -1,
+          -4,
+          -4,
+          -4
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 4,
+          "shadows": -2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 4,
+            "shadows": -2,
+            "midtones": 1
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 108,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Provia 400",
+        "notes": "Fujichrome Provia 400X slide: magenta-red cast, lavender skies, rich blues, deep reds, dark greens, fast fall to black, fine grain. Advice: contrast +1.",
+        "kind": "colour",
+        "hue": [
+          -3,
+          -2,
+          -2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -2,
+          -1
+        ],
+        "sat": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          2,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 0,
+          "g_m": -3
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": -1,
+          "blacks": -1,
+          "whites": -3
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": -1
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 109,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Reala Ace",
+        "notes": "Accurate, crisp modern negative: true hues, restrained greens.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -3,
+          -3,
+          -3,
+          -1,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -2,
+          -3,
+          -3,
+          -2
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 3,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 3,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 110,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Eterna",
+        "notes": "Cinema negative: flat, open shadows, quiet teal-leaning colour.",
+        "kind": "colour",
+        "hue": [
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          -2,
+          -6,
+          -4,
+          0,
+          -1,
+          -2
+        ],
+        "light": [
+          -1,
+          -1,
+          -2,
+          -3,
+          -3,
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sat": [
+          -2,
+          -2,
+          -3,
+          -2,
+          -2,
+          -3,
+          -4,
+          -5,
+          -2,
+          -3,
+          -3,
+          -3
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 4,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 4,
+            "midtones": 0
+          },
+          "contrast": -2
+        }
+      }
+    },
+    {
+      "index": 111,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Bleach Byp.",
+        "notes": "Silver-retained cinema look: near-monochrome, harsh contrast.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -2,
+          -3,
+          0,
+          0,
+          -3,
+          -7,
+          -5,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          -2,
+          -3,
+          -4,
+          -5,
+          -4,
+          -3,
+          -1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5,
+          -5
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 4,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -2,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 4,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 112,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Kodachrome64",
+        "notes": "Rich deep reds, golden yellows, dense cyan-blue skies, olive greens.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          -2,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          -1,
+          -2,
+          -2,
+          -2,
+          -1,
+          -1,
+          -2,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2
+        ],
+        "sat": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          -1,
+          1,
+          1,
+          0,
+          -1,
+          -1,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 113,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Portra 400",
+        "notes": "Warm pastel portrait negative: glowing skin, soft contrast.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          -3,
+          -3,
+          -2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1,
+          "tint": "warm"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 1
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 114,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Ektar 100",
+        "notes": "Ultra-vivid fine-grain negative: saturated reds and blues.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          2,
+          3,
+          3,
+          2,
+          1,
+          4,
+          4,
+          2,
+          0,
+          1,
+          1
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 115,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Gold 200",
+        "notes": "Golden consumer negative: sunny yellows, muted cyan skies.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          4,
+          2,
+          0,
+          0,
+          -1,
+          -1,
+          -2,
+          -2,
+          -3,
+          -2,
+          0,
+          2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 2,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1,
+          "tint": "amber"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 0,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 0,
+            "midtones": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 116,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Ektachrome",
+        "notes": "Clean, cool slide film: neutral skin, bright saturated blues.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          -1,
+          0,
+          0,
+          2,
+          3,
+          4,
+          4,
+          3,
+          1,
+          1,
+          0
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 117,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "CineStill800",
+        "notes": "Tungsten cinema film: cool cast, red bloom (bloom + bloom_tint red: the glow's Cr spreads far more than its luma, docs/HALATION_RED.md section 8) plus red/orange light.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          0,
+          2,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          0,
+          2,
+          3,
+          0,
+          0,
+          2,
+          2,
+          2,
+          -1,
+          -2,
+          -2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": -3,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 4,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 2,
+            "midtones": 0
+          }
+        }
+      }
+    },
+    {
+      "index": 118,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Pro 400H",
+        "notes": "Airy pastel negative: minty greens, light cyan skies.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          3,
+          3
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "sat": [
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          -2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 3,
+          "midtones": 2,
+          "blacks": 1,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 3,
+            "midtones": 2
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 119,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Faux IR",
+        "notes": "Infrared-inspired false colour (golden/orange foliage, deep blue skies). Not true Aerochrome: the hue range can't turn green red. Sat advice: strong (+3..+5).",
+        "kind": "colour",
+        "hue": [
+          -7,
+          3,
+          5,
+          7,
+          7,
+          7,
+          0,
+          3,
+          7,
+          -7,
+          -7,
+          -7
+        ],
+        "light": [
+          1,
+          2,
+          2,
+          2,
+          0,
+          0,
+          -7,
+          -3,
+          -2,
+          0,
+          2,
+          1
+        ],
+        "sat": [
+          4,
+          -1,
+          2,
+          3,
+          3,
+          3,
+          2,
+          5,
+          5,
+          3,
+          5,
+          5
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 120,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Kodachrome25",
+        "notes": "Kodachrome 25 slide (GarethB, mu-43): dense, rich reds, muted cyan/green, deep shadows. Advice: contrast +2, H-2 M+3 S-5.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -2,
+          1,
+          1,
+          -1,
+          -1,
+          2,
+          -3,
+          -2,
+          -4,
+          -4,
+          -4,
+          -5
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 0,
+          "g_m": 1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": -5,
+          "midtones": 3,
+          "blacks": -1,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": -5,
+            "midtones": 3
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 121,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Portra 160",
+        "notes": "Fine-grain portrait negative (I. Mitropoulos, om-recipes): natural skin, quiet greens, soft contrast.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          -2,
+          1,
+          -1,
+          -1,
+          -2,
+          -3,
+          -1,
+          -2,
+          -2,
+          -2,
+          -3,
+          -2
+        ],
+        "grain": "off",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": 1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 122,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Fujicolor200",
+        "notes": "Fujicolor C200 (J. Bloomer, om-recipes): warm yellows, fresh greens, soft contrast.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          3,
+          3,
+          3,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 2,
+          "g_m": 1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -3,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -3,
+            "midtones": 1
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 123,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Cuban Neg",
+        "notes": "Inspired by Osan's Classic Cuban Neg: warm Classic Neg, golden cast (WB A+4), deep blues/reds, gritty grain, bloom 3. Sat: +2 warm, -2 greens.",
+        "kind": "colour",
+        "hue": [
+          0,
+          -1,
+          0,
+          0,
+          7,
+          6,
+          -4,
+          -3,
+          6,
+          7,
+          5,
+          0
+        ],
+        "light": [
+          -1,
+          -2,
+          -3,
+          -3,
+          -1,
+          0,
+          -1,
+          -2,
+          -2,
+          -3,
+          -5,
+          -4
+        ],
+        "sat": [
+          2,
+          2,
+          2,
+          2,
+          0,
+          -2,
+          1,
+          1,
+          1,
+          -2,
+          -1,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 4,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 3
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 1,
+          "shadows": -3,
+          "midtones": 1,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": 1,
+            "shadows": -3,
+            "midtones": 1
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 124,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Cibachrome",
+        "notes": "Cibachrome print (Jay, om-recipes): glossy magenta-reds, deep blues, rich darks.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          3,
+          4,
+          3,
+          4,
+          2,
+          2,
+          4,
+          3,
+          0,
+          2,
+          -1
+        ],
+        "grain": "off",
+        "wb": {
+          "a_b": 1,
+          "g_m": -1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": -2,
+          "midtones": 1,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": -2,
+            "midtones": 1
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 125,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "UltraMax 400",
+        "notes": "Kodak consumer negative: warm, punchy reds/yellows, olive greens, visible grain.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -2,
+          -2
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "sat": [
+          3,
+          2,
+          2,
+          2,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": 1,
+          "g_m": 0
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 126,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Agfa Vista",
+        "notes": "Agfa Vista 200: vivid magenta-leaning reds, deep blues, cool cheap-film punch.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          1,
+          1,
+          3,
+          4,
+          2,
+          0,
+          1,
+          1,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 0,
+          "g_m": -1
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": -1,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 0,
+            "shadows": -1,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 127,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "CineStill50D",
+        "notes": "Daylight cinema stock: clean, slightly cool, rich blues, soft highlights, faint red glow.",
+        "kind": "colour",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          1,
+          1,
+          0
+        ],
+        "light": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": -1,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 2,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 2,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": -2
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 2,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 128,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Vision3 250D",
+        "notes": "Kodak daylight cinema negative: flat, wide latitude, gentle teal/orange separation.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -2,
+          -1,
+          1,
+          1,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -1,
+          0,
+          0,
+          -1,
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -2
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -3,
+          "shadows": 3,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": 3,
+            "midtones": 0
+          },
+          "contrast": -2
+        }
+      }
+    },
+    {
+      "index": 129,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Vision3 500T",
+        "notes": "Tungsten cinema negative in daylight: cool teal cast, warm lights, open shadows.",
+        "kind": "colour",
+        "hue": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -2,
+          -2,
+          1,
+          2,
+          0
+        ],
+        "light": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          -1
+        ],
+        "sat": [
+          -1,
+          0,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1,
+          -2,
+          -2
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": -2,
+          "g_m": 0
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 1,
+          "tint": "red"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -2,
+          "shadows": 3,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 3,
+            "midtones": 0
+          },
+          "contrast": -1
+        }
+      }
+    },
+    {
+      "index": 130,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Polaroid",
+        "notes": "Integral instant film: punchy, narrow dynamic range (bright highlights, deep shadows), warm highlights, cyan-green shadows.",
+        "kind": "colour",
+        "hue": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "light": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "sat": [
+          -1,
+          -1,
+          -2,
+          -2,
+          -2,
+          -2,
+          -3,
+          -3,
+          -2,
+          -1,
+          -2,
+          -1
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": 1,
+          "g_m": 1
+        },
+        "effect": {
+          "type": "bloom",
+          "strength": 2,
+          "tint": "warm"
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 2,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -3,
+            "shadows": 4,
+            "midtones": 1
+          },
+          "contrast": -2
+        }
+      }
+    },
+    {
+      "index": 131,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Cross Proc.",
+        "notes": "E-6 slide in C-41: hard contrast, yellow-green highlights, cyan skies, yellowed skin.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          0,
+          0,
+          -1,
+          -2,
+          -1,
+          -2,
+          -3,
+          -2,
+          -3,
+          -3,
+          -3
+        ],
+        "light": [
+          2,
+          1,
+          0,
+          -1,
+          -1,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "sat": [
+          3,
+          2,
+          2,
+          3,
+          1,
+          0,
+          2,
+          3,
+          3,
+          2,
+          3,
+          4
+        ],
+        "grain": "film",
+        "wb": {
+          "a_b": 1,
+          "g_m": 2
+        },
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 2,
+          "shadows": -3,
+          "midtones": 0,
+          "blacks": -1,
+          "whites": 1
+        },
+        "advice": {
+          "tone": {
+            "highlights": 2,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2
+        }
+      }
+    },
+    {
+      "index": 132,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Atrophy",
+        "notes": "Inspired by GxAce's Atrophy: urban-decay grade, near-grey base, muted greens/skies, rust and reds kept, gritty clarity. Sat advice: greens/blues -4..-5.",
+        "kind": "colour",
+        "hue": [
+          -2,
+          -1,
+          0,
+          0,
+          2,
+          1,
+          -2,
+          -1,
+          0,
+          2,
+          2,
+          -1
+        ],
+        "light": [
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -2,
+          -2,
+          -1,
+          -2,
+          -3,
+          -2
+        ],
+        "sat": [
+          -2,
+          -1,
+          1,
+          1,
+          -3,
+          -4,
+          -4,
+          -4,
+          -4,
+          -5,
+          -5,
+          -5
+        ],
+        "grain": "fine",
+        "wb": {
+          "a_b": -1,
+          "g_m": 1
+        },
+        "effect": {
+          "type": "clarity",
+          "strength": 3
+        },
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": -1,
+          "shadows": -2,
+          "midtones": 0,
+          "blacks": 1,
+          "whites": -1
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1
+        }
+      }
+    },
+    {
+      "index": 133,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Acros",
+        "notes": "Fine-grain mono: deep blacks, smooth tones, darker reds.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "fine",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -2,
+            "midtones": 0
+          },
+          "contrast": 1,
+          "mono_filter": {
+            "colour": "green",
+            "strength": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 134,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "Tri-X 400",
+        "notes": "Classic gritty reportage mono: punchy contrast, darker skies.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -1,
+            "shadows": -3,
+            "midtones": 0
+          },
+          "contrast": 2,
+          "mono_filter": {
+            "colour": "yellow",
+            "strength": 2
+          }
+        }
+      }
+    },
+    {
+      "index": 135,
+      "pack": "standard-1.0",
+      "pack_name": "Standard 1.0",
+      "recipe": {
+        "name": "HP5 Plus",
+        "notes": "Soft, grainy mono with wide latitude and open shadows.",
+        "kind": "mono",
+        "hue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "light": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sat": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "grain": "film",
+        "wb": null,
+        "effect": null,
+        "vignette": 0,
+        "art_effect": "off",
+        "tone": {
+          "highlights": 0,
+          "shadows": 0,
+          "midtones": 0,
+          "blacks": 0,
+          "whites": 0
+        },
+        "advice": {
+          "tone": {
+            "highlights": -2,
+            "shadows": 1,
+            "midtones": 0
+          },
+          "mono_filter": {
+            "colour": "none",
+            "strength": 1
+          }
+        }
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 static volatile int photo_lut_loading;
 static unsigned char *photo_lut_handle;
 static uint32_t photo_lut_stop;
-static char photo_lut_status[96]="SET: Load LUT JPEG engine";
+static char photo_lut_status[96]="Film lab is starting automatically";
 #define PHOTO_LUT_ABI 0x4c554933
 #ifndef PHOTO_LUT_CALL
 #define PHOTO_LUT_CALL(base,off) (((int (*)(void))((base)+(off)))())
@@ -28,7 +28,7 @@ static void photo_lut_log(const char *message){
 static void photo_lut_load_task(void *unused){
     (void)unused;uint32_t h[16],size=0;FILE *f=NULL;
     unsigned char *dma=NULL,*image=NULL;int ready=0;
-    photo_lut_log("Thai-Menu LUT3: direct overlay load; no module startup wait");
+    photo_lut_log("Thai-Menu LUT5: automatic film lab startup");
     if(photo_lut_handle){ready=1;goto done;}
     if(FIO_GetFileSize("ML/LUTDATA/LUTJPEG.BIN",&size) || size<64){snprintf(photo_lut_status,sizeof(photo_lut_status),"Missing ML/LUTDATA/LUTJPEG.BIN; copy full ML folder");goto done;}
     dma=fio_malloc(8192);if(!dma){snprintf(photo_lut_status,sizeof(photo_lut_status),"No file-read memory");goto done;}
@@ -72,7 +72,7 @@ static void photo_lut_load_task(void *unused){
     if(f)FIO_CloseFile(f);
     if(dma)fio_free(dma);
     if(image)free(image);
-    if(ready)snprintf(photo_lut_status,sizeof(photo_lut_status),"LUT ready; open FLIM TONE > LUT JPEG again");
+    if(ready)snprintf(photo_lut_status,sizeof(photo_lut_status),"Film lab ready - choose a film and shoot");
     photo_lut_log(photo_lut_status);
     NotifyBox(3500,"%s",ready?"LUT ready":"Cannot load LUT. See ML/LUTLOAD.LOG");
     photo_lut_loading=0;menu_redraw();
@@ -82,8 +82,17 @@ static MENU_SELECT_FUNC(photo_lut_load_select){
     photo_lut_loading=1;snprintf(photo_lut_status,sizeof(photo_lut_status),"Loading LUT engine...");
     task_create("lut_loader",0x1c,0x4000,photo_lut_load_task,NULL);
 }
+/* A process that crashed must not repeat automatically at the next boot. */
+static void photo_lut_auto_start(void){
+    uint32_t size=0;
+    if(!FIO_GetFileSize("ML/LUTDATA/FILMERR.LCK",&size)){
+        snprintf(photo_lut_status,sizeof(photo_lut_status),"Previous film job interrupted; SET to retry film lab");
+        photo_lut_log(photo_lut_status);return;
+    }
+    photo_lut_load_select(NULL,0);
+}
 static MENU_UPDATE_FUNC(photo_lut_load_update){
-    MENU_SET_VALUE("%s",photo_lut_loading?"Loading":"SET Load");MENU_SET_HELP("%s",photo_lut_status);
+    MENU_SET_VALUE("%s",photo_lut_loading?"Starting":"Retry");MENU_SET_HELP("%s",photo_lut_status);
 }
 void photo_lut_shutdown(void){
     while(photo_lut_loading)msleep(20);

@@ -45,5 +45,8 @@ const struct fos_look fos_looks[] =
       0, { { 0 } },
       0.4f, 0.75f, { 1.0f, 0.28f, 0.06f }, 0.036f, 1.3f,
       1, { 0.42f, 0.48f, 0.1f } },
+#include "../caduceus-models.h"
+#include "../caduceus-models.h"
+#include "../caduceus-models.h"
 };
 const int fos_nlooks = sizeof(fos_looks) / sizeof(fos_looks[0]);

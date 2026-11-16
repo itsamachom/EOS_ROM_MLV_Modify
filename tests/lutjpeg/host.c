@@ -24,8 +24,8 @@ void fos_dev_test_sample(int x,int y,int v){(void)x;(void)y;(void)v;}
 int main(int argc,char **argv){
 #ifdef FOS_DEV_TEST
  if(argc==3 && !strcmp(argv[1],"-T")){
-  const int films[]={0,2,7};fos_dev_cache(argv[2]);
-  for(int i=0;i<3;i++)if(!fos_dev_table(films[i]))return 2;
+  fos_dev_cache(argv[2]);
+  for(int i=0;i<fos_nfilms;i++)if(!fos_dev_table(i))return 2;
   fos_dev_release();assert(used==0);return 0;
  }
 #endif
@@ -33,9 +33,13 @@ int main(int argc,char **argv){
  if(getenv("LUT_TEST_MEM"))limit=atoi(getenv("LUT_TEST_MEM"));
  int film=atoi(argv[1]);fos_dev_cache(argv[2]);
  struct fos_dev *d=fos_dev_start(argv[3],argv[4],film,1,"","");
- if(!d){assert(used==0);return 2;}fos_dev_jpeg(d,argv[5]);
+ if(!d){assert(used==0);return 2;}
+ if(getenv("LUT_TEST_SIZE"))fos_dev_big(d,atoi(getenv("LUT_TEST_SIZE")),NULL);
+ fos_dev_jpeg(d,argv[5]);
  int p=0,steps=0;while(p>=0 && p<1000 && steps++<100000)p=fos_dev_step(d,10);
  if(p<0)fprintf(stderr,"Error: %s\n",fos_dev_error(d));
+ int made_w=0,made_h=0;fos_dev_made(d,&made_w,&made_h);
+ fprintf(stderr,"JPEG size: %dx%d\n",made_w,made_h);
  int ok=p==1000;fos_dev_free(d);fos_dev_release();assert(used==0);
  fprintf(stderr,"Host peak processing allocation: %zu bytes; %d steps\n",peak,steps);
  return ok?0:2;

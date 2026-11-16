@@ -20,10 +20,13 @@ static const struct fos_film builtin[] =
       400, 400, PS_MONO, 1, 0, 0, 2, 5500, 0, 0,           4, 2, 0, 0, "HP5", FOS_GROUP_BW, 0 },
     { "trix400", "KODAK", "Tri-X 400", "B&W", "Gritty contrast, street classic",
       400, 400, PS_MONO, 3, 0, 0, 2, 5500, 0, 0,           5, 4, 0, 0, "TriX400", FOS_GROUP_BW, 0 },
+#include "caduceus-films.h"
+#include "caduceus-films.h"
+#include "caduceus-films.h"
 };
 
 const struct fos_film *fos_films=builtin;
-int fos_nfilms=8;
+int fos_nfilms=sizeof(builtin)/sizeof(builtin[0]);
 const struct fos_look *fos_more_looks;
 int fos_nmore_looks;
 int fos_isqrt(unsigned int v)

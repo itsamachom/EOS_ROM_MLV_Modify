@@ -52,11 +52,18 @@ for name in ['LOOK00.LUT','LOOK02.LUT','LOOK07.LUT']:
     assert payload['ML/LUTDATA/'+name]==(root/'firmware/data/lutjpeg'/name).read_bytes()
 assert payload['ML/LUTDATA/RECIPES.json'] == (root/'firmware/data/lutjpeg/RECIPES.json').read_bytes()
 table_info = json.loads(payload['ML/LUTDATA/TABLES.json'])
+catalog_bytes=payload['ML/LUTDATA/caduceus/CATALOG.json']
+assert sha256(catalog_bytes)==table_info['catalog_sha256']
+for name,digest in json.loads(catalog_bytes)['files'].items():
+    assert sha256(payload['ML/LUTDATA/caduceus/'+name])==digest
+assert payload['ML/LUTDATA/caduceus/LICENSE'] and payload['ML/LUTDATA/caduceus/NOTICE']
 assert table_info['recipe_sha256'] == sha256(payload['ML/LUTDATA/RECIPES.json'])
 for name, digest in table_info['sha256'].items():
     assert sha256(payload['ML/LUTDATA/'+name]) == digest
 assert b'ML/LUTDATA/LUTJPEG.BIN' in binary
-assert b'Open menu' in binary
+assert b'Film lab' in binary
+assert b'FILMERR.LCK' in binary
+assert 'ML/LUTDATA/FILMERR.LCK' not in payload
 assert 'ML/LUTDATA/DIRECT.ON' in payload
 assert 'ML/SETTINGS/lutjpeg.en' not in payload
 import zlib

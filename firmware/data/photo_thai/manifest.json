@@ -3,17 +3,17 @@
   "weight": 600,
   "font_version": "Version 2.002",
   "font_sha256": "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8",
-  "atlas_sha256": "20100e723c79f9ffb888ce05447b7febd9efd52951fa4abc45fd125a2623d9f7",
-  "atlas_crc32": "70c76d76",
-  "atlas_bytes": 509887,
-  "translated_phrases": 371,
+  "atlas_sha256": "56d42d8c406d6baeb371752e78fa0f8a29e65f81ac24506d08b702808f60c90a",
+  "atlas_crc32": "319df349",
+  "atlas_bytes": 522325,
+  "translated_phrases": 387,
   "font_sizes": [
     23,
     28,
     32
   ],
   "shaping": "Pillow RAQM/HarfBuzz, language th, ltr",
-  "pillow": "13.0.0",
+  "pillow": "12.3.0",
   "font_size_overrides": {
     "Normal MLU Delay": 25,
     "JPEG / RAW+JPEG in Canon": 23,
@@ -35,6 +35,22 @@
     "Cinema": 23,
     "Black and White": 23,
     "72 native JPEG presets; no RAW development.": 23,
-    "L/R Tone U/D Group SET Details Q Restore MENU Back": 23
+    "L/R Tone U/D Group SET Details Q Restore MENU Back": 23,
+    "Film collection": 25,
+    "Film look": 25,
+    "After each photo": 25,
+    "JPEG output size": 25,
+    "Enable RAW+JPEG": 25,
+    "Develop last photo": 25,
+    "Photo progress": 25,
+    "Developing your film": 25,
+    "Preparing colours": 25,
+    "Reading your RAW photo": 25,
+    "Balancing light and colour": 25,
+    "Saving your JPEG": 25,
+    "Photo ready": 25,
+    "Conversion stopped": 25,
+    "Making a larger JPEG": 25,
+    "Original RAW is kept unchanged": 25
   }
 }

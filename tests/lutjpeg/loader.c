@@ -59,6 +59,10 @@ static void prepare(void){
 static void save(void){h[9]=crc(blob+64,h[3]);h[10]=crc(blob+128,h[5]*4);h[15]=crc(blob,60);write_file("ML/LUTDATA/LUTJPEG.BIN",blob,128+h[5]*4);}
 static void fail_clean(void){photo_lut_load_select(NULL,0);assert(!photo_lut_handle && !live_images && !dma_ptr && !handles && !photo_lut_loading);}
 int main(void){
+ prepare();save();write_file("ML/LUTDATA/FILMERR.LCK","",0);
+ photo_lut_auto_start();assert(!photo_lut_handle && !boots && strstr(photo_lut_status,"interrupted"));
+ remove("ML/LUTDATA/FILMERR.LCK");
+ photo_lut_auto_start();assert(photo_lut_handle && boots==1);photo_lut_shutdown();
  prepare();remove("ML/LUTDATA/LUTJPEG.BIN");fail_clean();assert(strstr(photo_lut_status,"Missing"));
  prepare();save();remove("ML/modules/600D_102.sym");fail_clean();assert(strstr(photo_lut_status,"differ"));
  prepare();save();write_file("autoexec.bin","wrong",5);fail_clean();assert(!boots);

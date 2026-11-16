@@ -3371,10 +3371,9 @@ static struct menu_entry shoot_menus[] = {
     {
         .name = "FLIM TONE",
         .select = menu_open_submenu,
-        .help = "Open the film picker or LUT JPEG conversion.",
+        .help = "Choose a film and shoot. RAW photos develop automatically.",
         .children = (struct menu_entry[]) {
-            {.name="Open menu",.select=photo_tone_open_picker,.icon_type=IT_ACTION,.help="Open the native JPEG film picker."},
-            {.name="LUT JPEG",.select=photo_lut_load_select,.update=photo_lut_load_update,.icon_type=IT_ACTION,.help="Load LUT JPEG directly; no Modules page needed."},
+            {.name="LUT JPEG",.select=photo_lut_load_select,.update=photo_lut_load_update,.icon_type=IT_ACTION,.help="Film lab starts automatically. Loading status or recovery retry."},
             MENU_EOL,
         },
     },
@@ -6249,6 +6248,9 @@ static void shoot_init()
 
     menu_add( "Shoot", shoot_menus, COUNT(shoot_menus) );
     menu_add( "Expo", expo_menus, COUNT(expo_menus) );
+#ifdef CONFIG_600D
+    photo_lut_auto_start(); /* Bound payload, not a user-loaded module. */
+#endif
     
     //~ menu_add( "Tweaks", vid_menus, COUNT(vid_menus) );
 

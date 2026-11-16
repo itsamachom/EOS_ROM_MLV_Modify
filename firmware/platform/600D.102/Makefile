@@ -39,6 +39,8 @@ zip_contents::
 	mkdir -p $(ZIP_DIR)/ML/LUTDATA
 	$(CP) $(TOP_DIR)/data/lutjpeg/LOOK*.LUT $(TOP_DIR)/data/lutjpeg/TABLES.json $(TOP_DIR)/data/lutjpeg/RECIPES.json $(ZIP_DIR)/ML/LUTDATA/
 	$(CP) $(TOP_DIR)/modules/lutjpeg/upstream/COPYING $(ZIP_DIR)/ML/LUTDATA/
+	mkdir -p $(ZIP_DIR)/ML/LUTDATA/caduceus
+	$(CP) $(TOP_DIR)/data/lutjpeg/caduceus/* $(ZIP_DIR)/ML/LUTDATA/caduceus/
 	mkdir -p $(ZIP_DIR)/ML/SETTINGS
 	rm -f $(ZIP_DIR)/ML/SETTINGS/lutjpeg.en
 	touch $(ZIP_DIR)/ML/LUTDATA/DIRECT.ON

@@ -1,0 +1,45 @@
+{
+  "version": "v3r6-lut5",
+  "target": "600D.102",
+  "status": "Public Experimental",
+  "audience": "First installation or existing ML: choose the matching package",
+  "project": "FIRMWARE ADD-ON Thai-Menu",
+  "project_website": "https://itsamachom.github.io/EOS_ROM_MLV_Modify/",
+  "firmware_source_tag": "v3r6-lut5",
+  "firmware_source_commit": null,
+  "source_base_commit": "28748209d4615bfb2cdd530111228d727eacc0c9",
+  "full_zip_sha256": "78d4ebaf3ba407f940590f9e959abd248aa2f77b9bec6034cc5bc844f855c89e",
+  "autoexec_sha256": "e0bea377a05c1b04df8ec3743f64b3b5c0edceac348f49b8eefca6023b20881c",
+  "installer_sha256": "7e33d8a2a71ad92c412d291fb0ecb6de0b9404c212571d51fd82f839688070e3",
+  "first_install": {
+    "filename": "600D-102-Thai-Menu-v3r6-lut5-FIRST-INSTALL.zip",
+    "path": "downloads/v3r6-lut5/first_install/600D-102-Thai-Menu-v3r6-lut5-FIRST-INSTALL.zip",
+    "bytes": 6096760,
+    "sha256": "0558ed953a389b57f8bfa622f70a589d7605333928905a5bd8dd2da3c7f577a9"
+  },
+  "camera": {
+    "filename": "600D-102-Thai-Menu-v3r6-lut5-UPDATE.zip",
+    "path": "downloads/v3r6-lut5/camera/600D-102-Thai-Menu-v3r6-lut5-UPDATE.zip",
+    "bytes": 6030707,
+    "sha256": "230a280c3785d749ed6f21ca2bf1f541dff5c98be872fb48595746204e161790"
+  },
+  "source": {
+    "filename": "600D-PHOTO-UI-v3r6-lut5-source.zip",
+    "url": "https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/v3r6-lut5/deliveries/photo-ui-v3r6-lut5-full/600D-PHOTO-UI-v3r6-lut5-source.zip",
+    "bytes": 44884533,
+    "sha256": "d96e2b1a134930de4ef077de1cb1dc482ae20d7702d5dd125826bb1e67cfeb6b"
+  },
+  "verified": [
+    "ZIP CRC",
+    "runtime bytes match Full ZIP in both packages",
+    "original installer size/hash and source-tree identity",
+    "FIR absent in update",
+    "source ZIP identity",
+    "licenses and upstream instructions retained"
+  ],
+  "camera_tested": false,
+  "first_install_hardware_tested": false,
+  "qemu_tested": false,
+  "installer_rebuilt": false,
+  "inherited_dependency_source_verified": false
+}

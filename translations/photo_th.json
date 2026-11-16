@@ -1571,5 +1571,85 @@
   "Open menu": {
     "th": "เปิดเมนู",
     "max_width": 318
+  },
+  "Film collection": {
+    "th": "หมวดฟิล์ม",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Film look": {
+    "th": "เลือกโทนฟิล์ม",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "After each photo": {
+    "th": "แปลงหลังถ่าย",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "JPEG output size": {
+    "th": "ขนาดภาพ JPEG",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Enable RAW+JPEG": {
+    "th": "เปิด RAW พร้อม JPEG",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Develop last photo": {
+    "th": "แปลงภาพล่าสุดอีกครั้ง",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Photo progress": {
+    "th": "สถานะล้างภาพ",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Developing your film": {
+    "th": "กำลังล้างภาพฟิล์ม",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Preparing colours": {
+    "th": "เตรียมสูตรสี",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Reading your RAW photo": {
+    "th": "กำลังอ่านภาพ RAW",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Balancing light and colour": {
+    "th": "ปรับแสงและสีของภาพ",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Saving your JPEG": {
+    "th": "กำลังบันทึกภาพ JPEG",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Photo ready": {
+    "th": "ล้างภาพเสร็จแล้ว",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Conversion stopped": {
+    "th": "หยุดการล้างภาพ",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Making a larger JPEG": {
+    "th": "กำลังสร้างภาพขนาดใหญ่",
+    "max_width": 672,
+    "font_size": 25
+  },
+  "Original RAW is kept unchanged": {
+    "th": "เก็บภาพ RAW ต้นฉบับไว้ครบ",
+    "max_width": 672,
+    "font_size": 25
   }
 }

@@ -147,7 +147,13 @@ static struct menu_entry * photo_resolve(const struct photo_item * item, struct 
         if (!item->entry) return NULL;
         for (struct menu_entry * e = m->children; e; e = e->next) {
             if (e->shidden || e->placeholder) continue;
-            if (streq(e->name, item->entry)) return e;
+            if (streq(e->name, item->entry)) {
+                if(streq(item->entry,"FLIM TONE")) {
+                    for(struct menu_entry *lab=m->children;lab;lab=lab->next)
+                        if(!lab->shidden && !lab->placeholder && streq(lab->name,"LUT JPEG"))return lab;
+                }
+                return e;
+            }
         }
         return NULL;
     }
@@ -191,6 +197,8 @@ static void photo_text(int font, int x, int y, int width, const char * text)
     bmp_printf(font, x, y, "%s", buf);
 }
 
+/* Exported for the bound film lab's progress screen. */
+void photo_film_text(int font,int x,int y,int width,const char *text){photo_text(font,x,y,width,text);}
 #include "photo-tone-600d.h"
 void photo_tone_open_picker(void *priv,int delta) {
     (void)priv;(void)delta;take_semaphore(menu_sem,0);

@@ -15,8 +15,9 @@
 struct card_info {char *drive_letter;int file_number;};
 static struct card_info card={"A",1};
 static struct {int job_state;} lens_info;
-static int get_ms_clock(void){struct timespec t;clock_gettime(CLOCK_MONOTONIC,&t);return t.tv_sec*1000+t.tv_nsec/1000000;}
-static void msleep(int n){(void)n;}
+static int mock_now=1000;
+static int get_ms_clock(void){return mock_now;}
+static void msleep(int n){mock_now+=n;}
 static struct card_info *get_shooting_card(void){return &card;}
 static int get_halfshutter_pressed(void){return 0;}
 static int is_movie_mode(void){return 0;}
@@ -42,12 +43,13 @@ static void menu_redraw(void){}
 static void task_create(const char *name,int pri,int stack,void (*fn)(void*),void *arg){(void)name;(void)pri;(void)stack;fn(arg);}
 #define MENU_SELECT_FUNC(n) void n(void *priv,int delta)
 struct menu_display_info {int unused;};
-struct menu_entry {const char *name,*help,*help2;int *priv;int min,max,submenu_width,icon_type;const char *choices;struct menu_entry *children;void (*update)(struct menu_entry*,struct menu_display_info*);void (*select)(void*,int);};
+struct menu_entry {const char *name,*help,*help2;int *priv;int min,max,submenu_width,icon_type;const char **choices;struct menu_entry *children;void (*update)(struct menu_entry*,struct menu_display_info*);void (*select)(void*,int);};
 #define MENU_UPDATE_FUNC(n) void n(struct menu_entry *entry,struct menu_display_info *info)
 #define MENU_SET_VALUE(...) ((void)0)
 #define MENU_SET_RINFO(...) ((void)0)
 #define MENU_SET_HELP(...) ((void)0)
-#define CHOICES(...) "test"
+#define MENU_SET_HELP2(...) ((void)0)
+#define CHOICES(...) ((const char *[]){__VA_ARGS__})
 #define IT_SUBMENU 10
 static void menu_open_submenu(void *p,int d){(void)p;(void)d;}
 #define MENU_EOL {0}
@@ -57,3 +59,13 @@ static void menu_open_submenu(void *p,int d){(void)p;(void)d;}
 #define MODULE_INIT(n)
 #define MODULE_DEINIT(n)
 #define MODULE_INFO_END()
+
+#define SEM_CREATE_UNLOCKED 1
+static void *create_named_semaphore(const char *s,int v){(void)s;(void)v;return (void*)1;}
+static void take_semaphore(void *s,int v){(void)s;(void)v;}
+static void give_semaphore(void *s){(void)s;}
+
+#define PICQ_RAW_JPG_LARGE_FINE 0x3070000
+#define PROP_PIC_QUALITY 1
+static int pic_quality=PICQ_RAW_JPG_LARGE_FINE,quality_requests;
+static void prop_request_change(unsigned p,const void *v,size_t n){assert(p==PROP_PIC_QUALITY && n==4);pic_quality=*(const int*)v;quality_requests++;}

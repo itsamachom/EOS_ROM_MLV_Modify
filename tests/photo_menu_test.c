@@ -289,7 +289,8 @@ static struct menu options={.name="Focus Peak",.children=&threshold,.icon=ICON_M
     .parent_menu=&overlay,.parent_entry=&peak};
 static struct menu prefs={.name="Prefs"};
 
-static void film_loader_select(void *p,int d){(void)p;(void)d;}
+static int film_loads;
+static void film_loader_select(void *p,int d){(void)p;(void)d;film_loads++;}
 static void film_loader_update(struct menu_entry *e,struct menu_display_info *i){(void)e;snprintf(i->value,MENU_MAX_VALUE_LEN,"SET Load");}
 static struct menu_entry film_children[2];
 static struct menu_entry film_root={.name="FLIM TONE",.children=film_children};
@@ -470,13 +471,20 @@ int main(void)
     struct menu_entry live_engine={.name="LUT JPEG"};
     film_root.next=&live_engine;live_engine.parent_menu=&film_shoot;
     assert(photo_detail_entry(&film_root,1,&lut_count)==&live_engine && lut_count==2);
-    live_engine.select=menu_open_submenu;live_engine.children=&film_children[0];
-    photo_pane=PHOTO_DETAILS;photo_detail_index=1;render();
-    press(BGMT_PRESS_SET);assert(submenu_level==1 && last_entry==&live_engine && !photo_confirm);
+    live_engine.select=menu_open_submenu;
+    int collection_value=0;
+    struct menu_entry collection_entry={.name="Film collection",.priv=&collection_value,.min=0,.max=9,.parent_menu=&film_options};
+    live_engine.children=&collection_entry;
+    struct menu *resolved_parent=NULL;
+    assert(photo_resolve(&photo_shoot[0],&resolved_parent)==&live_engine);
+    photo_pane=PHOTO_DETAILS;photo_detail_index=0;render();
+    int loads_before=film_loads;
+    press(BGMT_PRESS_SET);assert(photo_editing && film_loads==loads_before);
+    press(BGMT_MENU);photo_editing=0;
     submenu_level=0;
     live_engine.shidden=1;assert(photo_detail_entry(&film_root,1,&lut_count)==&film_children[1]);
     film_root.next=NULL;
-    puts("PASS FLIM TONE has Open menu / LUT JPEG, directly opens picker and prefers loaded engine");
+    puts("PASS film lab resolves directly to loaded engine and edits collections without loading a module; legacy picker fallback retained");
     for(int lang=0;lang<2;lang++){
         reset();photo_thai_enabled=lang;photo_page_index=0;photo_selection[0]=0;photo_pane=PHOTO_DETAILS;render();
         save_proof(lang?"film-menu-th":"film-menu-en");
