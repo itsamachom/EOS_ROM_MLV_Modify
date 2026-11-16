@@ -9,11 +9,13 @@
 #define PHOTO_LUT_LOADER_TEST 1
 #define O_RDONLY 0
 #define O_SYNC 0
-static int boots,stops,abi_bad,boot_bad,cache_sync,fail_alloc,fail_dma,short_read,handles,live_images;
+static int boots,stops,abi_bad,boot_bad,cache_sync,fail_alloc,fail_dma,short_read,handles,live_images,fail_guard;
 static unsigned char *dma_ptr;
 static int FIO_GetFileSize(const char *p,uint32_t *n){struct stat st;if(stat(p,&st))return -1;*n=st.st_size;return 0;}
 static FILE *FIO_OpenFile(const char *p,int flags){(void)flags;FILE *f=fopen(p,"rb");if(f)handles++;return f;}
 static FILE *FIO_CreateFileOrAppend(const char *p){FILE *f=fopen(p,"ab");if(f)handles++;return f;}
+static FILE *FIO_CreateFile(const char *p){if(fail_guard)return NULL;FILE *f=fopen(p,"wb");if(f)handles++;return f;}
+static int FIO_RemoveFile(const char *p){return remove(p);}
 static int FIO_ReadFile(FILE *f,void *p,unsigned n){assert(p==dma_ptr && n<=8192);return fread(p,1,short_read && n>1?n-1:n,f);}
 static int FIO_WriteFile(FILE *f,const void *p,unsigned n){return fwrite(p,1,n,f);}
 static void FIO_CloseFile(FILE *f){handles--;fclose(f);}
@@ -31,6 +33,7 @@ static void task_create(const char *s,int p,int z,void (*fn)(void*),void *a){(vo
 #define MENU_SET_VALUE(...) ((void)0)
 #define MENU_SET_HELP(...) ((void)0)
 static int fake_call(unsigned char *base,unsigned off){
+ uint32_t guard_size;assert(!FIO_GetFileSize("ML/LUTDATA/FILMBOOT.LCK",&guard_size));
  uint32_t ptr;memcpy(&ptr,base,4);assert(ptr==(uint32_t)(uintptr_t)base+16);
  if(off==12)return abi_bad?0:0x4c554933;
  if(off==4){boots++;return boot_bad?-1:0;}
@@ -48,7 +51,8 @@ static void write_file(const char *p,const void *b,unsigned n){FILE *f=fopen(p,"
 static void prepare(void){
  if(photo_lut_handle){image_free(photo_lut_handle);photo_lut_handle=NULL;}
  assert(!live_images && !handles && !dma_ptr);
- boots=stops=abi_bad=boot_bad=cache_sync=fail_alloc=fail_dma=short_read=0;photo_lut_loading=0;
+ boots=stops=abi_bad=boot_bad=cache_sync=fail_alloc=fail_dma=short_read=fail_guard=0;photo_lut_loading=0;
+ remove("ML/LUTDATA/FILMBOOT.LCK");
  memset(blob,0,sizeof(blob));h=(uint32_t*)blob;
  unsigned char core[64]={1,2,3},sym[64]={4,5,6};
  write_file("autoexec.bin",core,64);write_file("ML/modules/600D_102.sym",sym,64);
@@ -63,6 +67,13 @@ int main(void){
  photo_lut_auto_start();assert(!photo_lut_handle && !boots && strstr(photo_lut_status,"interrupted"));
  remove("ML/LUTDATA/FILMERR.LCK");
  photo_lut_auto_start();assert(photo_lut_handle && boots==1);photo_lut_shutdown();
+ uint32_t guard_size;assert(FIO_GetFileSize("ML/LUTDATA/FILMBOOT.LCK",&guard_size));
+ prepare();save();photo_lut_auto_start();assert(photo_lut_handle && !FIO_GetFileSize("ML/LUTDATA/FILMBOOT.LCK",&guard_size));
+ /* Simulate battery removal without calling overlay shutdown. */
+ image_free(photo_lut_handle);photo_lut_handle=NULL;boots=0;
+ photo_lut_auto_start();assert(!boots && !photo_lut_handle && strstr(photo_lut_status,"disabled"));
+ photo_lut_load_select(NULL,0);assert(boots==1 && photo_lut_handle);photo_lut_shutdown();
+ prepare();save();fail_guard=1;fail_clean();assert(!boots && !cache_sync && strstr(photo_lut_status,"guard"));
  prepare();remove("ML/LUTDATA/LUTJPEG.BIN");fail_clean();assert(strstr(photo_lut_status,"Missing"));
  prepare();save();remove("ML/modules/600D_102.sym");fail_clean();assert(strstr(photo_lut_status,"differ"));
  prepare();save();write_file("autoexec.bin","wrong",5);fail_clean();assert(!boots);
@@ -78,9 +89,10 @@ int main(void){
  prepare();save();short_read=1;fail_clean();
  prepare();save();abi_bad=1;fail_clean();assert(!boots);
  prepare();save();boot_bad=1;fail_clean();assert(boots==1 && stops==1);
+ boots=0;photo_lut_auto_start();assert(!boots && strstr(photo_lut_status,"disabled"));
  prepare();save();photo_lut_load_select(NULL,0);assert(photo_lut_handle && boots==1 && cache_sync==1 && !handles && !dma_ptr);
  photo_lut_load_select(NULL,0);assert(boots==1 && cache_sync==1);
  photo_lut_shutdown();assert(stops==1);
  prepare();assert(!live_images);
- puts("PASS direct loader CRC/bounds/relocation/core matching, DMA, low memory, ABI/init cleanup, reuse and shutdown; no startup/TCC dependency");
+ puts("PASS direct loader CRC/bounds/relocation/core matching, DMA, low memory, ABI/init cleanup; persistent startup/session guard, power-loss suppression, explicit retry and orderly shutdown");
 }

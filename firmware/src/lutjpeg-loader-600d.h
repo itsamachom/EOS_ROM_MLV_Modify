@@ -28,7 +28,7 @@ static void photo_lut_log(const char *message){
 static void photo_lut_load_task(void *unused){
     (void)unused;uint32_t h[16],size=0;FILE *f=NULL;
     unsigned char *dma=NULL,*image=NULL;int ready=0;
-    photo_lut_log("Thai-Menu LUT5: automatic film lab startup");
+    photo_lut_log("Thai-Menu: film lab startup requested");
     if(photo_lut_handle){ready=1;goto done;}
     if(FIO_GetFileSize("ML/LUTDATA/LUTJPEG.BIN",&size) || size<64){snprintf(photo_lut_status,sizeof(photo_lut_status),"Missing ML/LUTDATA/LUTJPEG.BIN; copy full ML folder");goto done;}
     dma=fio_malloc(8192);if(!dma){snprintf(photo_lut_status,sizeof(photo_lut_status),"No file-read memory");goto done;}
@@ -61,6 +61,13 @@ static void photo_lut_load_task(void *unused){
         off+=count;
     }
     if(~crc!=h[10])goto bad;
+    /* Persist before executing overlay code. Keep for its whole lifetime: a
+     * startup or callback crash must not automatically repeat after power loss.
+     * Only orderly overlay shutdown removes it; manual retry remains explicit. */
+    FILE *guard=FIO_CreateFile("ML/LUTDATA/FILMBOOT.LCK");
+    if(!guard){snprintf(photo_lut_status,sizeof(photo_lut_status),"Cannot create startup guard; film lab disabled");goto done;}
+    FIO_CloseFile(guard);
+    photo_lut_log("Overlay validated; entering film startup");
     sync_caches();
     if(PHOTO_LUT_CALL(image,h[8])!=PHOTO_LUT_ABI)goto bad;
     if(PHOTO_LUT_CALL(image,h[6])!=0){PHOTO_LUT_CALL(image,h[7]);goto bad;}
@@ -85,6 +92,10 @@ static MENU_SELECT_FUNC(photo_lut_load_select){
 /* A process that crashed must not repeat automatically at the next boot. */
 static void photo_lut_auto_start(void){
     uint32_t size=0;
+    if(!FIO_GetFileSize("ML/LUTDATA/FILMBOOT.LCK",&size)){
+        snprintf(photo_lut_status,sizeof(photo_lut_status),"Previous film startup/session interrupted; film lab disabled");
+        photo_lut_log(photo_lut_status);return;
+    }
     if(!FIO_GetFileSize("ML/LUTDATA/FILMERR.LCK",&size)){
         snprintf(photo_lut_status,sizeof(photo_lut_status),"Previous film job interrupted; SET to retry film lab");
         photo_lut_log(photo_lut_status);return;
@@ -96,6 +107,7 @@ static MENU_UPDATE_FUNC(photo_lut_load_update){
 }
 void photo_lut_shutdown(void){
     while(photo_lut_loading)msleep(20);
-    if(photo_lut_handle)PHOTO_LUT_CALL(photo_lut_handle,photo_lut_stop);
+    if(photo_lut_handle && PHOTO_LUT_CALL(photo_lut_handle,photo_lut_stop)==0)
+        FIO_RemoveFile("ML/LUTDATA/FILMBOOT.LCK");
 }
 #endif

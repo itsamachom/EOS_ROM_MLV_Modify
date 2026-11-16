@@ -1,3 +1,5 @@
+> **หยุดแนะนำใช้ v3r6-lut6 (16 พ.ย. 2026): ผู้ใช้รายงานค้างตั้งแต่เปิดสวิตช์ ไฟแดงกะพริบ และต้องถอดแบตจึงกู้กลับได้ อย่าทดสอบการ์ดชุดนี้ซ้ำ ดู [รายงานและแนวทางกู้กลับ](../../BOOT_INCIDENT_V3R6-LUT6.md). ยังไม่มีบิลด์แก้ที่ผ่านการทดสอบบนกล้องจริง**
+
 # v3r6-lut6 — Seven-film trial / Canon 600D 1.0.2
 
 [ดาวน์โหลด UPDATE สำหรับการ์ดที่มี ML แล้ว](https://raw.githubusercontent.com/itsamachom/EOS_ROM_MLV_Modify/v3r6-lut6/downloads/v3r6-lut6/camera/600D-102-Thai-Menu-v3r6-lut6-UPDATE.zip)
