@@ -61,18 +61,18 @@ static void prepare(void){
  uint32_t ptr=16;memcpy(blob+64,&ptr,4);
 }
 static void save(void){h[9]=crc(blob+64,h[3]);h[10]=crc(blob+128,h[5]*4);h[15]=crc(blob,60);write_file("ML/LUTDATA/LUTJPEG.BIN",blob,128+h[5]*4);}
-static void fail_clean(void){photo_lut_load_select(NULL,0);assert(!photo_lut_handle && !live_images && !dma_ptr && !handles && !photo_lut_loading);}
+static void test_load(void){photo_lut_loading=1;photo_lut_load_task(NULL);}
+static void fail_clean(void){test_load();assert(!photo_lut_handle && !live_images && !dma_ptr && !handles && !photo_lut_loading);}
 int main(void){
- prepare();save();write_file("ML/LUTDATA/FILMERR.LCK","",0);
- photo_lut_auto_start();assert(!photo_lut_handle && !boots && strstr(photo_lut_status,"interrupted"));
+ prepare();save();
+ /* Test actual public entry points with and without stale crash markers. */
+ for(int stale=0;stale<2;stale++){
+  if(stale){write_file("ML/LUTDATA/FILMERR.LCK","",0);write_file("ML/LUTDATA/FILMBOOT.LCK","",0);}
+  photo_lut_auto_start();photo_lut_load_select(NULL,0);
+  assert(!boots && !cache_sync && !photo_lut_handle && !handles && !dma_ptr && !photo_lut_loading);
+  assert(strstr(photo_lut_status,"Recovery"));
+ }
  remove("ML/LUTDATA/FILMERR.LCK");
- photo_lut_auto_start();assert(photo_lut_handle && boots==1);photo_lut_shutdown();
- uint32_t guard_size;assert(FIO_GetFileSize("ML/LUTDATA/FILMBOOT.LCK",&guard_size));
- prepare();save();photo_lut_auto_start();assert(photo_lut_handle && !FIO_GetFileSize("ML/LUTDATA/FILMBOOT.LCK",&guard_size));
- /* Simulate battery removal without calling overlay shutdown. */
- image_free(photo_lut_handle);photo_lut_handle=NULL;boots=0;
- photo_lut_auto_start();assert(!boots && !photo_lut_handle && strstr(photo_lut_status,"disabled"));
- photo_lut_load_select(NULL,0);assert(boots==1 && photo_lut_handle);photo_lut_shutdown();
  prepare();save();fail_guard=1;fail_clean();assert(!boots && !cache_sync && strstr(photo_lut_status,"guard"));
  prepare();remove("ML/LUTDATA/LUTJPEG.BIN");fail_clean();assert(strstr(photo_lut_status,"Missing"));
  prepare();save();remove("ML/modules/600D_102.sym");fail_clean();assert(strstr(photo_lut_status,"differ"));
@@ -89,10 +89,10 @@ int main(void){
  prepare();save();short_read=1;fail_clean();
  prepare();save();abi_bad=1;fail_clean();assert(!boots);
  prepare();save();boot_bad=1;fail_clean();assert(boots==1 && stops==1);
- boots=0;photo_lut_auto_start();assert(!boots && strstr(photo_lut_status,"disabled"));
- prepare();save();photo_lut_load_select(NULL,0);assert(photo_lut_handle && boots==1 && cache_sync==1 && !handles && !dma_ptr);
- photo_lut_load_select(NULL,0);assert(boots==1 && cache_sync==1);
+ boots=0;photo_lut_auto_start();assert(!boots);
+ prepare();save();test_load();assert(photo_lut_handle && boots==1 && cache_sync==1 && !handles && !dma_ptr);
+ test_load();assert(boots==1 && cache_sync==1);
  photo_lut_shutdown();assert(stops==1);
  prepare();assert(!live_images);
- puts("PASS direct loader CRC/bounds/relocation/core matching, DMA, low memory, ABI/init cleanup; persistent startup/session guard, power-loss suppression, explicit retry and orderly shutdown");
+ puts("PASS direct loader CRC/bounds/relocation/core matching, DMA, low memory, ABI/init cleanup; recovery boot/manual entry disabled, low-level guard and orderly shutdown");
 }

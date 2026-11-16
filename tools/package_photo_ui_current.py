@@ -64,9 +64,14 @@ assert payload['ML/LUTDATA/caduceus/LICENSE'] and payload['ML/LUTDATA/caduceus/N
 assert table_info['recipe_sha256'] == sha256(payload['ML/LUTDATA/RECIPES.json'])
 for name, digest in table_info['sha256'].items():
     assert sha256(payload['ML/LUTDATA/'+name]) == digest
-assert b'ML/LUTDATA/LUTJPEG.BIN' in binary
-assert b'Film lab' in binary
-assert b'FILMERR.LCK' in binary
+if release == 'v3r6-lut7':
+    assert b'Recovery update: film engine disabled' in binary
+    sym=payload['ML/modules/600D_102.sym']
+    assert all(n not in sym for n in [b'photo_film_filter',b'photo_film_register',b'photo_film_draw'])
+else:
+    assert b'ML/LUTDATA/LUTJPEG.BIN' in binary
+    assert b'Film lab' in binary
+    assert b'FILMERR.LCK' in binary
 assert 'ML/LUTDATA/FILMERR.LCK' not in payload
 assert 'ML/LUTDATA/DIRECT.ON' in payload
 assert 'ML/SETTINGS/lutjpeg.en' not in payload
@@ -75,7 +80,8 @@ hdr=struct.unpack('<16I',payload['ML/LUTDATA/LUTJPEG.BIN'][:64])
 assert hdr[13]==zlib.crc32(binary) and hdr[14]==len(binary)
 assert hdr[11]==zlib.crc32(payload['ML/modules/600D_102.sym'])
 assert hdr[15]==zlib.crc32(payload['ML/LUTDATA/LUTJPEG.BIN'][:60])
-assert b'ML/LUTLOAD.LOG' in binary
+if release != 'v3r6-lut7':
+    assert b'ML/LUTLOAD.LOG' in binary
 assert b'Module startup busy; retry' not in binary
 assert b'lutjpeg_bootstrap' in payload['ML/modules/lutjpeg.mo']
 assert b'lutjpeg_abi' in payload['ML/modules/lutjpeg.mo']

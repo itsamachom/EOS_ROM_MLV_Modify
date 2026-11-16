@@ -11,6 +11,7 @@ import sys
 root = pathlib.Path(__file__).resolve().parents[1]
 path = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else root / "firmware/platform/600D.102/build/magiclantern"
 data = path.read_bytes()
+recovery = b"Recovery update: film engine disabled" in data
 assert data[:6] == b"\x7fELF\x01\x01", "Expected little-endian ELF32"
 eh = struct.unpack_from("<16sHHIIIIIHHHHHH", data)
 sections = [struct.unpack_from("<10I", data, eh[6] + i * eh[11]) for i in range(eh[12])]
@@ -66,15 +67,17 @@ for menu, entry in bindings:
         assert {"photo_jpeg_style_read","photo_jpeg_style_write","photo_tone_recipes"} <= linked_symbols
         assert b"FLIM TONE\0" in data and b"Portra 400\0" in data
         assert ("Shoot","FLIM TONE") in registered and b"Open menu\0" in data
-        assert {"photo_lut_load_task","photo_tone_open_picker"} <= linked_symbols
+        assert "photo_tone_open_picker" in linked_symbols
+        assert ("photo_lut_load_task" not in linked_symbols) if recovery else ("photo_lut_load_task" in linked_symbols)
     elif (menu, entry) in module_bindings:
         # Modules are resolved dynamically on the camera. Check packaged strings.
         if entry == "LUT JPEG":
             assert ("Shoot","FLIM TONE") in registered
-            assert {"photo_lut_load_task","module_startup_complete","photo_lut_shutdown"} <= linked_symbols
+            assert {"module_startup_complete","photo_lut_shutdown"} <= linked_symbols
+            assert ("photo_lut_load_task" not in linked_symbols) if recovery else ("photo_lut_load_task" in linked_symbols)
         mod = {"Silent Picture": "silent", "Dual ISO": "dual_iso", "Auto ETTR": "ettr", "Arkanoid": "arkanoid", "LUT JPEG": "lutjpeg"}[entry]
         blob = (path.parent / "zip/ML/modules" / (mod + ".mo")).read_bytes()
-        assert entry.encode() + b"\0" in blob, (menu, entry)
+        assert (b"lutjpeg_bootstrap" in blob) if (recovery and entry == "LUT JPEG") else (entry.encode() + b"\0" in blob), (menu, entry)
     elif menu == "Scripts":
         script = {"Pong Game": "pong.lua", "Sokoban Game": "sokoban.lua"}[entry]
         text = (path.parent / "zip/ML/scripts" / script).read_text()

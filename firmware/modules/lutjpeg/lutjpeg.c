@@ -15,16 +15,12 @@
 #include "propvalues.h"
 #include "property.h"
 #endif
-#ifdef BGMT_Q
-#undef BGMT_Q
-#endif
-#include "../../platform/600D.102/gui.h"
 #include "upstream/fos.h"
 #include "upstream/fos_dev.h"
-#include "seven-films.h"
-#include "film-colour.h"
+#include "film-library.h"
+#include "../../src/film-recovery.h"
 
-static int within,auto_enabled=1,output_size=FOS_SIZE_L;
+static int collection,within=9,auto_enabled=1,output_size=FOS_SIZE_L;
 static volatile int running,percent,cancel,stopping,monitor_alive;
 static int chosen,last_width,last_height,last_made,completed,failed,dropped,stage;
 static char status[100]="Choose a film, enable RAW+JPEG, then shoot";
@@ -40,7 +36,7 @@ static volatile int qcount;
 static char observed_dir[96];
 static int observed_number=-1,observed_busy,stable_since,quality_requested;
 static uint32_t stable_size;
-static int current_index(void){return COERCE(within,0,6);}
+static int current_index(void){int c=COERCE(collection,0,(int)COUNT(pack_names)-1);return pack_offsets[c]+COERCE(within,0,pack_counts[c]-1);}
 static void lock_queue(void){take_semaphore(queue_sem,0);}
 static void unlock_queue(void){give_semaphore(queue_sem);}
 int *lut_errno(void){return &local_errno;}
@@ -60,23 +56,18 @@ static unsigned config_crc(const uint32_t *p){unsigned h=2166136261u;for(int i=0
 static void film_settings(int save){
     uint32_t *dma=fio_malloc(24);if(!dma)return;
     const char *path="ML/SETTINGS/FILMLAB.CFG";
-    if(save){dma[0]=0x36464a4c;dma[1]=within;dma[2]=auto_enabled;dma[3]=output_size;dma[4]=0;dma[5]=config_crc(dma);}
+    if(save){dma[0]=0x35464a4c;dma[1]=collection;dma[2]=within;dma[3]=auto_enabled;dma[4]=output_size;dma[5]=config_crc(dma);}
     FILE *f=save?FIO_CreateFile(path):FIO_OpenFile(path,O_RDONLY|O_SYNC);
     if(f){
         if(save)FIO_WriteFile(f,dma,24);
-        else if(FIO_ReadFile(f,dma,24)==24 && dma[0]==0x36464a4c && dma[1]<7 && dma[2]<=1 && dma[3]<=FOS_SIZE_L && dma[5]==config_crc(dma)){
-            within=dma[1];auto_enabled=dma[2];output_size=dma[3];
+        else if(FIO_ReadFile(f,dma,24)==24 && dma[0]==0x35464a4c && dma[1]<COUNT(pack_names) && dma[2]<(unsigned)pack_counts[dma[1]] && dma[3]<=1 && dma[4]<=FOS_SIZE_L && dma[5]==config_crc(dma)){
+            collection=dma[1];within=dma[2];auto_enabled=dma[3];output_size=dma[4];
         }
         FIO_CloseFile(f);
     }
     fio_free(dma);
 }
 
-#ifndef LUTJPEG_HOST_TEST
-extern void photo_film_text(int font,int x,int y,int width,const char *text);
-#endif
-#include "film-ui.h"
-#include "film-files.h"
 #ifndef LUTJPEG_HOST_TEST
 /* The core wrapper uses the same Thai atlas and clipped text renderer as Photo UI. */
 extern void photo_film_text(int font,int x,int y,int width,const char *text);
@@ -85,12 +76,12 @@ static int screen_visible,screen_until,last_screen_ms;
 static void draw_progress(void){
     int now=get_ms_clock();
     if(gui_menu_shown() || lens_info.job_state || RECORDING || get_halfshutter_pressed() || lv){
-        if(screen_visible){screen_visible=0;if(!gui_menu_shown())canon_gui_enable_front_buffer(1);redraw();}return;
+        if(screen_visible){screen_visible=0;redraw();}return;
     }
     if(now-last_screen_ms<150)return;
-    if(!running && now>screen_until){if(screen_visible){screen_visible=0;if(!gui_menu_shown())canon_gui_enable_front_buffer(1);redraw();}return;}
-    last_screen_ms=now;if(!screen_visible)canon_gui_disable_front_buffer();screen_visible=1;
-    BMP_LOCK(film_progress_draw(now,running,stage,percent,film_names[chosen],status,qcount,completed,last_width,last_height,last_made==current_job.size,leaf(current_job.path[0]?current_job.path:last_source),last_saved,failed));
+    if(!running && now>screen_until){if(screen_visible){screen_visible=0;redraw();}return;}
+    last_screen_ms=now;screen_visible=1;
+    BMP_LOCK(film_progress_draw(now,running,stage,percent,film_names[chosen],status,qcount,completed,last_width,last_height,last_made==current_job.size));
 }
 #else
 static int screen_until;
@@ -107,8 +98,8 @@ static int prepare_output(void){
     snprintf(parent,sizeof(parent),"%s:/ML/LUTOUT",current_job.drive);FIO_CreateDirectory(parent);
     snprintf(dir,sizeof(dir),"%s/L%03d",parent,films[chosen]);FIO_CreateDirectory(dir);
     for(int slot=1;slot<=9999;slot++){
-        snprintf(output,sizeof(output),"%s/LUT_%04d.JPG",dir,slot);snprintf(print,sizeof(print),"%s/LUT_%04d.FPV",dir,slot);
-        char a[128],b[128];snprintf(a,sizeof(a),"%s/LUT_%04d.TMP",dir,slot);snprintf(b,sizeof(b),"%s/LUT_%04d.PBM",dir,slot);
+        snprintf(output,sizeof(output),"%s/LUT_%04d.JPG",dir,slot);snprintf(print,sizeof(print),"%s/LUT_%04d.BMP",dir,slot);
+        char a[128],b[128];snprintf(a,sizeof(a),"%s/LUT_%04d.TMP",dir,slot);snprintf(b,sizeof(b),"%s/LUT_%04d.PART",dir,slot);
         if(!is_file(output) && !is_file(print) && !is_file(a) && !is_file(b))return 1;
     }
     snprintf(status,sizeof(status),"Output folder full");return 0;
@@ -124,7 +115,7 @@ static void convert_task(void *unused){
     snprintf(input,sizeof(input),"%s",current_job.path);
     snprintf(table_dir,sizeof(table_dir),"%s:/ML/LUTDATA",current_job.drive);
     snprintf(jpeg_part,sizeof(jpeg_part),"%s",output);char *ext=strrchr(jpeg_part,'.');if(ext)strcpy(ext,".TMP");
-    snprintf(print_part,sizeof(print_part),"%s",print);ext=strrchr(print_part,'.');if(ext)strcpy(ext,".PBM");
+    snprintf(print_part,sizeof(print_part),"%s",print);ext=strrchr(print_part,'.');if(ext)strcpy(ext,".PART");
     bounce=fio_malloc(8192);if(!bounce){snprintf(status,sizeof(status),"Not enough memory; try again later");goto done;}
     uint32_t before=0,after=0;
     if(FIO_GetFileSize(input,&before)){snprintf(status,sizeof(status),"RAW file is missing");goto done;}
@@ -144,16 +135,10 @@ static void convert_task(void *unused){
     }
     last_made=fos_dev_made(d,&last_width,&last_height);
     uint32_t size=0;
-    if(FIO_GetFileSize(jpeg_part,&size) || size<100 || !jpeg_valid(jpeg_part)){snprintf(status,sizeof(status),"Could not finish JPEG; please retry");goto done;}
+    if(FIO_GetFileSize(jpeg_part,&size) || size<100){snprintf(status,sizeof(status),"Could not finish JPEG; please retry");goto done;}
     if(FIO_RenameFile(jpeg_part,output)){FIO_RemoveFile(output);snprintf(status,sizeof(status),"Could not save JPEG; please retry");goto done;}
-    ok=1;
-    snprintf(last_source,sizeof(last_source),"%s",current_job.path);
-    snprintf(last_saved,sizeof(last_saved),"%s",output);last_saved_film=chosen;
-    int preview_ok=store_review(fos_dev_screen_indices(d),fos_dev_screen_palette(d),print);
-    int dcim_ok=publish_companion(input,output,last_saved,sizeof(last_saved));
-    last_record(1);
-    snprintf(status,sizeof(status),dcim_ok?"Film JPEG saved in DCIM; RAW kept":"Film JPEG saved in ML; DCIM update failed");
-    if(preview_ok)pending_view=1;
+    ok=1;FIO_RenameFile(print_part,print);
+    snprintf(status,sizeof(status),"JPEG %dx%d saved: ML/LUTOUT/L%03d",last_width,last_height,films[chosen]);
  done:
     if(d)fos_dev_free(d);
     fos_dev_release();
@@ -194,20 +179,6 @@ static void service_tick(void){
         quality_requested=1;
         if(!(pic_quality & 0x60000) || (pic_quality & 0xF)){int quality=PICQ_RAW_JPG_LARGE_FINE;prop_request_change(PROP_PIC_QUALITY,&quality,4);}
     }
-    load_trial_art();load_live_preview();
-    if(pending_view && !running && !lens_info.job_state && !get_halfshutter_pressed() && !RECORDING){
-        pending_view=0;
-        if(load_review()){
-#ifndef LUTJPEG_HOST_TEST
-            ui_mode=2;photo_film_mode(2);
-#endif
-        }else {
-            last_preview[0]=0;snprintf(status,sizeof(status),last_saved[0]?"JPEG saved; display preview unavailable":"No converted photo yet");
-#ifndef LUTJPEG_HOST_TEST
-            ui_mode=2;photo_film_mode(2);
-#endif
-        }
-    }
     observe_shot();draw_progress();
     if(running || lens_info.job_state || get_halfshutter_pressed() || RECORDING || is_movie_mode()){stable_since=0;return;}
     struct film_job j;lock_queue();int pending=qcount;if(pending)j=queue[qhead];unlock_queue();if(!pending)return;
@@ -241,52 +212,40 @@ static MENU_SELECT_FUNC(start_convert){
     if(enqueue(&job)){stable_since=0;snprintf(status,sizeof(status),"Photo added to conversion queue");}else NotifyBox(3000,"Queue full; original RAW is kept");
 }
 static MENU_SELECT_FUNC(cancel_convert){(void)priv;(void)delta;lock_queue();qcount=0;unlock_queue();cancel=1;snprintf(status,sizeof(status),"Conversion cancelled; RAW kept");}
-static MENU_SELECT_FUNC(open_film_picker){(void)priv;(void)delta;browsing=current_index();ui_mode=1;photo_film_mode(1);}
-static MENU_SELECT_FUNC(open_film_result){(void)priv;(void)delta;pending_view=1;}
+static MENU_SELECT_FUNC(change_pack){(void)priv;collection=(collection+delta+(int)COUNT(pack_names))%COUNT(pack_names);within=0;film_settings(1);}
+static MENU_SELECT_FUNC(change_film){(void)priv;within=(within+delta+pack_counts[collection])%pack_counts[collection];film_settings(1);}
 static MENU_SELECT_FUNC(change_auto){(void)priv;(void)delta;auto_enabled=!auto_enabled;if(auto_enabled)quality_requested=0;film_settings(1);}
 static MENU_SELECT_FUNC(change_size){(void)priv;output_size=(output_size+delta+FOS_SIZES)%FOS_SIZES;film_settings(1);}
 static MENU_SELECT_FUNC(enable_raw){
     (void)priv;(void)delta;
     if(!lens_info.job_state && !RECORDING && !is_movie_mode()){int quality=PICQ_RAW_JPG_LARGE_FINE;prop_request_change(PROP_PIC_QUALITY,&quality,4);}
 }
-static MENU_UPDATE_FUNC(show_film){MENU_SET_VALUE("%s",film_names[current_index()]);MENU_SET_HELP("%s",film_notes[current_index()]);}
-static MENU_UPDATE_FUNC(show_retry){const struct card_info *c=get_shooting_card();char source[24];snprintf(source,sizeof(source),"%s%04d.CR2",get_file_prefix(),c?c->file_number:0);MENU_SET_VALUE("%s",source);MENU_SET_HELP("Convert this one RAW only; originals are kept.");}
-static MENU_UPDATE_FUNC(show_status){char n[16];film_uint(n,completed);MENU_SET_VALUE("%s",running?"Developing":"Ready");MENU_SET_RINFO("%s saved",n);MENU_SET_HELP("%s",status);}
+static MENU_UPDATE_FUNC(film_update){entry->max=pack_counts[collection]-1;entry->choices=film_names+pack_offsets[collection];MENU_SET_HELP("%s",film_notes[current_index()]);}
+static MENU_UPDATE_FUNC(show_status){MENU_SET_VALUE("%s",running?"Developing":"Ready");MENU_SET_RINFO("%d%% / %d queued",percent,qcount);MENU_SET_HELP("%s. Done %d / failed %d / queue overflow %d.",status,completed,failed,dropped);}
 static struct menu_entry entries[]={
  {.name="LUT JPEG",.select=menu_open_submenu,.icon_type=IT_SUBMENU,.update=show_status,.help="Choose film, set RAW+JPEG once, shoot. JPEG develops automatically.",.submenu_width=710,
  .children=(struct menu_entry[]){
-  {.name="Choose film",.select=open_film_picker,.update=show_film,.icon_type=IT_ACTION,.help="Choose one of seven complete films. No separate collection setting."},
-  {.name="View film photo",.select=open_film_result,.icon_type=IT_ACTION,.help="Open the last successfully developed film image on this camera."},
+  {.name="Film collection",.priv=&collection,.min=0,.max=COUNT(pack_names)-1,.choices=pack_names,.select=change_pack,.help="Current film packs first; older Standard recipes are archived separately."},
+  {.name="Film look",.priv=&within,.min=0,.max=31,.choices=film_names,.select=change_film,.update=film_update,.help="Select the colours for your next photo."},
   {.name="After each photo",.priv=&auto_enabled,.min=0,.max=1,.choices=CHOICES("Manual","Automatic"),.select=change_auto,.help="Automatic is enabled by default. RAW files are required and kept."},
   {.name="JPEG output size",.priv=&output_size,.min=0,.max=FOS_SIZE_L,.choices=CHOICES("Small 720x480","Medium ~1728x1152","Large ~2592x1728"),.select=change_size,.help="Large is the default. Actual size and memory fallback are shown after conversion."},
   {.name="Enable RAW+JPEG",.select=enable_raw,.help="SET once to save RAW plus Canon JPEG for automatic film development."},
-  {.name="Develop last photo",.select=start_convert,.update=show_retry,.help="Manual retry of the latest RAW. Normal shooting converts automatically."},
+  {.name="Develop last photo",.select=start_convert,.help="Manual retry of the latest RAW. Normal shooting converts automatically."},
   {.name="Photo progress",.update=show_status,.help="An animated film screen appears automatically during development."},
   {.name="Cancel conversion",.select=cancel_convert,.help="Cancel current and waiting conversions. Originals are kept."},MENU_EOL}},
 };
 static int registered;
 unsigned int lutjpeg_abi(void){return 0x4c554933;}
 unsigned int lutjpeg_bootstrap(void){
-    if(!registered){queue_sem=create_named_semaphore("film_queue",SEM_CREATE_UNLOCKED);if(!queue_sem)return 1;live_sem=create_named_semaphore("film_live",SEM_CREATE_UNLOCKED);if(!live_sem)return 1;film_settings(0);last_record(0);stopping=0;register_film_ui();observe_shot();menu_add("Shoot",entries,COUNT(entries));registered=1;
+    /* Old .en flags or direct calls must not bypass the recovery core. */
+    if(PHOTO_LUT_RECOVERY_BUILD)return 1;
+    if(!registered){queue_sem=create_named_semaphore("film_queue",SEM_CREATE_UNLOCKED);if(!queue_sem)return 1;film_settings(0);stopping=0;observe_shot();menu_add("Shoot",entries,COUNT(entries));registered=1;
 #ifndef LUTJPEG_HOST_TEST
         monitor_alive=1;task_create("film_monitor",0x1e,0x4000,monitor_task,NULL);
 #endif
     }return 0;
 }
-unsigned int lutjpeg_shutdown(void){
-    stopping=cancel=1;live_ready=0;
-#ifndef LUTJPEG_HOST_TEST
-    photo_film_register(NULL);
-#endif
-    while(running || monitor_alive){msleep(20);}
-    take_semaphore(live_sem,0);if(live_table){free(live_table);live_table=NULL;}give_semaphore(live_sem);
-#ifndef LUTJPEG_HOST_TEST
-    BMP_LOCK(photo_film_palette_release();if(review_pixels){free(review_pixels);review_pixels=NULL;}if(trial_art){free(trial_art);trial_art=NULL;});
-#else
-    if(review_pixels){free(review_pixels);review_pixels=NULL;}if(trial_art){free(trial_art);trial_art=NULL;}
-#endif
-    if(registered){menu_remove("Shoot",entries,COUNT(entries));registered=0;}return 0;
-}
+unsigned int lutjpeg_shutdown(void){stopping=cancel=1;while(running || monitor_alive)msleep(20);if(registered){menu_remove("Shoot",entries,COUNT(entries));registered=0;}return 0;}
 MODULE_INFO_START()
  MODULE_INIT(lutjpeg_bootstrap)
  MODULE_DEINIT(lutjpeg_shutdown)

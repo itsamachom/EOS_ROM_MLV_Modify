@@ -60,3 +60,7 @@ The v3r6-lut3 experiment uses Codex/LLM assistance for the requested FLIM TONE t
 ## v3r6-lut6
 
 Codex assisted with the seven-film UI/art, independently authored Live View mapping, 600D bridge, JPEG/preview error separation, DCIM companion backup/restore, persistent ML result viewer, test fixtures, documentation and packaging. Host renders and synthetic RAW tests are not hardware validation. See PHOTO_UI_V3R6-LUT6.md for camera-test limitations.
+
+## v3r6-lut7 Recovery
+
+Codex-assisted recovery release after a real-camera boot hang report. Reverts lut6 core display/key/draw hooks and blocks film startup/manual activation in both core and module. ARM/host checks are not hardware boot validation. See PHOTO_UI_V3R6-LUT7.md.
