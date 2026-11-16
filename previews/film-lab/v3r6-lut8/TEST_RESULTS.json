@@ -1,0 +1,78 @@
+{
+  "kind": "synthetic RAW; host production adapter; not camera or timing validation",
+  "checks": "PASS offline converter: manual initialization only; actual DCIM enumeration/close/sort, five films, selection limit 4, batch counts, JPEG/DCF/named copies, 8.3 fallback, original RAW kept, write failures, Play passthrough and zero capture-property changes\n",
+  "files": [
+    {
+      "name": "IMG_0001_Astia.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "0a2bc919371c1acde610e212cc938614d88f720537d0ab430eab78059ef93c98"
+    },
+    {
+      "name": "IMG_0001_ClassicNeg.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "cfc199ca6d93b7a814193cbef0445c6b8e9aa399bc3597ae509f9215391ae5df"
+    },
+    {
+      "name": "IMG_0001_Ektachrome.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "a995e6cfec3e168bb740ce1920ea12e4f53b08e977bb7a4a4eba0fc2b66a2105"
+    },
+    {
+      "name": "IMG_0001_Ektachrome_001.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "a995e6cfec3e168bb740ce1920ea12e4f53b08e977bb7a4a4eba0fc2b66a2105"
+    },
+    {
+      "name": "IMG_0001_Gold200.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "57c4bbf6eb8baeab194591c4a0d8c715d4edec6545c2d75660352fd2bf999ed2"
+    },
+    {
+      "name": "IMG_0001_Velvia.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "8328a515db2bd9180903547fc3b6c93994b8af190f84b29322c069dee3dbc597"
+    },
+    {
+      "name": "IMG_0002_Ektachrome.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "a995e6cfec3e168bb740ce1920ea12e4f53b08e977bb7a4a4eba0fc2b66a2105"
+    },
+    {
+      "name": "IMG_0003_Ektachrome.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "a995e6cfec3e168bb740ce1920ea12e4f53b08e977bb7a4a4eba0fc2b66a2105"
+    },
+    {
+      "name": "IMG_0004_Ektachrome.JPG",
+      "size": [
+        2601,
+        1732
+      ],
+      "sha256": "a995e6cfec3e168bb740ce1920ea12e4f53b08e977bb7a4a4eba0fc2b66a2105"
+    }
+  ]
+}

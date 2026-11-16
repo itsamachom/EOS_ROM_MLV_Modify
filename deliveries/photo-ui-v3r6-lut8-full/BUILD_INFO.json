@@ -1,0 +1,26 @@
+{
+  "project": "FIRMWARE ADD-ON Thai-Menu",
+  "project_website": "https://itsamachom.github.io/EOS_ROM_MLV_Modify/",
+  "distribution_status": "Public Experimental; not Stable or source-audit complete",
+  "version": "PHOTO-UI-v3r6-lut8.600D.102",
+  "target": "600D.102",
+  "base_commit": "2ae4732e59764b502f51a9f1c5352f9aa82cd281",
+  "source_state": "Exact indexed build/source files and notes; generated DOWNLOAD.md is omitted to avoid checksum self-reference. Base commit plus working changes, not base alone.",
+  "source_zip_sha256": "2e8fee9ae467358033921bd0bbed2cfb8e21ab0381ecc7148110ace211537f47",
+  "autoexec_sha256": "ede37bc25bda11ea57cd2521df492c8c4fbeb880c45a801f8a2829c109c43b5e",
+  "camera_tested": false,
+  "qemu_tested": false,
+  "installer_modified": false,
+  "packager_checks": [
+    "build-version identity",
+    "ZIP CRC",
+    "autoexec XOR",
+    "Thai atlas identity",
+    "module inventory",
+    "unchanged installer",
+    "exact working-source bytes"
+  ],
+  "dependency_source_status": "Inherited dietlibc corresponding source remains unverified; see included release/v3r2/PROVENANCE.md and READINESS.json.",
+  "ai_assistance": "Codex/LLM-assisted fork; see AI_ASSISTANCE.md and release notes.",
+  "full_zip_sha256": "306c1e5e9dd4524955a4c0f661cc81191b078b4eacc62a63c8e92e4e009f7f5a"
+}

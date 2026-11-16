@@ -16,4 +16,4 @@ static void photo_lut_auto_start(void){assert(menus==2);starts++;}
 with tempfile.TemporaryDirectory() as t:
  p=Path(t);(p/'test.c').write_text(pre+'static void boot(void){'+body+'\n}\nint main(void){boot();assert(starts==1 && set_maindial_sem==1);}\n')
  subprocess.run(['gcc','-Wall','-Wextra','-Werror',p/'test.c','-o',p/'test'],check=True);subprocess.run([p/'test'],check=True)
-print('PASS production boot starts film lab after menu registration without a user action')
+print('PASS production boot reaches film startup policy after menu registration; offline policy checked by loader tests')

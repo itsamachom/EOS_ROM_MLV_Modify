@@ -11,10 +11,12 @@ import sys
 root = pathlib.Path(__file__).resolve().parents[1]
 path = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else root / "firmware/platform/600D.102/build/magiclantern"
 data = path.read_bytes()
-recovery = b"Recovery update: film engine disabled" in data
+
 assert data[:6] == b"\x7fELF\x01\x01", "Expected little-endian ELF32"
 eh = struct.unpack_from("<16sHHIIIIIHHHHHH", data)
 sections = [struct.unpack_from("<10I", data, eh[6] + i * eh[11]) for i in range(eh[12])]
+# Inspect loadable data, not stale compiler macro definitions in debug sections.
+recovery = any(b"Recovery update: film engine disabled" in data[s[4]:s[4]+s[5]] for s in sections if s[2] & 2 and s[1] != 8)
 
 
 def memory(addr, size):

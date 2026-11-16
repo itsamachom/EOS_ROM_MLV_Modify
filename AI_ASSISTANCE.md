@@ -64,3 +64,7 @@ Codex assisted with the seven-film UI/art, independently authored Live View mapp
 ## v3r6-lut7 Recovery
 
 Codex-assisted recovery release after a real-camera boot hang report. Reverts lut6 core display/key/draw hooks and blocks film startup/manual activation in both core and module. ARM/host checks are not hardware boot validation. See PHOTO_UI_V3R6-LUT7.md.
+
+## v3r6-lut8 Offline
+
+Codex-assisted manual file converter: five film choices, bounded DCIM enumeration/selection, four-photo batch, menu-only renderer, DCF/named copies, Exif fields and synthetic host tests. No capture properties, shot watcher, global key interception or display filters. Canon Playback discovery remains hardware-unverified.

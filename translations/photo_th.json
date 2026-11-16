@@ -1670,7 +1670,7 @@
   "Choose film": {
     "th": "เลือกโทนฟิล์ม",
     "max_width": 688,
-    "font_size": 25
+    "font_size": 23
   },
   "View film photo": {
     "th": "ดูภาพฟิล์มที่แปลงแล้ว",
@@ -1731,5 +1731,105 @@
     "th": "ตัวอย่างสี Live View พร้อมแล้ว",
     "max_width": 688,
     "font_size": 25
+  },
+  "RAW to Film Tone": {
+    "th": "แปลง RAW เป็นโทนฟิล์ม",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Left/Right: film   SET: choose RAW files": {
+    "th": "ซ้าย/ขวา เลือกฟิล์ม  SET เลือกภาพ RAW",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Selected": {
+    "th": "เลือกแล้ว",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "SET: mark photo   Q: convert selected photos": {
+    "th": "SET เลือกภาพ  Q แปลงภาพที่เลือก",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Reading RAW files": {
+    "th": "กำลังอ่านรายการภาพ RAW",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "No CR2 files found in DCIM": {
+    "th": "ไม่พบไฟล์ CR2 ใน DCIM",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Total photos": {
+    "th": "ภาพทั้งหมด",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Saved": {
+    "th": "บันทึกแล้ว",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Warnings": {
+    "th": "ข้อสังเกต",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "SET marks photo; Q starts conversion": {
+    "th": "SET เลือกภาพ  Q เริ่มแปลง",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Maximum 4 photos": {
+    "th": "เลือกได้สูงสุด 4 ภาพ",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Select 1 to 4 RAW files first": {
+    "th": "เลือกภาพ RAW ก่อน 1 ถึง 4 ภาพ",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Finished; original RAW kept": {
+    "th": "เสร็จแล้ว เก็บ RAW ต้นฉบับไว้ครบ",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Cancelled; original RAW kept": {
+    "th": "ยกเลิกแล้ว เก็บ RAW ต้นฉบับไว้ครบ",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "First 128 RAW files listed": {
+    "th": "แสดง RAW 128 ภาพแรก",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "RAW to Film Tone: SET to open": {
+    "th": "แปลง RAW เป็นโทนฟิล์ม กด SET เพื่อเปิด",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Open converter": {
+    "th": "เปิดตัวแปลง",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Finished with failed files": {
+    "th": "เสร็จแล้ว มีบางภาพแปลงไม่สำเร็จ",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "Cannot save JPEG": {
+    "th": "บันทึก JPEG ไม่สำเร็จ",
+    "max_width": 688,
+    "font_size": 23
+  },
+  "This photo": {
+    "th": "ภาพนี้",
+    "font_size": 23,
+    "max_width": 120
   }
 }

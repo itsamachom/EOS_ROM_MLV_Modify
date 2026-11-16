@@ -97,3 +97,7 @@ The illustrative photographic inputs under assets/film-lab-samples are CC0 1.0 i
 ## v3r6-lut6 seven-film trial
 
 Seven selected Standard 1.2 Caduceus recipe data records retain the Apache-2.0 notices above. The independently authored Canon Live View tables and seven illustrative canister sprites use the existing credited colour-model and GPL/OFL artwork pipeline. Barlow font notices continue to accompany runtime art. The fork adds the camera bridge, display filter, adaptive 144-colour preview, reversible DCIM companion export, tests and UI. Modified M-Film engine source hashes are recorded separately from original upstream hashes in PROVENANCE.json. No manufacturer endorsement or exact film/ISP match is claimed.
+
+## v3r6-lut8 Offline
+
+The file converter/UI are fork changes. Five retained Caduceus Standard 1.2 data recipes keep the Apache-2.0 license and NOTICE; processing remains GPL under existing notices. Canister art uses the existing credited GPL/OFL pipeline rendered in the existing ML palette. The M-Film JPEG writer adds Exif interoperability fields; its modified hash is in upstream/PROVENANCE.json. Host screenshots and RAW charts do not establish native Canon playback or camera boot support.

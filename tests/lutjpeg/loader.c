@@ -68,11 +68,12 @@ int main(void){
  /* Test actual public entry points with and without stale crash markers. */
  for(int stale=0;stale<2;stale++){
   if(stale){write_file("ML/LUTDATA/FILMERR.LCK","",0);write_file("ML/LUTDATA/FILMBOOT.LCK","",0);}
-  photo_lut_auto_start();photo_lut_load_select(NULL,0);
+  photo_lut_auto_start();
   assert(!boots && !cache_sync && !photo_lut_handle && !handles && !dma_ptr && !photo_lut_loading);
-  assert(strstr(photo_lut_status,"Recovery"));
+  assert(strstr(photo_lut_status,"RAW to Film"));
  }
  remove("ML/LUTDATA/FILMERR.LCK");
+ prepare();save();photo_lut_load_select(NULL,0);assert(boots==1 && photo_lut_handle);photo_lut_shutdown();
  prepare();save();fail_guard=1;fail_clean();assert(!boots && !cache_sync && strstr(photo_lut_status,"guard"));
  prepare();remove("ML/LUTDATA/LUTJPEG.BIN");fail_clean();assert(strstr(photo_lut_status,"Missing"));
  prepare();save();remove("ML/modules/600D_102.sym");fail_clean();assert(strstr(photo_lut_status,"differ"));
@@ -94,5 +95,5 @@ int main(void){
  test_load();assert(boots==1 && cache_sync==1);
  photo_lut_shutdown();assert(stops==1);
  prepare();assert(!live_images);
- puts("PASS direct loader CRC/bounds/relocation/core matching, DMA, low memory, ABI/init cleanup; recovery boot/manual entry disabled, low-level guard and orderly shutdown");
+ puts("PASS direct loader CRC/bounds/relocation/core matching, DMA, low memory, ABI/init cleanup; offline boot disabled, explicit manual entry works, low-level guard and orderly shutdown");
 }

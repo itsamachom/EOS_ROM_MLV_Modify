@@ -70,8 +70,8 @@ if release == 'v3r6-lut7':
     assert all(n not in sym for n in [b'photo_film_filter',b'photo_film_register',b'photo_film_draw'])
 else:
     assert b'ML/LUTDATA/LUTJPEG.BIN' in binary
-    assert b'Film lab' in binary
-    assert b'FILMERR.LCK' in binary
+    assert (b'RAW to Film Tone' if release == 'v3r6-lut8' else b'Film lab') in binary
+    assert (b'FILMBOOT.LCK' if release == 'v3r6-lut8' else b'FILMERR.LCK') in binary
 assert 'ML/LUTDATA/FILMERR.LCK' not in payload
 assert 'ML/LUTDATA/DIRECT.ON' in payload
 assert 'ML/SETTINGS/lutjpeg.en' not in payload

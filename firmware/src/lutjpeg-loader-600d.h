@@ -1,13 +1,12 @@
 /* 600D bound LUT overlay loader. GPL-2.0-or-later; no camera-side TCC. */
 #ifdef CONFIG_600D
-#include "film-recovery.h"
 #ifndef PHOTO_LUT_LOADER_TEST
 #include "arm-mcr.h"
 #endif
 static volatile int photo_lut_loading;
 static unsigned char *photo_lut_handle;
 static uint32_t photo_lut_stop;
-static char photo_lut_status[96]=PHOTO_LUT_RECOVERY_MESSAGE;
+static char photo_lut_status[96]="RAW to Film Tone: SET to open";
 #define PHOTO_LUT_ABI 0x4c554933
 #ifndef PHOTO_LUT_CALL
 #define PHOTO_LUT_CALL(base,off) (((int (*)(void))((base)+(off)))())
@@ -80,34 +79,25 @@ static void photo_lut_load_task(void *unused){
     if(f)FIO_CloseFile(f);
     if(dma)fio_free(dma);
     if(image)free(image);
-    if(ready)snprintf(photo_lut_status,sizeof(photo_lut_status),"Film lab ready - choose a film and shoot");
+    if(ready)snprintf(photo_lut_status,sizeof(photo_lut_status),"Choose film");
     photo_lut_log(photo_lut_status);
     NotifyBox(3500,"%s",ready?"LUT ready":"Cannot load LUT. See ML/LUTLOAD.LOG");
     photo_lut_loading=0;menu_redraw();
 }
 static MENU_SELECT_FUNC(photo_lut_load_select){
-    if(PHOTO_LUT_RECOVERY_BUILD){(void)priv;(void)delta;NotifyBox(4000,"%s",PHOTO_LUT_RECOVERY_MESSAGE);return;}
+
     (void)priv;(void)delta;if(photo_lut_loading)return;
     photo_lut_loading=1;snprintf(photo_lut_status,sizeof(photo_lut_status),"Loading LUT engine...");
     task_create("lut_loader",0x1c,0x4000,photo_lut_load_task,NULL);
 }
 /* A process that crashed must not repeat automatically at the next boot. */
 static void photo_lut_auto_start(void){
-    if(PHOTO_LUT_RECOVERY_BUILD)return;
-    uint32_t size=0;
-    if(!FIO_GetFileSize("ML/LUTDATA/FILMBOOT.LCK",&size)){
-        snprintf(photo_lut_status,sizeof(photo_lut_status),"Previous film startup/session interrupted; film lab disabled");
-        photo_lut_log(photo_lut_status);return;
-    }
-    if(!FIO_GetFileSize("ML/LUTDATA/FILMERR.LCK",&size)){
-        snprintf(photo_lut_status,sizeof(photo_lut_status),"Previous film job interrupted; SET to retry film lab");
-        photo_lut_log(photo_lut_status);return;
-    }
-    photo_lut_load_select(NULL,0);
+    /* Offline tool: never load or inspect files during camera startup. */
 }
 static MENU_UPDATE_FUNC(photo_lut_load_update){
-    MENU_SET_VALUE("%s",PHOTO_LUT_RECOVERY_BUILD?"Disabled":photo_lut_loading?"Starting":"Retry");MENU_SET_HELP("%s",photo_lut_status);
+    MENU_SET_VALUE("%s",photo_lut_loading?"Loading":"Open converter");MENU_SET_HELP("%s",photo_lut_status);
 }
+int photo_offline_allowed(void){return photo_lut_loading;}
 void photo_lut_shutdown(void){
     while(photo_lut_loading)msleep(20);
     if(photo_lut_handle && PHOTO_LUT_CALL(photo_lut_handle,photo_lut_stop)==0)

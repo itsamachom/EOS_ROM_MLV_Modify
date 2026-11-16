@@ -3371,9 +3371,9 @@ static struct menu_entry shoot_menus[] = {
     {
         .name = "FLIM TONE",
         .select = menu_open_submenu,
-        .help = "Choose a film and shoot. RAW photos develop automatically.",
+        .help = "Convert existing RAW files with a film tone. Camera shooting settings stay unchanged.",
         .children = (struct menu_entry[]) {
-            {.name="LUT JPEG",.select=photo_lut_load_select,.update=photo_lut_load_update,.icon_type=IT_ACTION,.help="Film lab starts automatically. Loading status or recovery retry."},
+            {.name="LUT JPEG",.select=photo_lut_load_select,.update=photo_lut_load_update,.icon_type=IT_ACTION,.help="Offline RAW converter. SET opens five films and a file selector. No automatic startup."},
             MENU_EOL,
         },
     },

@@ -30,6 +30,10 @@
     "fos_dev.h": {
       "description": "lut6: 144-colour adaptive preview and accessors for the camera viewer; original RAW/JPEG processing interfaces retained.",
       "sha256": "8913071400c935c4277bb3c5ff70e6550f35fced148ddf4c08bec05a3a653328"
+    },
+    "fos_jpeg.c": {
+      "description": "lut8: add ExifVersion 0230, FlashpixVersion 0100, sRGB ColorSpace and actual pixel dimensions to Exif; original baseline encoder retained. Not native Canon playback validation.",
+      "sha256": "65ac219efd6ba8d65e75bbbba9eb65f9c5c35d48868d99a502543bc4e0cd4fbe"
     }
   }
 }

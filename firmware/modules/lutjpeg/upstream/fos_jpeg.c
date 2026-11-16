@@ -219,7 +219,7 @@ static int xmp(char *out, int size, const char *film)
     return n < size ? n : size - 1;
 }
 
-static int exif(uint8_t *out, const struct fos_jpeg_meta *m)
+static int exif(uint8_t *out, const struct fos_jpeg_meta *m, int width, int height)
 {
     char date[20] = "";
     if (m->when && strlen(m->when) >= 16)
@@ -242,7 +242,7 @@ static int exif(uint8_t *out, const struct fos_jpeg_meta *m)
         { 0x010E, 2, m->desc }, { 0x010F, 2, "Canon" }, { 0x0110, 2, fos_port_model() },
         { 0x0131, 2, "M-FILM darkroom" }, { 0x0132, 2, date },
     };
-    const int n0 = 6, n1 = 1 + (fnum > 0);
+    const int n0 = 6, n1 = 6 + (fnum > 0);
     int p = 8, data = 8 + 2 + n0 * 12 + 4 + 2 + n1 * 12 + 4;
     memcpy(out, "II*\0\x08\0\0\0", 8);
 #define W16(v) (out[p] = (uint8_t) (v), out[p + 1] = (uint8_t) ((v) >> 8), p += 2)
@@ -268,9 +268,14 @@ static int exif(uint8_t *out, const struct fos_jpeg_meta *m)
         out[q + 4] = 10; out[q + 5] = out[q + 6] = out[q + 7] = 0;
         data += 8;
     }
+    W16(0x9000); W16(7); W32(4); W32(0x30333230); /* ExifVersion 0230 */
     W16(0x9003); W16(2); W32(20); W32(data);
     memcpy(out + data, date[0] ? date : "                   ", 20);
     data += 20;
+    W16(0xA000); W16(7); W32(4); W32(0x30303130); /* FlashpixVersion 0100 */
+    W16(0xA001); W16(3); W32(1); W32(1); /* sRGB */
+    W16(0xA002); W16(4); W32(1); W32(width);
+    W16(0xA003); W16(4); W32(1); W32(height);
     W32(0);
 #undef W16
 #undef W32
@@ -323,7 +328,7 @@ struct fos_jpeg *fos_jpeg_begin(const char *path, int width, int height, int qua
     {
         uint8_t ex[512];
         memset(ex, 0, sizeof(ex));
-        int n = exif(ex, meta);
+        int n = exif(ex, meta, width, height);
         put16(w, 0xFFE1); put16(w, n + 8);
         static const uint8_t tag[6] = { 'E', 'x', 'i', 'f', 0, 0 };
         for (int i = 0; i < 6; i++) put8(w, tag[i]);

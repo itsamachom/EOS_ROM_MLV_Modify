@@ -1,3 +1,5 @@
+#ifndef LUTJPEG_CAMERA_FIXTURE_H
+#define LUTJPEG_CAMERA_FIXTURE_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -28,7 +30,8 @@ static int is_file(const char *p){uint32_t n;return !FIO_GetFileSize(p,&n);}
 static void FIO_CreateDirectory(const char *p){mkdir(p,0700);}
 static int fail_preview_file,fail_optional_print;
 static int valid83(const char *p){const char *s=strrchr(p,'/');s=s?s+1:p;const char *dot=strrchr(s,'.');return dot?(dot-s<=8 && strlen(dot+1)<=3):strlen(s)<=8;}
-static FILE *FIO_CreateFile(const char *p){if(!valid83(p) || (fail_preview_file && strstr(p,".FPV")) || (fail_optional_print && strstr(p,".PBM")))return NULL;return fopen(p,"wb");}
+static int allow_long_names;
+static FILE *FIO_CreateFile(const char *p){if((!allow_long_names && !valid83(p)) || (fail_preview_file && strstr(p,".FPV")) || (fail_optional_print && strstr(p,".PBM")))return NULL;return fopen(p,"wb");}
 static FILE *FIO_OpenFile(const char *p,int f){(void)f;return fopen(p,"rb");}
 static int FIO_ReadFile(FILE *f,void *p,int n);
 static int FIO_WriteFile(FILE *f,const void *p,int n);
@@ -81,3 +84,5 @@ static int test_film_mode;
 void photo_film_mode(int mode){test_film_mode=mode;}
 void photo_film_palette_release(void){}
 static void gui_stop_menu(void){}
+
+#endif
