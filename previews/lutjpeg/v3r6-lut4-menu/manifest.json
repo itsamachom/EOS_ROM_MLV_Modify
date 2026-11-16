@@ -1,0 +1,121 @@
+{
+  "release": "v3r6-lut4",
+  "kind": "production UI host capture, simulated properties",
+  "color_effect_preview": false,
+  "selection_animation": "Three cached-art selection frames; GIF40ms illustrates the transition, not measured camera timing",
+  "animation": "Illustration of acknowledged settings stages, not measured camera latency or post-shot processing",
+  "files": [
+    {
+      "file": "film-menu-en.png",
+      "sha256": "f88e0d7c85b65b11dba80b344ac7f2b48436307cc5cb42f20fbb25f1a0d2e734"
+    },
+    {
+      "file": "film-menu-th.png",
+      "sha256": "6da2f31ef344f6dc292e3ba90ff77029097b9265d311b1c6d3a4e3b92510cbe6"
+    },
+    {
+      "file": "tone-active-en.png",
+      "sha256": "e5ace1483df857354864b493f9b51c043a56f19b5141c645965c6dc3d38f8e50"
+    },
+    {
+      "file": "tone-active-th.png",
+      "sha256": "f19fadcffddcd0fe6f13af1578028c609aa19cd9d4315c4ed0a014e49f199da6"
+    },
+    {
+      "file": "tone-browsing-en.png",
+      "sha256": "9cd9ddefcf9a863faf89caa63e9cee5f7db4da17038e6c5b43afff19d56fca49"
+    },
+    {
+      "file": "tone-browsing-th.png",
+      "sha256": "dc58d1e17988910931943b636953c5a3aacef36fe02c3e88977b59de93aaaaf6"
+    },
+    {
+      "file": "tone-changed-en.png",
+      "sha256": "ee59422975f2da42f6093ac5f1badf6f03035c1972db419c3d1897d3869133c6"
+    },
+    {
+      "file": "tone-changed-th.png",
+      "sha256": "2c7e2f2e5e0b8fc7825a3c02e516cfa607900c8151764c4acfaf9d6db78e4a38"
+    },
+    {
+      "file": "tone-detail-en-01.png",
+      "sha256": "527c4a9170a46b4570a1fe3aca15cc0e4604ae52ca4e17eff9c55cf6332ac97e"
+    },
+    {
+      "file": "tone-detail-th-01.png",
+      "sha256": "8297c9af24cdba11b681a2220562b719a94e43f5f97c7464d84f7d2164a2b14f"
+    },
+    {
+      "file": "tone-setting-0.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-1.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-2.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-3.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-4.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-5.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-6.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-7.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-setting-8.png",
+      "sha256": "25b609955f5d51f21b6f61d1bc54fd38d0da5cd325c59f2a3e37035dc18d8a3a"
+    },
+    {
+      "file": "tone-zoom-0.png",
+      "sha256": "c77ad802bbe6dc996a02304e36764f735395a1eeac7ad56242d9b99f6639d22e"
+    },
+    {
+      "file": "tone-zoom-1.png",
+      "sha256": "7be497a324b2f8b678351c121302c85a8ffce3f70f36452f6eb3117647569e0a"
+    },
+    {
+      "file": "tone-zoom-2.png",
+      "sha256": "8b0566365612c235031913e47e2ce2465074c194862eb0b42dc3919b59c03b44"
+    },
+    {
+      "file": "tones-en-01.png",
+      "sha256": "4fb1911fc7435791549e09e6098fff3343dedc93361485e62eebf570641c47c9"
+    },
+    {
+      "file": "tones-en-03.png",
+      "sha256": "69b42efa8dbc4e5120dd5d6f3bb74b2af899510343693990ae02c77540d47492"
+    },
+    {
+      "file": "tones-en-08.png",
+      "sha256": "1e018c0ff1330b2e0e7e48e8ae34d6e6524e2407a7ad7aed61bf73bf8a9dc955"
+    },
+    {
+      "file": "tones-th-01.png",
+      "sha256": "4b9664e6021790bbf96d90fde0e74cc1a800db4b1e60a22cde35b56f5bb596ee"
+    },
+    {
+      "file": "tones-th-03.png",
+      "sha256": "8b0566365612c235031913e47e2ce2465074c194862eb0b42dc3919b59c03b44"
+    },
+    {
+      "file": "tones-th-08.png",
+      "sha256": "65955ae9598e0ce1e2d8b01e04bebe28df150b73afa2c169d893c0d19a5fab3b"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+-r ../tools/requirements-thai.txt
+numpy==2.2.6

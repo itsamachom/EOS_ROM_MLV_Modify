@@ -1,0 +1,2 @@
+# FOL1 colour grids are binary data, even when their RGB bytes contain no NUL.
+firmware/data/lutjpeg/*.LUT binary

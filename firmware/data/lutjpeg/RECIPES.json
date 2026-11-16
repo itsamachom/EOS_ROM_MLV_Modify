@@ -1,0 +1,38 @@
+{
+  "schema": "thai-menu-lut/1",
+  "domain": "linearized model-output RGB, then display-luma curve and HSV sectors",
+  "notes": "Independently authored test adjustments inspired by the matrix/curve/sector approach. Not Olympus values or measured film matches. No exposure or ISO change.",
+  "sector_centres_degrees": [60, 30, 15, 0, 330, 270, 240, 210, 180, 150, 120, 90],
+  "looks": [
+    {
+      "key": "portra400", "index": 0,
+      "matrix": [[1.02, 0.01, -0.03], [0.01, 1.00, -0.01], [-0.02, 0.02, 1.00]],
+      "curve": [[0, 0.012], [0.10, 0.115], [0.30, 0.315], [0.60, 0.605], [0.85, 0.835], [1, 0.975]],
+      "hue_degrees": [0, 1, 1, 0, 0, 0, -2, -1, 0, 0, 1, 0],
+      "saturation_scale": [0.97, 0.98, 0.98, 0.97, 0.96, 0.96, 0.94, 0.96, 0.98, 0.96, 0.95, 0.96],
+      "lightness_delta": [0.002, 0.008, 0.006, 0.002, 0, 0, -0.004, -0.002, 0, 0, 0, 0],
+      "shadow_rgb": [-0.002, 0, 0.003], "highlight_rgb": [0.004, 0.001, -0.003],
+      "monochrome": false
+    },
+    {
+      "key": "ektar100", "index": 2,
+      "matrix": [[1.04, -0.025, -0.015], [-0.015, 1.035, -0.02], [-0.015, -0.025, 1.04]],
+      "curve": [[0, 0], [0.10, 0.085], [0.30, 0.29], [0.60, 0.615], [0.85, 0.865], [1, 1]],
+      "hue_degrees": [0, 0, 0, -1, 0, 0, -2, -1, 0, 1, 1, 0],
+      "saturation_scale": [1.03, 1.01, 1.00, 1.04, 1.01, 1.02, 1.07, 1.05, 1.03, 1.04, 1.05, 1.03],
+      "lightness_delta": [0, 0.003, 0.003, 0, 0, 0, -0.012, -0.008, -0.003, -0.004, -0.006, -0.002],
+      "shadow_rgb": [0, 0, 0], "highlight_rgb": [0, 0, 0],
+      "monochrome": false
+    },
+    {
+      "key": "trix400", "index": 7,
+      "matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+      "curve": [[0, 0.008], [0.10, 0.083], [0.30, 0.285], [0.60, 0.62], [0.85, 0.88], [1, 0.99]],
+      "hue_degrees": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "saturation_scale": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "lightness_delta": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "shadow_rgb": [0, 0, 0], "highlight_rgb": [0, 0, 0],
+      "monochrome": true
+    }
+  ]
+}

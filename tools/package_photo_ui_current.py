@@ -12,6 +12,11 @@ import re
 import struct
 import subprocess
 import zipfile
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--private-test', action='store_true', help='Label local artifacts as unpublished private test builds.')
+args = parser.parse_args()
 
 root = Path(__file__).resolve().parents[1]
 release = (root / 'scripts/photo-ui-version.txt').read_text().strip()
@@ -45,6 +50,11 @@ assert sha256(payload['ML-SETUP.FIR']) == '7e33d8a2a71ad92c412d291fb0ecb6de0b940
 assert {Path(n).stem for n in payload if n.endswith('.mo')} == {'adv_int','autoexpo','deflick','dual_iso','ettr','file_man','img_name','pic_view','arkanoid','lua','lutjpeg'}
 for name in ['LOOK00.LUT','LOOK02.LUT','LOOK07.LUT']:
     assert payload['ML/LUTDATA/'+name]==(root/'firmware/data/lutjpeg'/name).read_bytes()
+assert payload['ML/LUTDATA/RECIPES.json'] == (root/'firmware/data/lutjpeg/RECIPES.json').read_bytes()
+table_info = json.loads(payload['ML/LUTDATA/TABLES.json'])
+assert table_info['recipe_sha256'] == sha256(payload['ML/LUTDATA/RECIPES.json'])
+for name, digest in table_info['sha256'].items():
+    assert sha256(payload['ML/LUTDATA/'+name]) == digest
 assert b'ML/LUTDATA/LUTJPEG.BIN' in binary
 assert b'Open menu' in binary
 assert 'ML/LUTDATA/DIRECT.ON' in payload
@@ -72,8 +82,8 @@ with zipfile.ZipFile(source) as z:
         assert z.read(prefix+name) == (root/name).read_bytes()
 info = {
     'project':'FIRMWARE ADD-ON Thai-Menu',
-    'project_website':'https://itsamachom.github.io/eos_rom_mlv_modifly/',
-    'distribution_status':'Public Experimental; not Stable or source-audit complete',
+    'project_website':'https://itsamachom.github.io/EOS_ROM_MLV_Modify/',
+    'distribution_status':('Private test; unpublished; hardware unvalidated' if args.private_test else 'Public Experimental; not Stable or source-audit complete'),
     'version': version, 'target':'600D.102', 'base_commit':base,
     'source_state':'Exact indexed build/source files and notes; generated DOWNLOAD.md is omitted to avoid checksum self-reference. Base commit plus working changes, not base alone.',
     'source_zip_sha256':sha256(source.read_bytes()), 'autoexec_sha256':sha256(binary),
@@ -101,8 +111,27 @@ with zipfile.ZipFile(full) as z:
         assert z.read(name) == data
     assert sha256(z.read('SOURCE/'+source.name)) == info['source_zip_sha256']
 info['full_zip_sha256'] = sha256(full.read_bytes())
+artifacts = [full, source]
+if args.private_test:
+    update = out / f'600D-102-Thai-Menu-{release}-TEST-UPDATE.zip'
+    update_payload = {n: data for n, data in payload.items() if n == 'autoexec.bin' or n.startswith('ML/')}
+    with zipfile.ZipFile(update, 'w', zipfile.ZIP_DEFLATED) as z:
+        for name, data in update_payload.items():
+            z.writestr(name, data)
+        z.write(notes, 'UPDATE_TH.md')
+        z.write(root/'firmware/COPYING', 'COPYING')
+        z.write(root/'THIRD_PARTY_NOTICES.md', 'THIRD_PARTY_NOTICES.md')
+        z.writestr('BUILD_INFO.json', json.dumps(info, indent=2)+'\n')
+        z.writestr('SOURCE.txt', f'Private unpublished test. Matching source: {source.name}\nSHA256: {info["source_zip_sha256"]}\n')
+        z.writestr('PAYLOAD_SHA256SUMS', ''.join(f'{sha256(data)}  {name}\n' for name, data in sorted(update_payload.items())))
+    with zipfile.ZipFile(update) as z:
+        assert z.testzip() is None and not any(n.upper().endswith('.FIR') for n in z.namelist())
+        for name, data in update_payload.items():
+            assert z.read(name) == data
+    info['test_update_zip_sha256'] = sha256(update.read_bytes())
+    artifacts.append(update)
 (out/'BUILD_INFO.json').write_text(json.dumps(info,indent=2)+'\n')
-(out/'SHA256SUMS').write_text(''.join(f'{sha256(p.read_bytes())}  {p.name}\n' for p in [full,source,out/'BUILD_INFO.json']))
+(out/'SHA256SUMS').write_text(''.join(f'{sha256(p.read_bytes())}  {p.name}\n' for p in artifacts+[out/'BUILD_INFO.json']))
 print('PASS package version, source identity, module inventory, CRC and XOR')
 print(full)
 print(info['full_zip_sha256'])

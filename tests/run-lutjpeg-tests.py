@@ -35,6 +35,11 @@ with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch
  run([t/'host',0,t/'missing',t/'chart.CR2',t/'bad.BMP',t/'bad.JPG'],ok=False)
  assert not (t/'bad.JPG').exists()
  (t/'badtable').mkdir()
+ # A valid FOL1 file from another recipe revision must not silently load.
+ wrong=bytearray((root/'firmware/data/lutjpeg/LOOK00.LUT').read_bytes());wrong[4]^=1
+ (t/'badtable/LOOK00.LUT').write_bytes(wrong)
+ run([t/'host',0,t/'badtable',t/'chart.CR2',t/'bad.BMP',t/'bad.JPG'],ok=False)
+ assert not (t/'bad.JPG').exists()
  broken=bytearray((root/'firmware/data/lutjpeg/LOOK00.LUT').read_bytes());broken[0]^=1
  (t/'badtable/LOOK00.LUT').write_bytes(broken)
  run([t/'host',0,t/'badtable',t/'chart.CR2',t/'bad.BMP',t/'bad.JPG'],ok=False)
@@ -49,5 +54,5 @@ with tempfile.TemporaryDirectory(prefix='lutjpeg-check-',dir='/workspace/scratch
  for f in (root/'firmware/data/lutjpeg').glob('*.LUT'):shutil.copy(f,t/'A:/ML/LUTDATA'/f.name)
  p=run([t/'adapter'],cwd=t)
  assert hashlib.sha256((t/'A:/DCIM/100CANON/IMG_0001.CR2').read_bytes()).hexdigest()==original
- (proofs/'TEST_RESULTS.json').write_text(json.dumps({'kind':'Synthetic RAW processed by actual production core; not a camera photograph or camera timing','matrix':'600D','size':[720,480],'color_mae_portra_ektar':mae,'results':results,'adapter_checks':p.stdout.strip(),'checks':['ASAN/UBSAN','three distinct LUT JPEGs','monochrome output','DMA bounce chunk bounds','output collision avoidance','original RAW unchanged','cancel','write failure','missing RAW','missing/corrupt table','rename failure','truncated RAW','low memory']},indent=2)+'\n')
+ (proofs/'TEST_RESULTS.json').write_text(json.dumps({'kind':'Synthetic RAW processed by actual production core; not a camera photograph or camera timing','matrix':'600D','size':[720,480],'color_mae_portra_ektar':mae,'results':results,'adapter_checks':p.stdout.strip(),'checks':['ASAN/UBSAN','three distinct LUT JPEGs','monochrome output','DMA bounce chunk bounds','output collision avoidance','original RAW unchanged','cancel','write failure','missing RAW','missing/corrupt table','recipe revision mismatch','rename failure','truncated RAW','low memory']},indent=2)+'\n')
  print('PASS production RAW/LUT/JPEG and camera adapter; Portra/Ektar RGB mean difference:',round(mae,2))

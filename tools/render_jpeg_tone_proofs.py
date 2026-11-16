@@ -1,9 +1,10 @@
 """Capture production JPEG tone UI with real font masks and simulated properties."""
 from pathlib import Path
-import os,subprocess,tempfile,hashlib,json
+import os,subprocess,tempfile,hashlib,json,argparse
 from PIL import Image,ImageDraw
 root=Path(__file__).resolve().parents[1]
-out=root/'previews/jpeg-tones';out.mkdir(parents=True,exist_ok=True)
+ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,default=root/'previews/jpeg-tones');args=ap.parse_args()
+out=args.out;out.mkdir(parents=True,exist_ok=True)
 with tempfile.TemporaryDirectory(prefix='jpeg-tone-proof-') as tmp:
  env=dict(os.environ,PHOTO_PROOF_RBF_DIR=str(root/'firmware/data/fonts'),PHOTO_PROOF_OUT=tmp)
  subprocess.run(['bash','tests/run-jpeg-tone-tests.sh'],cwd=root,env=env,check=True)

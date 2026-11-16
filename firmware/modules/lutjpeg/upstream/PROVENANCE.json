@@ -17,5 +17,11 @@
     "fos_gfx.c": "82e356fd629384b373ef66e78b7adb83132f8d4b70757fe042b677abc346e079"
   },
   "catalog_scope": "Eight builtin film/look identities retained for upstream table indices; UI exposes only indices 0/2/7. Model and fixed colors/isqrt extracted; UI/RAW library fonts not imported.",
-  "test_fixture": "tests/lutjpeg/mkcr2.c derives from upstream sim/tools/mkcr2.c; matrix/white level adjusted for synthetic 600D processing tests. Not a physical camera capture."
+  "test_fixture": "tests/lutjpeg/mkcr2.c derives from upstream sim/tools/mkcr2.c; matrix/white level adjusted for synthetic 600D processing tests. Not a physical camera capture.",
+  "fork_modifications": {
+    "fos_dev.c": {
+      "description": "v3r6-lut4: include generated recipe-version.h and use LUTJPEG_RECIPE_TAG in look_hash to reject other recipe revisions. Original model/RAW/JPEG implementation retained. Original upstream checksum remains recorded in files above.",
+      "sha256": "58112b66d660f3931cff4f26701c174309f26a372cdeed01076425f444811e80"
+    }
+  }
 }

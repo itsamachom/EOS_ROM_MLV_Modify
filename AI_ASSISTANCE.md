@@ -1,5 +1,7 @@
 # AI / LLM assistance disclosure
 
+- v3r6-lut4 private test: Codex/LLM-assisted three-look picker filtering with retained full-library mode, independent offline matrix/curve/HSV-sector/split-colour recipes and baker, recipe revision binding, host tests and private packaging. No Caduceus implementation or recipe data copied; see PHOTO_UI_V3R6-LUT4.md.
+
 This fork uses OpenAI Codex/LLM assistance. This includes substantial generated
 or guided code; it is not being represented as solely human-written code.
 

@@ -138,7 +138,9 @@ void fos_film_color(const struct fos_look *f, const float in[3], float out[3])
  * files go to the desktop darkroom, so the two give the same colour. */
 #define GRID 33
 #define NGRID (GRID * GRID * GRID)
-#define LOOK_MODEL 1                    /* bump when fos_film_color changes */
+/* Fork change: reject tables baked for another recipe revision, including lut3. */
+#include "../recipe-version.h"
+#define LOOK_MODEL LUTJPEG_RECIPE_TAG
 #define CIN_BLACK 0.0108f               /* 10^((95 - 685) * 0.002 / 0.6) */
 
 static struct

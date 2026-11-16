@@ -37,7 +37,7 @@ zip_contents::
 	$(MAKE) -C $(TOP_DIR)/modules/lutjpeg
 	$(CP) $(TOP_DIR)/modules/lutjpeg/build/lutjpeg.mo $(ZIP_DIR)/ML/modules/
 	mkdir -p $(ZIP_DIR)/ML/LUTDATA
-	$(CP) $(TOP_DIR)/data/lutjpeg/LOOK*.LUT $(TOP_DIR)/data/lutjpeg/TABLES.json $(ZIP_DIR)/ML/LUTDATA/
+	$(CP) $(TOP_DIR)/data/lutjpeg/LOOK*.LUT $(TOP_DIR)/data/lutjpeg/TABLES.json $(TOP_DIR)/data/lutjpeg/RECIPES.json $(ZIP_DIR)/ML/LUTDATA/
 	$(CP) $(TOP_DIR)/modules/lutjpeg/upstream/COPYING $(ZIP_DIR)/ML/LUTDATA/
 	mkdir -p $(ZIP_DIR)/ML/SETTINGS
 	rm -f $(ZIP_DIR)/ML/SETTINGS/lutjpeg.en

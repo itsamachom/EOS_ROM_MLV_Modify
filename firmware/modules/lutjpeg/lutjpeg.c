@@ -103,7 +103,7 @@ static MENU_SELECT_FUNC(start_convert){
         if(!FIO_GetFileSize(input,&size) && size>1024){found=1;break;}
     }
     if(!found){NotifyBox(5000,"Latest image has no RAW.\nSet Canon RAW+JPEG, then take a photo.");return;}
-    chosen=COERCE(selected,0,2);
+    chosen=COERCE(selected,0,(int)COUNT(films)-1);
     char parent[64],dir[80];
     snprintf(parent,sizeof(parent),"%s:/ML/LUTOUT",card->drive_letter);
     FIO_CreateDirectory(parent);
@@ -124,7 +124,7 @@ static MENU_UPDATE_FUNC(show_status){MENU_SET_VALUE("%s",running?"Working":"Read
 static struct menu_entry entries[]={
  {.name="LUT JPEG",.select=menu_open_submenu,.icon_type=IT_SUBMENU,.update=show_status,.help="Experimental RAW to LUT to JPEG. 600D.102 only.",.submenu_width=710,
  .children=(struct menu_entry[]){
-  {.name="Film LUT",.priv=&selected,.min=0,.max=2,.choices=CHOICES("Portra 400","Ektar 100","Tri-X 400"),.help="Real LUT processing; does not change ISO or Canon Picture Style."},
+  {.name="Film LUT",.priv=&selected,.min=0,.max=COUNT(films)-1,.choices=CHOICES("Portra 400","Ektar 100","Tri-X 400"),.help="lut4: matrix, tone curve and selective colour. Three test looks.",.help2="No ISO/Picture Style change. New JPEG from RAW; not Live View."},
   {.name="Convert latest RAW",.select=start_convert,.help="After shooting: SET to create a new 720x480 JPEG.",.help2="Canon RAW/RAW+JPEG required. Output: ML/LUTOUT. Originals kept."},
   {.name="Conversion status",.update=show_status,.help="Progress and last output folder."},
   {.name="Cancel conversion",.select=cancel_convert,.help="Stop processing; source RAW is preserved."},MENU_EOL}},

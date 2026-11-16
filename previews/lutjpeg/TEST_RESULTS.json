@@ -5,22 +5,22 @@
     720,
     480
   ],
-  "color_mae_portra_ektar": 16.660888310185186,
+  "color_mae_portra_ektar": 21.972572337962962,
   "results": [
     {
       "name": "portra400",
-      "jpeg_sha256": "22281f971e5dd9b1e23815b5a64536e7cfab5dfd67274c3ba39a5c3ebaf64698",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 157 ms, expose 12, finish 24, jpeg 20, palette 15, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 28 steps\n"
+      "jpeg_sha256": "389302d3c958e48e768c5cc6afb9deaa946bb5f82ba3d4845eb124502fe96c81",
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 210 ms, expose 13, finish 25, jpeg 20, palette 19, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 32 steps\n"
     },
     {
       "name": "ektar100",
-      "jpeg_sha256": "e12075b5506e36ca73b513ceca67507265e05a2ef81d8bfc291aa1bde27dac8f",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 147 ms, expose 12, finish 23, jpeg 17, palette 15, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 28 steps\n"
+      "jpeg_sha256": "e6ab910d32b059c09a5cbb522d16756479353fb9c5924eb3ee2a1328da27b5bd",
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 206 ms, expose 14, finish 25, jpeg 21, palette 18, big print 0 (0 x 0), write 0\nHost peak processing allocation: 5542696 bytes; 32 steps\n"
     },
     {
       "name": "trix400",
-      "jpeg_sha256": "70e7d9a1ca4118f0116cc05c35457fce0933cfdbaeed8338952731ea40676d60",
-      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 146 ms, expose 13, finish 22, jpeg 20, palette 14, big print 0 (0 x 0), write 0\nHost peak processing allocation: 5542696 bytes; 28 steps\n"
+      "jpeg_sha256": "51698ff1eed48225ba4ee35c1d5dd6365183d0072fa6bc5c90361ac338d86b06",
+      "host_log": "dev: chart.CR2 raw 5344x3516 (ljpeg 2672x3516, 2 comps, 14 bits) slices 2 x 1780 + 1784, picture 142,51 5202x3464, black cols 0..122, orientation 1\ndev: no white balance in the frame, developed as daylight\ndev: frame 1: read 214 ms, expose 14, finish 23, jpeg 20, palette 16, big print 0 (0 x 0), write 1\nHost peak processing allocation: 5542696 bytes; 33 steps\n"
     }
   ],
   "adapter_checks": "PASS actual adapter: DMA bounce, selected LUT, distinct outputs, collision avoidance, missing RAW",
@@ -35,6 +35,7 @@
     "write failure",
     "missing RAW",
     "missing/corrupt table",
+    "recipe revision mismatch",
     "rename failure",
     "truncated RAW",
     "low memory"

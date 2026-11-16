@@ -22,6 +22,22 @@ static int fixture_write(void *ctx,int op,const struct photo_tone_state *s) {
 }
 int main(void) {
     assert(existing_photo_menu_tests()==0);
+    int visible[PHOTO_TONE_COUNT],visible_count=0;
+    for(int group=0;group<PHOTO_TONE_GROUP_COUNT;group++)visible_count+=photo_tone_ids(group,visible);
+    assert(visible_count==(PHOTO_TONE_FULL_LIBRARY?72:3));
+    if(!PHOTO_TONE_FULL_LIBRARY) {
+        assert(photo_tone_ids(0,visible)==3 && photo_tone_ids(1,visible)==0);
+        assert(streq(photo_tone_recipes[visible[0]].key,"portra400"));
+        assert(streq(photo_tone_recipes[visible[1]].key,"ektar100"));
+        assert(streq(photo_tone_recipes[visible[2]].key,"trix400"));
+        photo_tone_group=0;photo_tone_key(BGMT_PRESS_DOWN);assert(photo_tone_group==0);
+        photo_tone_key(BGMT_PRESS_UP);assert(photo_tone_group==0);
+        photo_tone_group=3;photo_tone_selected[0]=72;
+        int repaired=photo_tone_current();
+        assert(photo_tone_group==0 && repaired==visible[0]);
+        photo_tone_selected[0]=0;
+    }
+    puts("PASS visible selection matches build mode; compact three looks or restored 72-look library");
     proof_measure_fonts=1;
     for(int i=0;i<PHOTO_TONE_COUNT;i++) {
         struct tone_fixture f={.state=initial_state(),.ready=1};

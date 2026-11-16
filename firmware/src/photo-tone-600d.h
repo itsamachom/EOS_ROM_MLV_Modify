@@ -2,6 +2,11 @@
  * Recipe values credited in photo-tone-recipes-600d.h; graphics/UI written for this fork.
  * Included after photo_text; all UI state is protected by menu_sem. */
 #include "photo-tone-engine.h"
+/* Keep the complete catalog/art intact; enable this for a future library build. */
+#ifndef PHOTO_TONE_FULL_LIBRARY
+#define PHOTO_TONE_FULL_LIBRARY 0
+#endif
+#define PHOTO_TONE_GROUP_COUNT (PHOTO_TONE_FULL_LIBRARY ? 4 : 1)
 static int photo_tone_opened,photo_tone_group,photo_tone_selected[4],photo_tone_confirm;
 static int photo_tone_working,photo_tone_step,photo_tone_steps;
 static const char *photo_tone_message="JPEG / RAW+JPEG in Canon";
@@ -76,9 +81,17 @@ static int photo_tone_platform_write(void *ctx,int op,const struct photo_tone_st
 }
 #endif
 static int photo_tone_ids(int group,int out[PHOTO_TONE_COUNT]) {
-    int n=0;for(int i=0;i<PHOTO_TONE_COUNT;i++)if(photo_tone_recipes[i].group==group)out[n++]=i;return n;
+    int n=0;
+    if(group<0 || group>=PHOTO_TONE_GROUP_COUNT)return 0;
+    for(int i=0;i<PHOTO_TONE_COUNT;i++) {
+        const struct photo_tone_recipe *r=&photo_tone_recipes[i];
+        if(PHOTO_TONE_FULL_LIBRARY ? r->group==group :
+           (streq(r->key,"portra400") || streq(r->key,"ektar100") || streq(r->key,"trix400")))out[n++]=i;
+    }
+    return n;
 }
 static int photo_tone_current(void) {
+    if(photo_tone_group<0 || photo_tone_group>=PHOTO_TONE_GROUP_COUNT)photo_tone_group=0;
     int ids[PHOTO_TONE_COUNT],n=photo_tone_ids(photo_tone_group,ids);
     photo_tone_selected[photo_tone_group]=MOD(photo_tone_selected[photo_tone_group],n);
     return ids[photo_tone_selected[photo_tone_group]];
@@ -325,15 +338,17 @@ static void photo_film_pill(const struct photo_tone_recipe *r,int index,int acti
 }
 
 static int photo_tone_draw(void) {
+    (void)photo_tone_current(); /* Normalize group/selection before shelf indexing. */
     photo_thai_prepare();
     bmp_fill(COLOR_BLACK,0,0,720,480);bmp_fill(COLOR_GRAY(5),0,0,720,48);
     photo_text(FONT(FONT_LARGE,COLOR_WHITE,COLOR_GRAY(5)),16,2,570,"FLIM TONE");
     if(photo_tone_confirm==1){photo_tone_detail();return 1;}
-    for(int g=0;g<4;g++) {
+    for(int g=0;g<PHOTO_TONE_GROUP_COUNT;g++) {
         int bg=g==photo_tone_group?COLOR_BLUE:COLOR_BLACK;
-        int x=8+g*158,width=g==3?230:150;
+        int x=8+g*158,width=PHOTO_TONE_FULL_LIBRARY?(g==3?230:150):704;
+        const char *label=PHOTO_TONE_FULL_LIBRARY?photo_tone_groups[g]:"Portra 400 / Ektar 100 / Tri-X 400";
         bmp_fill(bg,x,54,width,40);
-        photo_text(FONT(FONT_MED,g==photo_tone_group?COLOR_WHITE:COLOR_CYAN,bg),x+(width-bmp_string_width(FONT(FONT_MED,COLOR_WHITE,bg),photo_tone_groups[g]))/2,60,width-12,photo_tone_groups[g]);
+        photo_text(FONT(FONT_MED,g==photo_tone_group?COLOR_WHITE:COLOR_CYAN,bg),x+(width-bmp_string_width(FONT(FONT_MED,COLOR_WHITE,bg),label))/2,60,width-12,label);
     }
     int ids[PHOTO_TONE_COUNT],n=photo_tone_ids(photo_tone_group,ids),selected=photo_tone_selected[photo_tone_group];
     char count[20];snprintf(count,sizeof(count),"%d/%d",selected+1,n);
@@ -364,12 +379,13 @@ static int photo_tone_draw(void) {
         photo_text(FONT(FONT_MED,COLOR_WHITE,COLOR_BLACK),16,350,392,first);
         photo_text(FONT(FONT_MED,COLOR_WHITE,COLOR_BLACK),16,376,392,strlen(photo_tone_read_detail)>32?photo_tone_read_detail+32:"");
     }
-    photo_text(FONT(FONT_MED,COLOR_CYAN,COLOR_BLACK),16,442,688,"L/R Tone U/D Group SET Details Q Restore MENU Back");
+    photo_text(FONT(FONT_MED,COLOR_CYAN,COLOR_BLACK),16,442,688,PHOTO_TONE_FULL_LIBRARY?"L/R Tone U/D Group SET Details Q Restore MENU Back":"L/R Tone  SET Details  Q Restore  MENU Back");
     return 1;
 }
 /* Called with menu_sem held. Returns a pending action, dispatched outside it. */
 static int photo_tone_key(int key) {
     if(photo_tone_working)return 0;
+    (void)photo_tone_current();
     if(key==BGMT_MENU){if(photo_tone_confirm)photo_tone_confirm=0;else {photo_tone_opened=0;photo_tone_art_release();}return 0;}
     if(photo_tone_confirm==1 && key!=BGMT_PRESS_SET)return 0;
     if(key==BGMT_PRESS_LEFT || key==BGMT_WHEEL_LEFT || key==BGMT_PRESS_RIGHT || key==BGMT_WHEEL_RIGHT) {
@@ -379,7 +395,7 @@ static int photo_tone_key(int key) {
         photo_tone_selected[photo_tone_group]=next<0?0:next>=n?n-1:next;photo_tone_confirm=0;photo_tone_anim_step=0;return 0;
     }
     if(key==BGMT_PRESS_UP || key==BGMT_WHEEL_UP || key==BGMT_PRESS_DOWN || key==BGMT_WHEEL_DOWN) {
-        photo_tone_group=MOD(photo_tone_group+(key==BGMT_PRESS_UP || key==BGMT_WHEEL_UP?-1:1),4);photo_tone_confirm=0;photo_tone_anim_step=0;return 0;
+        photo_tone_group=MOD(photo_tone_group+(key==BGMT_PRESS_UP || key==BGMT_WHEEL_UP?-1:1),PHOTO_TONE_GROUP_COUNT);photo_tone_confirm=0;photo_tone_anim_step=0;return 0;
     }
     if(key==BGMT_Q){photo_tone_confirm=photo_tone_session.saved?2:0;photo_tone_message="No session backup";return 0;}
     if(key==BGMT_PRESS_SET) {

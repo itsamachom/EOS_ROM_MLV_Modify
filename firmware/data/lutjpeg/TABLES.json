@@ -1,14 +1,16 @@
 {
   "upstream_commit": "3a5b0d8506d6279b1b223f78612dfa6db47405e8",
-  "origin": "Offline baked from GPL M-Film builtin model with devtest -T; not external Film-Luts or measured film scans",
+  "origin": "GPL M-Film builtin model plus independent lut4 matrix/curve/HSV-sector/split-colour adjustments; not measured film scans or Olympus tables",
+  "recipe_sha256": "b466a93923e3cddaf442e5360c1efe9ece340bd8ce06036123430229a1607851",
+  "recipe_domain": "linearized model-output RGB, then display-luma curve and HSV sectors",
   "indices": {
     "LOOK00.LUT": "portra400",
     "LOOK02.LUT": "ektar100",
     "LOOK07.LUT": "trix400"
   },
   "sha256": {
-    "LOOK02.LUT": "ef38a131d03cf9f7eac900886fa601f819b296fb931259e5673175b1a20587c4",
-    "LOOK00.LUT": "ef0e7f9723471e7d0933dfcaef00043e575034d90087ecaa2a53f71bbf032144",
-    "LOOK07.LUT": "8858c78622af1b411529e5fbe8c933e2ec776663cfc4847ae54a558d5c674962"
+    "LOOK00.LUT": "ccfd9569c074412008cc10aed1a867571b9f6a71c9912000bc3a3708c9085c7c",
+    "LOOK02.LUT": "9638858c1dceee222dbc56af378d778ce847426ddc3b2c76d90df22cefa984ca",
+    "LOOK07.LUT": "cd417e3f877df079d88635193c00fd11a714a92479804a1ae8edc62f7da58aa2"
   }
 }
